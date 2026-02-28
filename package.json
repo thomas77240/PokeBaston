@@ -1,0 +1,19 @@
+{
+  "name": "pokebaston",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently -n \"BACK,FRONT\" -c \"blue,green\" \".\\mvnw spring-boot:run\" \"cd frontend && npm run dev\"",
+    "build": ".\\mvnw clean package -DskipTests",
+    "start": "java -jar target/app.jar --spring.profiles.active=prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

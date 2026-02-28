@@ -1,0 +1,31 @@
+# --- JAVA / SPRING ---
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mtj.tmp/
+
+# --- REACT / NODE (dans le sous-dossier frontend) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.eslintcache
+*.log
+
+# --- IDE (Eclipse, IntelliJ, VS Code) ---
+.settings/
+.project
+.classpath
+.factorypath
+.idea/
+*.iml
+*.iws
+.vscode/
+
+# --- Root Node (for npm commands) ---
+node_modules/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
