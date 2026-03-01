@@ -3,6 +3,7 @@ package l3miage.pokebaston.modele;
 import java.util.List;
 
 public class Pokemon {
+
     private String type;
     private String name;
     private int hp;

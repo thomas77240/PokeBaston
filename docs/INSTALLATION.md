@@ -9,7 +9,7 @@
     - SpringMVC
 
 ## 📋 Pré-requis
-* **Java 17** ou supérieur
+* **Java 21** ou supérieur
 * **Node.js 22** ou supérieur
 * **Maven** (inclus via le wrapper `./mvnw`)
 ---

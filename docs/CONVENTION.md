@@ -8,17 +8,18 @@ Pour maintenir un historique clair et professionnel au sein de notre équipe de 
 
 ## 🚀 Types de Commits Principaux
 
-| Emoji | Type | Usage | Exemple (Anglais) |
-| :--- | :--- | :--- | :--- |
-| ✨ | **feat** | Ajout d'une nouvelle fonctionnalité | `✨ feat: add type advantage logic` |
-| 🐛 | **fix** | Correction d'un bug | `🐛 fix: resolve HP calculation glitch` |
-| 📝 | **docs** | Modification de la documentation | `📝 docs: update project readme` |
-| 🎨 | **style** | UI, CSS, et changements de formatage | `🎨 style: adjust battle arena layout` |
-| ⚡ | **perf** | Amélioration des performances | `⚡ perf: optimize sprite loading time` |
-| ♻️ | **refactor** | Modification du code sans changer le comportement | `♻️ refactor: clean up battle loop logic` |
-| 🧪 | **test** | Ajout ou correction de tests | `🧪 test: add unit test for physical moves` |
-| 🔧 | **chore** | Maintenance, configuration, outils (npm, git) | `🔧 chore: install axios dependency` |
-| ⏪ | **revert** | Annulation d'un commit précédent | `⏪ revert: undo last broken feature` |
+| Emoji | Shortcode | Syntaxe | Type | Usage | Exemple |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| ✨ | `:sparkles:` | **feat** | Fonctionnalité | Ajout d'une nouveauté | `✨ feat: add type advantage logic` |
+| 🐛 | `:bug:` | **fix** | Bug | Correction d'un problème | `🐛 fix: resolve HP calculation glitch` |
+| 📝 | `:memo:` | **docs** | Documentation | Modification de la doc | `📝 docs: update project readme` |
+| 🎨 | `:art:` | **style** | Style | UI, CSS, formatage | `🎨 style: adjust battle arena layout` |
+| ⚡ | `:zap:` | **perf** | Performance | Amélioration de la rapidité | `⚡ perf: optimize sprite loading time` |
+| ♻️ | `:recycle:` | **refactor** | Refacto | Code plus propre | `♻️ refactor: clean up battle loop logic` |
+| 🧪 | `:test_tube:` | **test** | Test | Ajout/Correction de tests | `🧪 test: add unit test for physical moves` |
+| 🔧 | `:wrench:` | **chore** | Maintenance | Config, outils, dépendances | `🔧 chore: install axios dependency` |
+| ⏪ | `:rewind:` | **revert** | Revert | Annulation d'un commit | `⏪ revert: undo last broken feature` |
+| 🧱 | `:bricks:` | **arch** | Architecture | Structure du projet | `🧱 arch: initializing pokebaston project` |
 
 ---
 
