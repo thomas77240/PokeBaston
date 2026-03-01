@@ -5,7 +5,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
         "stats": {
-            "HP": 45,
+            "hp": 45,
             "atk": 49,
             "def": 49,
             "spa": 65,
@@ -119,7 +119,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 62,
             "def": 63,
             "spa": 80,
@@ -233,7 +233,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 82,
             "def": 83,
             "spa": 100,
@@ -347,7 +347,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
         "stats": {
-            "HP": 39,
+            "hp": 39,
             "atk": 52,
             "def": 43,
             "spa": 60,
@@ -458,7 +458,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
         "stats": {
-            "HP": 58,
+            "hp": 58,
             "atk": 64,
             "def": 58,
             "spa": 80,
@@ -569,7 +569,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
         "stats": {
-            "HP": 78,
+            "hp": 78,
             "atk": 84,
             "def": 78,
             "spa": 109,
@@ -683,7 +683,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
         "stats": {
-            "HP": 44,
+            "hp": 44,
             "atk": 48,
             "def": 65,
             "spa": 50,
@@ -794,7 +794,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
         "stats": {
-            "HP": 59,
+            "hp": 59,
             "atk": 63,
             "def": 80,
             "spa": 65,
@@ -905,7 +905,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
         "stats": {
-            "HP": 79,
+            "hp": 79,
             "atk": 83,
             "def": 100,
             "spa": 85,
@@ -1016,7 +1016,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
         "stats": {
-            "HP": 45,
+            "hp": 45,
             "atk": 30,
             "def": 35,
             "spa": 20,
@@ -1127,7 +1127,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 20,
             "def": 55,
             "spa": 25,
@@ -1238,7 +1238,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 45,
             "def": 50,
             "spa": 90,
@@ -1352,7 +1352,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 35,
             "def": 30,
             "spa": 20,
@@ -1466,7 +1466,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
         "stats": {
-            "HP": 45,
+            "hp": 45,
             "atk": 25,
             "def": 50,
             "spa": 25,
@@ -1580,7 +1580,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 90,
             "def": 40,
             "spa": 45,
@@ -1694,7 +1694,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 45,
             "def": 40,
             "spa": 35,
@@ -1808,7 +1808,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
         "stats": {
-            "HP": 63,
+            "hp": 63,
             "atk": 60,
             "def": 55,
             "spa": 50,
@@ -1922,7 +1922,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
         "stats": {
-            "HP": 83,
+            "hp": 83,
             "atk": 80,
             "def": 75,
             "spa": 70,
@@ -2036,7 +2036,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 56,
             "def": 35,
             "spa": 25,
@@ -2147,7 +2147,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 81,
             "def": 60,
             "spa": 50,
@@ -2258,7 +2258,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 60,
             "def": 30,
             "spa": 31,
@@ -2372,7 +2372,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 90,
             "def": 65,
             "spa": 61,
@@ -2486,7 +2486,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 60,
             "def": 44,
             "spa": 40,
@@ -2597,7 +2597,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 95,
             "def": 69,
             "spa": 65,
@@ -2708,7 +2708,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 55,
             "def": 40,
             "spa": 50,
@@ -2819,7 +2819,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 90,
             "def": 55,
             "spa": 90,
@@ -2930,7 +2930,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 75,
             "def": 85,
             "spa": 20,
@@ -3041,7 +3041,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/28.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
         "stats": {
-            "HP": 75,
+            "hp": 75,
             "atk": 100,
             "def": 110,
             "spa": 45,
@@ -3152,7 +3152,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/29.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 47,
             "def": 52,
             "spa": 40,
@@ -3263,7 +3263,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/30.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
         "stats": {
-            "HP": 70,
+            "hp": 70,
             "atk": 62,
             "def": 67,
             "spa": 55,
@@ -3374,7 +3374,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 92,
             "def": 87,
             "spa": 75,
@@ -3488,7 +3488,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/32.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
         "stats": {
-            "HP": 46,
+            "hp": 46,
             "atk": 57,
             "def": 40,
             "spa": 40,
@@ -3599,7 +3599,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/33.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
         "stats": {
-            "HP": 61,
+            "hp": 61,
             "atk": 72,
             "def": 57,
             "spa": 55,
@@ -3710,7 +3710,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/34.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
         "stats": {
-            "HP": 81,
+            "hp": 81,
             "atk": 102,
             "def": 77,
             "spa": 85,
@@ -3824,7 +3824,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
         "stats": {
-            "HP": 70,
+            "hp": 70,
             "atk": 45,
             "def": 48,
             "spa": 60,
@@ -3935,7 +3935,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
         "stats": {
-            "HP": 95,
+            "hp": 95,
             "atk": 70,
             "def": 73,
             "spa": 95,
@@ -4046,7 +4046,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
         "stats": {
-            "HP": 38,
+            "hp": 38,
             "atk": 41,
             "def": 40,
             "spa": 50,
@@ -4157,7 +4157,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
         "stats": {
-            "HP": 73,
+            "hp": 73,
             "atk": 76,
             "def": 75,
             "spa": 81,
@@ -4268,7 +4268,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
         "stats": {
-            "HP": 115,
+            "hp": 115,
             "atk": 45,
             "def": 20,
             "spa": 45,
@@ -4382,7 +4382,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/40.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
         "stats": {
-            "HP": 140,
+            "hp": 140,
             "atk": 70,
             "def": 45,
             "spa": 85,
@@ -4496,7 +4496,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/41.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 45,
             "def": 35,
             "spa": 30,
@@ -4610,7 +4610,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/42.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
         "stats": {
-            "HP": 75,
+            "hp": 75,
             "atk": 80,
             "def": 70,
             "spa": 65,
@@ -4724,7 +4724,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/43.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
         "stats": {
-            "HP": 45,
+            "hp": 45,
             "atk": 50,
             "def": 55,
             "spa": 75,
@@ -4838,7 +4838,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/44.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 65,
             "def": 70,
             "spa": 85,
@@ -4952,7 +4952,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/45.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
         "stats": {
-            "HP": 75,
+            "hp": 75,
             "atk": 80,
             "def": 85,
             "spa": 110,
@@ -5066,7 +5066,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/46.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 70,
             "def": 55,
             "spa": 45,
@@ -5180,7 +5180,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/47.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 95,
             "def": 80,
             "spa": 60,
@@ -5294,7 +5294,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/48.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 55,
             "def": 50,
             "spa": 40,
@@ -5408,7 +5408,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/49.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
         "stats": {
-            "HP": 70,
+            "hp": 70,
             "atk": 65,
             "def": 60,
             "spa": 90,
@@ -5522,7 +5522,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
         "stats": {
-            "HP": 10,
+            "hp": 10,
             "atk": 55,
             "def": 25,
             "spa": 35,
@@ -5633,7 +5633,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 100,
             "def": 50,
             "spa": 50,
@@ -5744,7 +5744,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 45,
             "def": 35,
             "spa": 40,
@@ -5855,7 +5855,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/53.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 70,
             "def": 60,
             "spa": 65,
@@ -5966,7 +5966,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/54.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 52,
             "def": 48,
             "spa": 65,
@@ -6077,7 +6077,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/55.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 82,
             "def": 78,
             "spa": 95,
@@ -6188,7 +6188,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 80,
             "def": 35,
             "spa": 35,
@@ -6299,7 +6299,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/57.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 105,
             "def": 60,
             "spa": 60,
@@ -6410,7 +6410,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 70,
             "def": 45,
             "spa": 70,
@@ -6521,7 +6521,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 110,
             "def": 80,
             "spa": 100,
@@ -6632,7 +6632,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/60.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 50,
             "def": 40,
             "spa": 40,
@@ -6743,7 +6743,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 65,
             "def": 65,
             "spa": 50,
@@ -6854,7 +6854,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/62.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 95,
             "def": 95,
             "spa": 70,
@@ -6968,7 +6968,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
         "stats": {
-            "HP": 25,
+            "hp": 25,
             "atk": 20,
             "def": 15,
             "spa": 105,
@@ -7079,7 +7079,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/64.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 35,
             "def": 30,
             "spa": 120,
@@ -7190,7 +7190,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 50,
             "def": 45,
             "spa": 135,
@@ -7301,7 +7301,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
         "stats": {
-            "HP": 70,
+            "hp": 70,
             "atk": 80,
             "def": 50,
             "spa": 35,
@@ -7412,7 +7412,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/67.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 100,
             "def": 70,
             "spa": 50,
@@ -7523,7 +7523,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 130,
             "def": 80,
             "spa": 65,
@@ -7634,7 +7634,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/69.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 75,
             "def": 35,
             "spa": 70,
@@ -7748,7 +7748,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/70.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 90,
             "def": 50,
             "spa": 85,
@@ -7862,7 +7862,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 105,
             "def": 65,
             "spa": 100,
@@ -7976,7 +7976,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/72.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 40,
             "def": 35,
             "spa": 50,
@@ -8090,7 +8090,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/73.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 70,
             "def": 65,
             "spa": 80,
@@ -8204,7 +8204,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 80,
             "def": 100,
             "spa": 30,
@@ -8318,7 +8318,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 95,
             "def": 115,
             "spa": 45,
@@ -8432,7 +8432,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 120,
             "def": 130,
             "spa": 55,
@@ -8546,7 +8546,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 85,
             "def": 55,
             "spa": 65,
@@ -8657,7 +8657,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 100,
             "def": 70,
             "spa": 80,
@@ -8768,7 +8768,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 65,
             "def": 65,
             "spa": 40,
@@ -8882,7 +8882,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
         "stats": {
-            "HP": 95,
+            "hp": 95,
             "atk": 75,
             "def": 110,
             "spa": 100,
@@ -8996,7 +8996,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
         "stats": {
-            "HP": 25,
+            "hp": 25,
             "atk": 35,
             "def": 70,
             "spa": 95,
@@ -9110,7 +9110,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/82.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 60,
             "def": 95,
             "spa": 120,
@@ -9224,7 +9224,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
         "stats": {
-            "HP": 52,
+            "hp": 52,
             "atk": 90,
             "def": 55,
             "spa": 58,
@@ -9338,7 +9338,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/84.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 85,
             "def": 45,
             "spa": 35,
@@ -9452,7 +9452,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/85.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 110,
             "def": 70,
             "spa": 60,
@@ -9566,7 +9566,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/86.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 45,
             "def": 55,
             "spa": 45,
@@ -9677,7 +9677,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/87.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 70,
             "def": 80,
             "spa": 70,
@@ -9791,7 +9791,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/88.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 80,
             "def": 50,
             "spa": 40,
@@ -9902,7 +9902,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/89.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
         "stats": {
-            "HP": 105,
+            "hp": 105,
             "atk": 105,
             "def": 75,
             "spa": 65,
@@ -10013,7 +10013,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/90.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 65,
             "def": 100,
             "spa": 45,
@@ -10124,7 +10124,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/91.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 95,
             "def": 180,
             "spa": 85,
@@ -10238,7 +10238,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 35,
             "def": 30,
             "spa": 100,
@@ -10352,7 +10352,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/93.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png",
         "stats": {
-            "HP": 45,
+            "hp": 45,
             "atk": 50,
             "def": 45,
             "spa": 115,
@@ -10466,7 +10466,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 65,
             "def": 60,
             "spa": 130,
@@ -10580,7 +10580,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 45,
             "def": 160,
             "spa": 30,
@@ -10694,7 +10694,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/96.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 48,
             "def": 45,
             "spa": 43,
@@ -10805,7 +10805,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/97.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png",
         "stats": {
-            "HP": 85,
+            "hp": 85,
             "atk": 73,
             "def": 70,
             "spa": 73,
@@ -10916,7 +10916,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/98.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 105,
             "def": 90,
             "spa": 25,
@@ -11027,7 +11027,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/99.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 130,
             "def": 115,
             "spa": 50,
@@ -11138,7 +11138,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/100.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 30,
             "def": 50,
             "spa": 55,
@@ -11249,7 +11249,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 50,
             "def": 70,
             "spa": 80,
@@ -11360,7 +11360,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/102.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 40,
             "def": 80,
             "spa": 60,
@@ -11474,7 +11474,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/103.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png",
         "stats": {
-            "HP": 95,
+            "hp": 95,
             "atk": 95,
             "def": 85,
             "spa": 125,
@@ -11588,7 +11588,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/104.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 50,
             "def": 95,
             "spa": 40,
@@ -11699,7 +11699,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/105.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 80,
             "def": 110,
             "spa": 50,
@@ -11810,7 +11810,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/106.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 120,
             "def": 53,
             "spa": 35,
@@ -11921,7 +11921,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/107.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
         "stats": {
-            "HP": 50,
+            "hp": 50,
             "atk": 105,
             "def": 79,
             "spa": 35,
@@ -12032,7 +12032,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/108.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 55,
             "def": 75,
             "spa": 60,
@@ -12143,7 +12143,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/109.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 65,
             "def": 95,
             "spa": 60,
@@ -12254,7 +12254,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/110.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 90,
             "def": 120,
             "spa": 85,
@@ -12365,7 +12365,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/111.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 85,
             "def": 95,
             "spa": 30,
@@ -12479,7 +12479,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/112.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
         "stats": {
-            "HP": 105,
+            "hp": 105,
             "atk": 130,
             "def": 120,
             "spa": 45,
@@ -12593,7 +12593,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/113.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
         "stats": {
-            "HP": 250,
+            "hp": 250,
             "atk": 5,
             "def": 5,
             "spa": 35,
@@ -12704,7 +12704,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/114.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 55,
             "def": 115,
             "spa": 100,
@@ -12815,7 +12815,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
         "stats": {
-            "HP": 105,
+            "hp": 105,
             "atk": 95,
             "def": 80,
             "spa": 40,
@@ -12926,7 +12926,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/116.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 40,
             "def": 70,
             "spa": 70,
@@ -13037,7 +13037,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/117.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 65,
             "def": 95,
             "spa": 95,
@@ -13148,7 +13148,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/118.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
         "stats": {
-            "HP": 45,
+            "hp": 45,
             "atk": 67,
             "def": 60,
             "spa": 35,
@@ -13259,7 +13259,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/119.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 92,
             "def": 65,
             "spa": 65,
@@ -13370,7 +13370,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/120.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 45,
             "def": 55,
             "spa": 70,
@@ -13481,7 +13481,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 75,
             "def": 85,
             "spa": 100,
@@ -13595,7 +13595,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
         "stats": {
-            "HP": 40,
+            "hp": 40,
             "atk": 45,
             "def": 65,
             "spa": 100,
@@ -13709,7 +13709,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/123.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
         "stats": {
-            "HP": 70,
+            "hp": 70,
             "atk": 110,
             "def": 80,
             "spa": 55,
@@ -13823,7 +13823,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 50,
             "def": 35,
             "spa": 115,
@@ -13937,7 +13937,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/125.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 83,
             "def": 57,
             "spa": 95,
@@ -14048,7 +14048,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/126.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 95,
             "def": 57,
             "spa": 100,
@@ -14159,7 +14159,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/127.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 125,
             "def": 100,
             "spa": 55,
@@ -14270,7 +14270,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
         "stats": {
-            "HP": 75,
+            "hp": 75,
             "atk": 100,
             "def": 95,
             "spa": 40,
@@ -14381,7 +14381,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
         "stats": {
-            "HP": 20,
+            "hp": 20,
             "atk": 10,
             "def": 55,
             "spa": 15,
@@ -14492,7 +14492,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
         "stats": {
-            "HP": 95,
+            "hp": 95,
             "atk": 125,
             "def": 79,
             "spa": 60,
@@ -14606,7 +14606,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
         "stats": {
-            "HP": 130,
+            "hp": 130,
             "atk": 85,
             "def": 80,
             "spa": 85,
@@ -14720,7 +14720,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
         "stats": {
-            "HP": 48,
+            "hp": 48,
             "atk": 48,
             "def": 48,
             "spa": 48,
@@ -14831,7 +14831,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
         "stats": {
-            "HP": 55,
+            "hp": 55,
             "atk": 55,
             "def": 50,
             "spa": 45,
@@ -14942,7 +14942,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/134.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",
         "stats": {
-            "HP": 130,
+            "hp": 130,
             "atk": 65,
             "def": 60,
             "spa": 110,
@@ -15053,7 +15053,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/135.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 65,
             "def": 60,
             "spa": 110,
@@ -15164,7 +15164,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/136.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 130,
             "def": 60,
             "spa": 95,
@@ -15275,7 +15275,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/137.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
         "stats": {
-            "HP": 65,
+            "hp": 65,
             "atk": 60,
             "def": 70,
             "spa": 85,
@@ -15386,7 +15386,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/138.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
         "stats": {
-            "HP": 35,
+            "hp": 35,
             "atk": 40,
             "def": 100,
             "spa": 90,
@@ -15500,7 +15500,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/139.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png",
         "stats": {
-            "HP": 70,
+            "hp": 70,
             "atk": 60,
             "def": 125,
             "spa": 115,
@@ -15614,7 +15614,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/140.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png",
         "stats": {
-            "HP": 30,
+            "hp": 30,
             "atk": 80,
             "def": 90,
             "spa": 55,
@@ -15728,7 +15728,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/141.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
         "stats": {
-            "HP": 60,
+            "hp": 60,
             "atk": 115,
             "def": 105,
             "spa": 65,
@@ -15842,7 +15842,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
         "stats": {
-            "HP": 80,
+            "hp": 80,
             "atk": 105,
             "def": 65,
             "spa": 60,
@@ -15956,7 +15956,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
         "stats": {
-            "HP": 160,
+            "hp": 160,
             "atk": 110,
             "def": 65,
             "spa": 65,
@@ -16067,7 +16067,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 85,
             "def": 100,
             "spa": 95,
@@ -16181,7 +16181,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/145.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 90,
             "def": 85,
             "spa": 125,
@@ -16295,7 +16295,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/146.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png",
         "stats": {
-            "HP": 90,
+            "hp": 90,
             "atk": 100,
             "def": 90,
             "spa": 125,
@@ -16409,7 +16409,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/147.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
         "stats": {
-            "HP": 41,
+            "hp": 41,
             "atk": 64,
             "def": 45,
             "spa": 50,
@@ -16520,7 +16520,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/148.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
         "stats": {
-            "HP": 61,
+            "hp": 61,
             "atk": 84,
             "def": 65,
             "spa": 70,
@@ -16631,7 +16631,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
         "stats": {
-            "HP": 91,
+            "hp": 91,
             "atk": 134,
             "def": 95,
             "spa": 100,
@@ -16745,7 +16745,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
         "stats": {
-            "HP": 106,
+            "hp": 106,
             "atk": 110,
             "def": 90,
             "spa": 154,
@@ -16856,7 +16856,7 @@
         "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
         "stats": {
-            "HP": 100,
+            "hp": 100,
             "atk": 100,
             "def": 100,
             "spa": 100,

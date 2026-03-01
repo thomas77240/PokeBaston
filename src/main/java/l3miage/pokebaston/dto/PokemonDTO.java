@@ -2,7 +2,6 @@ package l3miage.pokebaston.dto;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PokemonDTO {
     public int id;
@@ -14,11 +13,9 @@ public class PokemonDTO {
     public List<ResistanceDTO> resistances;
 
     public static class StatsDTO {
-        @JsonProperty("HP")
         public int hp;
         public int atk;
-        @JsonProperty("def")
-        public int def_stat; 
+        public int def;
         public int spa;
         public int spd;
         public int spe;
