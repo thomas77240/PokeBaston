@@ -1,0 +1,34 @@
+{
+    "p1Pokemon": {
+        "name": "Pikachu",
+        "type": "Electrik",
+        "hp": 100,
+        "atk": 55,
+        "def": 40,
+        "spe": 90,
+        "moves": [
+            { "name": "Tonnerre", "type": "Electrik", "power": 90 }
+        ]
+    },
+    "p2Pokemon": {
+        "name": "Carapuce",
+        "type": "Eau",
+        "hp": 110,
+        "atk": 48,
+        "def": 65,
+        "spe": 43,
+        "moves": [
+            { "name": "Pistolet à O", "type": "Eau", "power": 40 }
+        ]
+    },
+    "p1Move": {
+        "name": "Tonnerre",
+        "type": "Electrik",
+        "power": 90
+    },
+    "p2Move": {
+        "name": "Pistolet à O",
+        "type": "Eau",
+        "power": 40
+    }
+}
