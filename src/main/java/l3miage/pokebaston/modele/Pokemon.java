@@ -53,12 +53,21 @@ public class Pokemon {
         return moves;
     }
 
+<<<<<<< HEAD
     public int getSPA() {
         return spa;
     }
 
     public int getSPD() {
         return spd;
+=======
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public void setName(String Name){
+        this.name = Name;
+>>>>>>> c6e67b4 (:white_check_mark: test(modele): Test du cas nominal d'initiative, ajout des setter nécessaire)
     }
 
     public void setHP(int hp) {

@@ -25,6 +25,18 @@ public class Move {
         return power;
     }
 
+    public void setPower(int power){
+        this.power = power;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
     // public int getUses() {
     //     return uses;
     // }
