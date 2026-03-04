@@ -51,6 +51,14 @@ public class Pokemon {
         return moves;
     }
 
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public void setName(String Name){
+        this.name = Name;
+    }
+
     public void setHP(int hp) {
         this.hp = hp;
     }
