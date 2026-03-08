@@ -18,7 +18,7 @@ import jakarta.annotation.PostConstruct;
 import l3miage.pokebaston.dto.PokemonDTO;
 
 @Repository
-public class PokemonRepository {
+public class PokemonRepository implements IPokemonRepository {
     private final Map<Integer, PokemonDTO> pokedex = new ConcurrentHashMap<>();
 
     @Value("classpath:data/pokemons.json")
