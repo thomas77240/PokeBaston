@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import l3miage.pokebaston.modele.Move;
 import l3miage.pokebaston.modele.Pokemon;
-import l3miage.pokebaston.service.BattleEngine;
 import l3miage.pokebaston.service.BattleReport;
 import l3miage.pokebaston.service.BattleRequest;
+import l3miage.pokebaston.service.IBattleEngine;
 
 @RestController
 @RequestMapping("/api/battle")
 public class BattleController {
     
     @Autowired
-    private BattleEngine battleEngine;
+    private IBattleEngine battleEngine;
 
-    @PostMapping(value = "/start") //renvoyer le statut de la game pour 
-    public BattleReport startBattle(@RequestBody BattleRequest request) {
+    @PostMapping(value = "/turn") //renvoyer le statut de la game pour 
+    public BattleReport startturn(@RequestBody BattleRequest request) {
 
         // Renvoyer un battle statut avec tout l'état de la game. 
         // Etat de la game => quel round, historique des attaques/moves/objets 

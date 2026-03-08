@@ -11,16 +11,18 @@ public class Pokemon {
     private int def;
     private int spe;
     private List<Move> moves;
-    // private int spa;
-    // private int spd;
+    private int spa;
+    private int spd;
 
-    public Pokemon(String type, String name, int hp, int atk, int def, int spe) {
+    public Pokemon(String type, String name, int hp, int atk, int def, int spe, int spa, int spd) {
         this.type = type;
         this.name = name;
         this.hp = hp;
         this.atk = atk;
         this.def = def;
         this.spe = spe;
+        this.spa = spa;
+        this.spd = spd;
     }
 
     public String getType() {
@@ -51,6 +53,14 @@ public class Pokemon {
         return moves;
     }
 
+    public int getSPA() {
+        return spa;
+    }
+
+    public int getSPD() {
+        return spd;
+    }
+
     public void setHP(int hp) {
         this.hp = hp;
     }
@@ -71,9 +81,17 @@ public class Pokemon {
         this.moves = moves;
     }
 
+    public void setSPA(int spa) {
+        this.spa = spa;
+    }
+
+    public void setSPD(int spd) {
+        this.spd = spd;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(name + " (" + type + ") - HP: " + hp + ", ATK: " + atk + ", DEF: " + def + ", SPE: " + spe + ", MOVES: ");
+        sb.append(name + " (" + type + ") - HP: " + hp + ", ATK: " + atk + ", DEF: " + def + ", SPE: " + spe + ", SPA: " + spa + ", SPD: " + spd + ", MOVES: ");
         
         for (Move move: moves) {
             sb.append(move + ", ");
