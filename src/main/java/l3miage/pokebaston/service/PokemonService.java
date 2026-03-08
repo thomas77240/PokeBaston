@@ -1,19 +1,16 @@
 package l3miage.pokebaston.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
 import l3miage.pokebaston.dto.PokemonDTO;
-import l3miage.pokebaston.repositories.PokemonRepository;
+import l3miage.pokebaston.exceptions.PokemonNotFoundException;
+import l3miage.pokebaston.repositories.IPokemonRepository;
 
 @Service
-public class PokemonService {
+public class PokemonService implements IPokemonService {
     @Autowired
-    private PokemonRepository pokemonRepository;
+    private IPokemonRepository pokemonRepository;
 
     public List<PokemonDTO> getAllPokemons() {
         return pokemonRepository.findAll();
@@ -22,12 +19,16 @@ public class PokemonService {
     public PokemonDTO getPokemonById(int id) {
         PokemonDTO pokemon = pokemonRepository.findById(id);
         if (pokemon == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pokémon non trouvé");
+            throw new PokemonNotFoundException("Le Pokémon avec l'id: " + id + " n'existe pas.");
         }
         return pokemon;
     }
 
     public List<PokemonDTO> getPokemonsByType(String type) {
-        return pokemonRepository.findByType(type);
+        List<PokemonDTO> list = pokemonRepository.findByType(type);
+        if (list.isEmpty()) {
+            throw new PokemonNotFoundException("Aucun Pokémon trouvé pour le type " + type + ".");
+        }
+        return list;
     }
 }
