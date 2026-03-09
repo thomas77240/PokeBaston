@@ -1,14 +1,22 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Game from './pages/Game';
+import TeamConfig from './pages/TeamConfig';
+import BaseLayout from './layouts/BaseLayout';
+import CreateGameLayout from './layouts/GameSetupLayout';
+import GameConfig from './pages/GameSettings';
 
 function App() {
 	return (
 		<Routes>
-			{/* Route par défaut (http://localhost:5173/) */}
-			<Route path="/" element={<Home />} />
-			<Route path="/game" element={<Game />} />
-			<Route path="*" element={<h2>404 - Page introuvable 😢</h2>} />
+			<Route element={<BaseLayout />}>
+				<Route path="/" element={<Home />} />
+				<Route path="*" element={<h2>404 - Page introuvable</h2>} />
+			</Route>
+			<Route path="/setup" element={<CreateGameLayout />}>
+				<Route index element={<GameConfig />} />
+				<Route path="player-1" element={<TeamConfig player={1} />} />
+				<Route path="player-2" element={<TeamConfig player={2} />} />
+			</Route>
 		</Routes>
 	);
 }
