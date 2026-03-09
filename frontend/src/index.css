@@ -1,1 +1,56 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Varela+Round&display=swap');
+@import 'tailwindcss';
+
+:root {
+  /* THÈME CLAIR par défaut */
+  --theme-bg: #f8fafc;
+  --theme-bg-light: #f1f1f3;
+  --theme-fg: #292524;
+  --theme-muted: #78716c;
+}
+
+/* 🌙 THÈME SOMBRE (Automatique selon le système de l'utilisateur) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg: #070707;
+    --theme-bg-light: #1f1f1f;
+    --theme-fg: #f1f5f9;
+    --theme-muted: #94a3b8;
+  }
+}
+
+/* 🌙 THÈME SOMBRE */
+:root.dark {
+  --theme-bg: #070707;
+  --theme-bg-light: #1f1f1f;
+  --theme-fg: #f1f5f9;
+  --theme-muted: #94a3b8;
+}
+
+@theme {
+  --color-background: var(--theme-bg);
+  --color-background-light: var(--theme-bg-light);
+  --color-foreground: var(--theme-fg);
+  --color-muted: var(--theme-muted);
+
+  --font-main: 'Varela Round', sans-serif;
+  --font-title: 'Baloo 2', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-main bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .font-title {
+    @apply font-title font-semibold;
+  }
+}
+
+--color-background: #f8fafc; /* Slate-50 : Un "faux blanc" très doux et reposant pour les yeux */
+  --color-background-light: #f1f1f3;
+
+  --color-foreground: #0f172a; /* Slate-900 : Gris très foncé pour un contraste parfait sans être agressif */
+  --color-muted: #64748b; /* Slate-500 : Gris moyen pour les textes secondaires */
