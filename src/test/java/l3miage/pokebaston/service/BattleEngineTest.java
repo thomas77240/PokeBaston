@@ -19,14 +19,16 @@ public class BattleEngineTest {
 
     
 
-    private Pokemon createPokemon(String type, String name, int hp, int atk, int def, int spe){
-        Pokemon pokemon = new Pokemon(type,name, hp, atk, def, spe);
+    private Pokemon createPokemon(String type, String name, int hp, int atk, int def, int spe, int spa, int spd){
+        Pokemon pokemon = new Pokemon(type,name, hp, atk, def, spe, spa, spd);
             pokemon.setType(type);
             pokemon.setName(name);
             pokemon.setHP(hp);
             pokemon.setATK(atk);
             pokemon.setDEF(def);
             pokemon.setSPE(spe);
+            pokemon.setSPA(spa);
+            pokemon.setSPD(spd);
             return pokemon;
     }
 
@@ -44,8 +46,8 @@ public class BattleEngineTest {
      *  */ 
     void setUp(){
         battleEngine = new BattleEngine();
-        p1 = createPokemon("foudre", "Pikachu", 100 ,50 ,40 , 100);
-        p2 = createPokemon("feu", "Salameche", 100 ,40 ,30 , 80);
+        p1 = createPokemon("foudre", "Pikachu", 100 ,50 ,40 , 100, 10, 10 );
+        p2 = createPokemon("feu", "Salameche", 100 ,40 ,30 , 80, 10, 10 );
         m1 = createMoves("fatal foudre", "foudre", 20);
         m2 = createMoves("flammeche", "feu", 20);
     }
