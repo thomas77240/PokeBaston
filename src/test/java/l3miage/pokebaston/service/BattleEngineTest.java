@@ -9,16 +9,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+
 public class BattleEngineTest {
     private BattleEngine battleEngine;
+    private Pokemon p1;
+    private Pokemon p2;
+    private Move m1;
+    private Move m2;
 
-    @BeforeEach
-    /**
-     * Initialisation avant chaque tests
-     *  */ 
-    void setUp(){
-        battleEngine = new BattleEngine();
-    }
+    
 
     private Pokemon createPokemon(String type, String name, int hp, int atk, int def, int spe){
         Pokemon pokemon = new Pokemon(type,name, hp, atk, def, spe);
@@ -38,17 +37,24 @@ public class BattleEngineTest {
         m.setPower(power);
         return m; 
     }
+
+    @BeforeEach
+    /**
+     * Initialisation avant chaque tests
+     *  */ 
+    void setUp(){
+        battleEngine = new BattleEngine();
+        p1 = createPokemon("foudre", "Pikachu", 100 ,50 ,40 , 100);
+        p2 = createPokemon("feu", "Salameche", 100 ,40 ,30 , 80);
+        m1 = createMoves("fatal foudre", "foudre", 20);
+        m2 = createMoves("flammeche", "feu", 20);
+    }
     /**
     * Test du cas nominal : le pokemon le plus rapide attaque en premier. le second riposte. les deux survivent 
     */
     @Test
-    @DisplayName("Test : Pikachu (plus rapide) attaque en premier, salache (plus lent) attaque ensuite, aucun n'a ses points de vie a zero")
+    @DisplayName("Test : Pikachu (plus rapide) attaque en premier, salameche (plus lent) attaque ensuite")
     void TestP1Attackfirst(){
-        Pokemon p1 = createPokemon("foudre", "Pikachu", 100 ,50 ,40 , 100);
-        Pokemon p2 = createPokemon("feu", "Salameche", 100 ,40 ,30 , 80);
-        Move m1 = createMoves("fatal foudre", "foudre", 20);
-        Move m2 = createMoves("flammeche", "feu", 20);
-
         //Execution du premier tour
         BattleReport report = battleEngine.oneTurn(p1, p2, m1, m2);
         
@@ -60,10 +66,16 @@ public class BattleEngineTest {
         assertTrue(IndexP1 != -1, "le log doit contenir l'attaque de " + m1.getName());
         assertTrue(IndexP2 != -1, "le log doit contenir l'attaque de" + m2.getName());
         assertTrue(IndexP1 < IndexP2, p1.getName()+ "doit attaquer avant" + p2.getName());
+   
+    }
 
-
+    @Test
+    @DisplayName("les deux pokemons attaquent chacun leur tour, les points de vie ont bien été enlevé a chacun a la fin du tour")
+    void TestDmgAtEnd()
+    {
+        battleEngine.oneTurn(p1, p2, m1, m2);
         assertEquals(60, p2.getHP(), "les Hp de p2 devrait être reduits de 40");
         assertEquals(80, p1.getHP(), "les Hp de p1 devrait être reduit de 20");
-        
+
     }
 }
