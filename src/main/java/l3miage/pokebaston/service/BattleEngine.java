@@ -4,13 +4,13 @@ import org.springframework.stereotype.Service;
 
 import l3miage.pokebaston.modele.Move;
 import l3miage.pokebaston.modele.Pokemon;
-
+import l3miage.pokebaston.dto.BattleTurnResponse;
 
 @Service
 public class BattleEngine implements IBattleEngine {
-    public BattleReport oneTurn(Pokemon p1, Pokemon p2, Move m1, Move m2) {
+    public BattleTurnResponse oneTurn(Pokemon p1, Pokemon p2, Move m1, Move m2) {
 
-        BattleReport turn_state = new BattleReport(p1, p2);
+        BattleTurnResponse turn_state = new BattleTurnResponse(p1, p2);
 
         // Determine the order of attack based on speed
         if (p1.getSPE() > p2.getSPE()) {
@@ -35,7 +35,8 @@ public class BattleEngine implements IBattleEngine {
     public void attack(Pokemon attacker, Pokemon defender, Move move) {
         int damage = calculateDamage(attacker, defender, move);
         defender.setHP(defender.getHP() - damage);
-        System.out.println(attacker.getName() + " attacks " + defender.getName() + " with " + move.getName() + " for " + damage + " damage!");
+        System.out.println(attacker.getName() + " attacks " + defender.getName() + " with " + move.getName() + " for "
+                + damage + " damage!");
     }
 
     public int calculateDamage(Pokemon attacker, Pokemon defender, Move move) {

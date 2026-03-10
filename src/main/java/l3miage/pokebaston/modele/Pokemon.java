@@ -1,10 +1,13 @@
 package l3miage.pokebaston.modele;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import l3miage.pokebaston.dto.PokemonDTO;
 
 public class Pokemon {
 
-    private String type;
+    private List<String> types;
     private String name;
     private int hp;
     private int atk;
@@ -14,8 +17,8 @@ public class Pokemon {
     private int spa;
     private int spd;
 
-    public Pokemon(String type, String name, int hp, int atk, int def, int spe, int spa, int spd) {
-        this.type = type;
+    public Pokemon(List<String> type, String name, int hp, int atk, int def, int spe, int spa, int spd) {
+        this.types = type;
         this.name = name;
         this.hp = hp;
         this.atk = atk;
@@ -25,8 +28,19 @@ public class Pokemon {
         this.spd = spd;
     }
 
-    public String getType() {
-        return type;
+    public Pokemon(PokemonDTO p) {
+        this.types = p.types();
+        this.name = p.name();
+        this.hp = p.stats().hp();
+        this.atk = p.stats().atk();
+        this.def = p.stats().def();
+        this.spe = p.stats().spe();
+        this.spa = p.stats().spa();
+        this.spd = p.stats().spd();
+    }
+
+    public List<String> getType() {
+        return types;
     }
 
     public String getName() {
@@ -36,7 +50,7 @@ public class Pokemon {
     public int getHP() {
         return hp;
     }
-    
+
     public int getATK() {
         return atk;
     }
@@ -91,9 +105,11 @@ public class Pokemon {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(name + " (" + type + ") - HP: " + hp + ", ATK: " + atk + ", DEF: " + def + ", SPE: " + spe + ", SPA: " + spa + ", SPD: " + spd + ", MOVES: ");
-        
-        for (Move move: moves) {
+        sb.append(name + " (" + String.join(", ", types) + ") - HP: " + hp + ", ATK: " + atk + ", DEF: " + def
+                + ", SPE: " + spe + ", SPA: "
+                + spa + ", SPD: " + spd + ", MOVES: ");
+
+        for (Move move : moves) {
             sb.append(move + ", ");
         }
 
