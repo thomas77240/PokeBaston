@@ -53,14 +53,6 @@ public class Pokemon {
         return moves;
     }
 
-    public int getSPA() {
-        return spa;
-    }
-
-    public int getSPD() {
-        return spd;
-    }
-
     public void setHP(int hp) {
         this.hp = hp;
     }
