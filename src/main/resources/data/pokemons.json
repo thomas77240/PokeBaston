@@ -1,0 +1,5354 @@
+[
+    {
+        "id": 1,
+        "name": "Bulbizarre",
+        "stats": {
+            "hp": 45,
+            "atk": 49,
+            "def": 49,
+            "spa": 65,
+            "spd": 65,
+            "spe": 45
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 2,
+        "name": "Herbizarre",
+        "stats": {
+            "hp": 60,
+            "atk": 62,
+            "def": 63,
+            "spa": 80,
+            "spd": 80,
+            "spe": 60
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 3,
+        "name": "Florizarre",
+        "stats": {
+            "hp": 80,
+            "atk": 82,
+            "def": 83,
+            "spa": 100,
+            "spd": 100,
+            "spe": 80
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 4,
+        "name": "Salamèche",
+        "stats": {
+            "hp": 39,
+            "atk": 52,
+            "def": 43,
+            "spa": 60,
+            "spd": 50,
+            "spe": 65
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 5,
+        "name": "Reptincel",
+        "stats": {
+            "hp": 58,
+            "atk": 64,
+            "def": 58,
+            "spa": 80,
+            "spd": 65,
+            "spe": 80
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 6,
+        "name": "Dracaufeu",
+        "stats": {
+            "hp": 78,
+            "atk": 84,
+            "def": 78,
+            "spa": 109,
+            "spd": 85,
+            "spe": 100
+        },
+        "types": [
+            "Vol",
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 4,
+            "insecte": 0.25,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.25,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 7,
+        "name": "Carapuce",
+        "stats": {
+            "hp": 44,
+            "atk": 48,
+            "def": 65,
+            "spa": 50,
+            "spd": 64,
+            "spe": 43
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 8,
+        "name": "Carabaffe",
+        "stats": {
+            "hp": 59,
+            "atk": 63,
+            "def": 80,
+            "spa": 65,
+            "spd": 80,
+            "spe": 58
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 9,
+        "name": "Tortank",
+        "stats": {
+            "hp": 79,
+            "atk": 83,
+            "def": 100,
+            "spa": 85,
+            "spd": 105,
+            "spe": 78
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 10,
+        "name": "Chenipan",
+        "stats": {
+            "hp": 45,
+            "atk": 30,
+            "def": 35,
+            "spa": 20,
+            "spd": 20,
+            "spe": 45
+        },
+        "types": [
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 0.5,
+            "roche": 2,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 11,
+        "name": "Chrysacier",
+        "stats": {
+            "hp": 50,
+            "atk": 20,
+            "def": 55,
+            "spa": 25,
+            "spd": 25,
+            "spe": 30
+        },
+        "types": [
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 0.5,
+            "roche": 2,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 12,
+        "name": "Papilusion",
+        "stats": {
+            "hp": 60,
+            "atk": 45,
+            "def": 50,
+            "spa": 90,
+            "spd": 80,
+            "spe": 70
+        },
+        "types": [
+            "Vol",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 1,
+            "sol": 0,
+            "roche": 4,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 13,
+        "name": "Aspicot",
+        "stats": {
+            "hp": 40,
+            "atk": 35,
+            "def": 30,
+            "spa": 20,
+            "spd": 20,
+            "spe": 50
+        },
+        "types": [
+            "Poison",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 14,
+        "name": "Coconfort",
+        "stats": {
+            "hp": 45,
+            "atk": 25,
+            "def": 50,
+            "spa": 25,
+            "spd": 25,
+            "spe": 35
+        },
+        "types": [
+            "Poison",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 15,
+        "name": "Dardargnan",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 40,
+            "spa": 45,
+            "spd": 80,
+            "spe": 75
+        },
+        "types": [
+            "Poison",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 16,
+        "name": "Roucool",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 40,
+            "spa": 35,
+            "spd": 35,
+            "spe": 56
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 17,
+        "name": "Roucoups",
+        "stats": {
+            "hp": 63,
+            "atk": 60,
+            "def": 55,
+            "spa": 50,
+            "spd": 50,
+            "spe": 71
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 18,
+        "name": "Roucarnage",
+        "stats": {
+            "hp": 83,
+            "atk": 80,
+            "def": 75,
+            "spa": 70,
+            "spd": 70,
+            "spe": 101
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 19,
+        "name": "Rattata",
+        "stats": {
+            "hp": 30,
+            "atk": 56,
+            "def": 35,
+            "spa": 25,
+            "spd": 35,
+            "spe": 72
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 20,
+        "name": "Rattatac",
+        "stats": {
+            "hp": 55,
+            "atk": 81,
+            "def": 60,
+            "spa": 50,
+            "spd": 70,
+            "spe": 97
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 21,
+        "name": "Piafabec",
+        "stats": {
+            "hp": 40,
+            "atk": 60,
+            "def": 30,
+            "spa": 31,
+            "spd": 31,
+            "spe": 70
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 22,
+        "name": "Rapasdepic",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 65,
+            "spa": 61,
+            "spd": 61,
+            "spe": 100
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 23,
+        "name": "Abo",
+        "stats": {
+            "hp": 35,
+            "atk": 60,
+            "def": 44,
+            "spa": 40,
+            "spd": 54,
+            "spe": 55
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 24,
+        "name": "Arbok",
+        "stats": {
+            "hp": 60,
+            "atk": 95,
+            "def": 69,
+            "spa": 65,
+            "spd": 79,
+            "spe": 80
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 25,
+        "name": "Pikachu",
+        "stats": {
+            "hp": 35,
+            "atk": 55,
+            "def": 40,
+            "spa": 50,
+            "spd": 50,
+            "spe": 90
+        },
+        "types": [
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 26,
+        "name": "Raichu",
+        "stats": {
+            "hp": 60,
+            "atk": 90,
+            "def": 55,
+            "spa": 90,
+            "spd": 80,
+            "spe": 110
+        },
+        "types": [
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 27,
+        "name": "Sabelette",
+        "stats": {
+            "hp": 50,
+            "atk": 75,
+            "def": 85,
+            "spa": 20,
+            "spd": 30,
+            "spe": 40
+        },
+        "types": [
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 2,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 28,
+        "name": "Sablaireau",
+        "stats": {
+            "hp": 75,
+            "atk": 100,
+            "def": 110,
+            "spa": 45,
+            "spd": 55,
+            "spe": 65
+        },
+        "types": [
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 2,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 29,
+        "name": "Nidoran♀",
+        "stats": {
+            "hp": 55,
+            "atk": 47,
+            "def": 52,
+            "spa": 40,
+            "spd": 40,
+            "spe": 41
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 30,
+        "name": "Nidorina",
+        "stats": {
+            "hp": 70,
+            "atk": 62,
+            "def": 67,
+            "spa": 55,
+            "spd": 55,
+            "spe": 56
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 31,
+        "name": "Nidoqueen",
+        "stats": {
+            "hp": 90,
+            "atk": 92,
+            "def": 87,
+            "spa": 75,
+            "spd": 85,
+            "spe": 76
+        },
+        "types": [
+            "Poison",
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 1,
+            "électrik": 0,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 32,
+        "name": "Nidoran♂",
+        "stats": {
+            "hp": 46,
+            "atk": 57,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 50
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 33,
+        "name": "Nidorino",
+        "stats": {
+            "hp": 61,
+            "atk": 72,
+            "def": 57,
+            "spa": 55,
+            "spd": 55,
+            "spe": 65
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 34,
+        "name": "Nidoking",
+        "stats": {
+            "hp": 81,
+            "atk": 102,
+            "def": 77,
+            "spa": 85,
+            "spd": 75,
+            "spe": 85
+        },
+        "types": [
+            "Poison",
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 1,
+            "électrik": 0,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 35,
+        "name": "Mélofée",
+        "stats": {
+            "hp": 70,
+            "atk": 45,
+            "def": 48,
+            "spa": 60,
+            "spd": 65,
+            "spe": 35
+        },
+        "types": [
+            "Fée"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 2,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 0,
+            "ténèbres": 0.5,
+            "fée": 1
+        }
+    },
+    {
+        "id": 36,
+        "name": "Mélodelfe",
+        "stats": {
+            "hp": 95,
+            "atk": 70,
+            "def": 73,
+            "spa": 95,
+            "spd": 90,
+            "spe": 60
+        },
+        "types": [
+            "Fée"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 2,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 0,
+            "ténèbres": 0.5,
+            "fée": 1
+        }
+    },
+    {
+        "id": 37,
+        "name": "Goupix",
+        "stats": {
+            "hp": 38,
+            "atk": 41,
+            "def": 40,
+            "spa": 50,
+            "spd": 65,
+            "spe": 65
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 38,
+        "name": "Feunard",
+        "stats": {
+            "hp": 73,
+            "atk": 76,
+            "def": 75,
+            "spa": 81,
+            "spd": 100,
+            "spe": 100
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 39,
+        "name": "Rondoudou",
+        "stats": {
+            "hp": 115,
+            "atk": 45,
+            "def": 20,
+            "spa": 45,
+            "spd": 25,
+            "spe": 20
+        },
+        "types": [
+            "Normal",
+            "Fée"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 2,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 2,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 0,
+            "ténèbres": 0.5,
+            "fée": 1
+        }
+    },
+    {
+        "id": 40,
+        "name": "Grodoudou",
+        "stats": {
+            "hp": 140,
+            "atk": 70,
+            "def": 45,
+            "spa": 85,
+            "spd": 50,
+            "spe": 45
+        },
+        "types": [
+            "Normal",
+            "Fée"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 2,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 2,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 0,
+            "ténèbres": 0.5,
+            "fée": 1
+        }
+    },
+    {
+        "id": 41,
+        "name": "Nosferapti",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 35,
+            "spa": 30,
+            "spd": 40,
+            "spe": 55
+        },
+        "types": [
+            "Vol",
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.25,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 2,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 42,
+        "name": "Nosferalto",
+        "stats": {
+            "hp": 75,
+            "atk": 80,
+            "def": 70,
+            "spa": 65,
+            "spd": 75,
+            "spe": 90
+        },
+        "types": [
+            "Vol",
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.25,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 2,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 43,
+        "name": "Mystherbe",
+        "stats": {
+            "hp": 45,
+            "atk": 50,
+            "def": 55,
+            "spa": 75,
+            "spd": 65,
+            "spe": 30
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 44,
+        "name": "Ortide",
+        "stats": {
+            "hp": 60,
+            "atk": 65,
+            "def": 70,
+            "spa": 85,
+            "spd": 75,
+            "spe": 40
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 45,
+        "name": "Rafflesia",
+        "stats": {
+            "hp": 75,
+            "atk": 80,
+            "def": 85,
+            "spa": 110,
+            "spd": 90,
+            "spe": 50
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 46,
+        "name": "Paras",
+        "stats": {
+            "hp": 35,
+            "atk": 70,
+            "def": 55,
+            "spa": 45,
+            "spd": 55,
+            "spe": 25
+        },
+        "types": [
+            "Insecte",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 4,
+            "poison": 2,
+            "sol": 0.25,
+            "roche": 2,
+            "insecte": 2,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 4,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 47,
+        "name": "Parasect",
+        "stats": {
+            "hp": 60,
+            "atk": 95,
+            "def": 80,
+            "spa": 60,
+            "spd": 80,
+            "spe": 30
+        },
+        "types": [
+            "Insecte",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 4,
+            "poison": 2,
+            "sol": 0.25,
+            "roche": 2,
+            "insecte": 2,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 4,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 48,
+        "name": "Mimitoss",
+        "stats": {
+            "hp": 60,
+            "atk": 55,
+            "def": 50,
+            "spa": 40,
+            "spd": 55,
+            "spe": 45
+        },
+        "types": [
+            "Poison",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 49,
+        "name": "Aéromite",
+        "stats": {
+            "hp": 70,
+            "atk": 65,
+            "def": 60,
+            "spa": 90,
+            "spd": 75,
+            "spe": 90
+        },
+        "types": [
+            "Poison",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 50,
+        "name": "Taupiqueur",
+        "stats": {
+            "hp": 10,
+            "atk": 55,
+            "def": 25,
+            "spa": 35,
+            "spd": 45,
+            "spe": 95
+        },
+        "types": [
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 2,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 51,
+        "name": "Triopikeur",
+        "stats": {
+            "hp": 35,
+            "atk": 100,
+            "def": 50,
+            "spa": 50,
+            "spd": 70,
+            "spe": 120
+        },
+        "types": [
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 2,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 52,
+        "name": "Miaouss",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 35,
+            "spa": 40,
+            "spd": 40,
+            "spe": 90
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 53,
+        "name": "Persian",
+        "stats": {
+            "hp": 65,
+            "atk": 70,
+            "def": 60,
+            "spa": 65,
+            "spd": 65,
+            "spe": 115
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 54,
+        "name": "Psykokwak",
+        "stats": {
+            "hp": 50,
+            "atk": 52,
+            "def": 48,
+            "spa": 65,
+            "spd": 50,
+            "spe": 55
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 55,
+        "name": "Akwakwak",
+        "stats": {
+            "hp": 80,
+            "atk": 82,
+            "def": 78,
+            "spa": 95,
+            "spd": 80,
+            "spe": 85
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 56,
+        "name": "Férosinge",
+        "stats": {
+            "hp": 40,
+            "atk": 80,
+            "def": 35,
+            "spa": 35,
+            "spd": 45,
+            "spe": 70
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 57,
+        "name": "Colossinge",
+        "stats": {
+            "hp": 65,
+            "atk": 105,
+            "def": 60,
+            "spa": 60,
+            "spd": 70,
+            "spe": 95
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 58,
+        "name": "Caninos",
+        "stats": {
+            "hp": 55,
+            "atk": 70,
+            "def": 45,
+            "spa": 70,
+            "spd": 50,
+            "spe": 60
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 59,
+        "name": "Arcanin",
+        "stats": {
+            "hp": 90,
+            "atk": 110,
+            "def": 80,
+            "spa": 100,
+            "spd": 80,
+            "spe": 95
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 60,
+        "name": "Ptitard",
+        "stats": {
+            "hp": 40,
+            "atk": 50,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 90
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 61,
+        "name": "Têtarte",
+        "stats": {
+            "hp": 65,
+            "atk": 65,
+            "def": 65,
+            "spa": 50,
+            "spd": 50,
+            "spe": 90
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 62,
+        "name": "Tartard",
+        "stats": {
+            "hp": 90,
+            "atk": 95,
+            "def": 95,
+            "spa": 70,
+            "spd": 90,
+            "spe": 70
+        },
+        "types": [
+            "Combat",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 2,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 63,
+        "name": "Abra",
+        "stats": {
+            "hp": 25,
+            "atk": 20,
+            "def": 15,
+            "spa": 105,
+            "spd": 55,
+            "spe": 90
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 64,
+        "name": "Kadabra",
+        "stats": {
+            "hp": 40,
+            "atk": 35,
+            "def": 30,
+            "spa": 120,
+            "spd": 70,
+            "spe": 105
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 65,
+        "name": "Alakazam",
+        "stats": {
+            "hp": 55,
+            "atk": 50,
+            "def": 45,
+            "spa": 135,
+            "spd": 95,
+            "spe": 120
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 66,
+        "name": "Machoc",
+        "stats": {
+            "hp": 70,
+            "atk": 80,
+            "def": 50,
+            "spa": 35,
+            "spd": 35,
+            "spe": 35
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 67,
+        "name": "Machopeur",
+        "stats": {
+            "hp": 80,
+            "atk": 100,
+            "def": 70,
+            "spa": 50,
+            "spd": 60,
+            "spe": 45
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 68,
+        "name": "Mackogneur",
+        "stats": {
+            "hp": 90,
+            "atk": 130,
+            "def": 80,
+            "spa": 65,
+            "spd": 85,
+            "spe": 55
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 69,
+        "name": "Chétiflor",
+        "stats": {
+            "hp": 50,
+            "atk": 75,
+            "def": 35,
+            "spa": 70,
+            "spd": 30,
+            "spe": 40
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 70,
+        "name": "Boustiflor",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 50,
+            "spa": 85,
+            "spd": 45,
+            "spe": 55
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 71,
+        "name": "Empiflor",
+        "stats": {
+            "hp": 80,
+            "atk": 105,
+            "def": 65,
+            "spa": 100,
+            "spd": 70,
+            "spe": 70
+        },
+        "types": [
+            "Poison",
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 0.5,
+            "psy": 2,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 72,
+        "name": "Tentacool",
+        "stats": {
+            "hp": 40,
+            "atk": 40,
+            "def": 35,
+            "spa": 50,
+            "spd": 100,
+            "spe": 70
+        },
+        "types": [
+            "Poison",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 1,
+            "électrik": 2,
+            "psy": 2,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 73,
+        "name": "Tentacruel",
+        "stats": {
+            "hp": 80,
+            "atk": 70,
+            "def": 65,
+            "spa": 80,
+            "spd": 120,
+            "spe": 100
+        },
+        "types": [
+            "Poison",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 1,
+            "électrik": 2,
+            "psy": 2,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 74,
+        "name": "Racaillou",
+        "stats": {
+            "hp": 40,
+            "atk": 80,
+            "def": 100,
+            "spa": 30,
+            "spd": 30,
+            "spe": 20
+        },
+        "types": [
+            "Sol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 4,
+            "plante": 4,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 75,
+        "name": "Gravalanch",
+        "stats": {
+            "hp": 55,
+            "atk": 95,
+            "def": 115,
+            "spa": 45,
+            "spd": 45,
+            "spe": 35
+        },
+        "types": [
+            "Sol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 4,
+            "plante": 4,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 76,
+        "name": "Grolem",
+        "stats": {
+            "hp": 80,
+            "atk": 120,
+            "def": 130,
+            "spa": 55,
+            "spd": 65,
+            "spe": 45
+        },
+        "types": [
+            "Sol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 4,
+            "plante": 4,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 77,
+        "name": "Ponyta",
+        "stats": {
+            "hp": 50,
+            "atk": 85,
+            "def": 55,
+            "spa": 65,
+            "spd": 65,
+            "spe": 90
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 78,
+        "name": "Galopa",
+        "stats": {
+            "hp": 65,
+            "atk": 100,
+            "def": 70,
+            "spa": 80,
+            "spd": 80,
+            "spe": 105
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 79,
+        "name": "Ramoloss",
+        "stats": {
+            "hp": 90,
+            "atk": 65,
+            "def": 65,
+            "spa": 40,
+            "spd": 40,
+            "spe": 15
+        },
+        "types": [
+            "Eau",
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 0.5,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 80,
+        "name": "Flagadoss",
+        "stats": {
+            "hp": 95,
+            "atk": 75,
+            "def": 110,
+            "spa": 100,
+            "spd": 80,
+            "spe": 30
+        },
+        "types": [
+            "Eau",
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 0.5,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 81,
+        "name": "Magnéti",
+        "stats": {
+            "hp": 25,
+            "atk": 35,
+            "def": 70,
+            "spa": 95,
+            "spd": 55,
+            "spe": 45
+        },
+        "types": [
+            "Acier",
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.25,
+            "poison": 0,
+            "sol": 4,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.25,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 0.5,
+            "glace": 0.5,
+            "dragon": 0.5,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 82,
+        "name": "Magnéton",
+        "stats": {
+            "hp": 50,
+            "atk": 60,
+            "def": 95,
+            "spa": 120,
+            "spd": 70,
+            "spe": 70
+        },
+        "types": [
+            "Acier",
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.25,
+            "poison": 0,
+            "sol": 4,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.25,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 0.5,
+            "glace": 0.5,
+            "dragon": 0.5,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 83,
+        "name": "Canarticho",
+        "stats": {
+            "hp": 52,
+            "atk": 90,
+            "def": 55,
+            "spa": 58,
+            "spd": 62,
+            "spe": 60
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 84,
+        "name": "Doduo",
+        "stats": {
+            "hp": 35,
+            "atk": 85,
+            "def": 45,
+            "spa": 35,
+            "spd": 35,
+            "spe": 75
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 85,
+        "name": "Dodrio",
+        "stats": {
+            "hp": 60,
+            "atk": 110,
+            "def": 70,
+            "spa": 60,
+            "spd": 60,
+            "spe": 110
+        },
+        "types": [
+            "Normal",
+            "Vol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 86,
+        "name": "Otaria",
+        "stats": {
+            "hp": 65,
+            "atk": 45,
+            "def": 55,
+            "spa": 45,
+            "spd": 70,
+            "spe": 45
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 87,
+        "name": "Lamantine",
+        "stats": {
+            "hp": 90,
+            "atk": 70,
+            "def": 80,
+            "spa": 70,
+            "spd": 95,
+            "spe": 70
+        },
+        "types": [
+            "Eau",
+            "Glace"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.25,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 88,
+        "name": "Tadmorv",
+        "stats": {
+            "hp": 80,
+            "atk": 80,
+            "def": 50,
+            "spa": 40,
+            "spd": 50,
+            "spe": 25
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 89,
+        "name": "Grotadmorv",
+        "stats": {
+            "hp": 105,
+            "atk": 105,
+            "def": 75,
+            "spa": 65,
+            "spd": 100,
+            "spe": 50
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 90,
+        "name": "Kokiyas",
+        "stats": {
+            "hp": 30,
+            "atk": 65,
+            "def": 100,
+            "spa": 45,
+            "spd": 25,
+            "spe": 40
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 91,
+        "name": "Crustabri",
+        "stats": {
+            "hp": 50,
+            "atk": 95,
+            "def": 180,
+            "spa": 85,
+            "spd": 45,
+            "spe": 70
+        },
+        "types": [
+            "Eau",
+            "Glace"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.25,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 92,
+        "name": "Fantominus",
+        "stats": {
+            "hp": 30,
+            "atk": 35,
+            "def": 30,
+            "spa": 100,
+            "spd": 35,
+            "spe": 80
+        },
+        "types": [
+            "Poison",
+            "Spectre"
+        ],
+        "resistances": {
+            "normal": 0,
+            "combat": 0,
+            "vol": 1,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.25,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 93,
+        "name": "Spectrum",
+        "stats": {
+            "hp": 45,
+            "atk": 50,
+            "def": 45,
+            "spa": 115,
+            "spd": 55,
+            "spe": 95
+        },
+        "types": [
+            "Poison",
+            "Spectre"
+        ],
+        "resistances": {
+            "normal": 0,
+            "combat": 0,
+            "vol": 1,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.25,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 94,
+        "name": "Ectoplasma",
+        "stats": {
+            "hp": 60,
+            "atk": 65,
+            "def": 60,
+            "spa": 130,
+            "spd": 75,
+            "spe": 110
+        },
+        "types": [
+            "Poison",
+            "Spectre"
+        ],
+        "resistances": {
+            "normal": 0,
+            "combat": 0,
+            "vol": 1,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.25,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 95,
+        "name": "Onix",
+        "stats": {
+            "hp": 35,
+            "atk": 45,
+            "def": 160,
+            "spa": 30,
+            "spd": 45,
+            "spe": 70
+        },
+        "types": [
+            "Sol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 4,
+            "plante": 4,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 96,
+        "name": "Soporifik",
+        "stats": {
+            "hp": 60,
+            "atk": 48,
+            "def": 45,
+            "spa": 43,
+            "spd": 90,
+            "spe": 42
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 97,
+        "name": "Hypnomade",
+        "stats": {
+            "hp": 85,
+            "atk": 73,
+            "def": 70,
+            "spa": 73,
+            "spd": 115,
+            "spe": 67
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 98,
+        "name": "Krabby",
+        "stats": {
+            "hp": 30,
+            "atk": 105,
+            "def": 90,
+            "spa": 25,
+            "spd": 25,
+            "spe": 50
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 99,
+        "name": "Krabboss",
+        "stats": {
+            "hp": 55,
+            "atk": 130,
+            "def": 115,
+            "spa": 50,
+            "spd": 50,
+            "spe": 75
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 100,
+        "name": "Voltorbe",
+        "stats": {
+            "hp": 40,
+            "atk": 30,
+            "def": 50,
+            "spa": 55,
+            "spd": 55,
+            "spe": 100
+        },
+        "types": [
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 101,
+        "name": "Électrode",
+        "stats": {
+            "hp": 60,
+            "atk": 50,
+            "def": 70,
+            "spa": 80,
+            "spd": 80,
+            "spe": 150
+        },
+        "types": [
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 102,
+        "name": "Noeunoeuf",
+        "stats": {
+            "hp": 60,
+            "atk": 40,
+            "def": 80,
+            "spa": 60,
+            "spd": 45,
+            "spe": 40
+        },
+        "types": [
+            "Plante",
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 2,
+            "sol": 0.5,
+            "roche": 1,
+            "insecte": 4,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 0.5,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 103,
+        "name": "Noadkoko",
+        "stats": {
+            "hp": 95,
+            "atk": 95,
+            "def": 85,
+            "spa": 125,
+            "spd": 75,
+            "spe": 55
+        },
+        "types": [
+            "Plante",
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 2,
+            "sol": 0.5,
+            "roche": 1,
+            "insecte": 4,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 0.5,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 104,
+        "name": "Osselait",
+        "stats": {
+            "hp": 50,
+            "atk": 50,
+            "def": 95,
+            "spa": 40,
+            "spd": 50,
+            "spe": 35
+        },
+        "types": [
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 2,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 105,
+        "name": "Ossatueur",
+        "stats": {
+            "hp": 60,
+            "atk": 80,
+            "def": 110,
+            "spa": 50,
+            "spd": 80,
+            "spe": 45
+        },
+        "types": [
+            "Sol"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 2,
+            "plante": 2,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 106,
+        "name": "Kicklee",
+        "stats": {
+            "hp": 50,
+            "atk": 120,
+            "def": 53,
+            "spa": 35,
+            "spd": 110,
+            "spe": 87
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 107,
+        "name": "Tygnon",
+        "stats": {
+            "hp": 50,
+            "atk": 105,
+            "def": 79,
+            "spa": 35,
+            "spd": 110,
+            "spe": 76
+        },
+        "types": [
+            "Combat"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 1,
+            "sol": 1,
+            "roche": 0.5,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 0.5,
+            "fée": 2
+        }
+    },
+    {
+        "id": 108,
+        "name": "Excelangue",
+        "stats": {
+            "hp": 90,
+            "atk": 55,
+            "def": 75,
+            "spa": 60,
+            "spd": 75,
+            "spe": 30
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 109,
+        "name": "Smogo",
+        "stats": {
+            "hp": 40,
+            "atk": 65,
+            "def": 95,
+            "spa": 60,
+            "spd": 45,
+            "spe": 35
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 110,
+        "name": "Smogogo",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 120,
+            "spa": 85,
+            "spd": 70,
+            "spe": 60
+        },
+        "types": [
+            "Poison"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 2,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 111,
+        "name": "Rhinocorne",
+        "stats": {
+            "hp": 80,
+            "atk": 85,
+            "def": 95,
+            "spa": 30,
+            "spd": 30,
+            "spe": 25
+        },
+        "types": [
+            "Sol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 4,
+            "plante": 4,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 112,
+        "name": "Rhinoféros",
+        "stats": {
+            "hp": 105,
+            "atk": 130,
+            "def": 120,
+            "spa": 45,
+            "spd": 45,
+            "spe": 40
+        },
+        "types": [
+            "Sol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.25,
+            "sol": 2,
+            "roche": 0.5,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 4,
+            "plante": 4,
+            "électrik": 0,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 113,
+        "name": "Leveinard",
+        "stats": {
+            "hp": 250,
+            "atk": 5,
+            "def": 5,
+            "spa": 35,
+            "spd": 105,
+            "spe": 50
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 114,
+        "name": "Saquedeneu",
+        "stats": {
+            "hp": 65,
+            "atk": 55,
+            "def": 115,
+            "spa": 100,
+            "spd": 40,
+            "spe": 60
+        },
+        "types": [
+            "Plante"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 2,
+            "poison": 2,
+            "sol": 0.5,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 0.5,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 115,
+        "name": "Kangourex",
+        "stats": {
+            "hp": 105,
+            "atk": 95,
+            "def": 80,
+            "spa": 40,
+            "spd": 80,
+            "spe": 90
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 116,
+        "name": "Hypotrempe",
+        "stats": {
+            "hp": 30,
+            "atk": 40,
+            "def": 70,
+            "spa": 70,
+            "spd": 25,
+            "spe": 60
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 117,
+        "name": "Hypocéan",
+        "stats": {
+            "hp": 55,
+            "atk": 65,
+            "def": 95,
+            "spa": 95,
+            "spd": 45,
+            "spe": 85
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 118,
+        "name": "Poissirène",
+        "stats": {
+            "hp": 45,
+            "atk": 67,
+            "def": 60,
+            "spa": 35,
+            "spd": 50,
+            "spe": 63
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 119,
+        "name": "Poissoroy",
+        "stats": {
+            "hp": 80,
+            "atk": 92,
+            "def": 65,
+            "spa": 65,
+            "spd": 80,
+            "spe": 68
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 120,
+        "name": "Stari",
+        "stats": {
+            "hp": 30,
+            "atk": 45,
+            "def": 55,
+            "spa": 70,
+            "spd": 55,
+            "spe": 85
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 121,
+        "name": "Staross",
+        "stats": {
+            "hp": 60,
+            "atk": 75,
+            "def": 85,
+            "spa": 100,
+            "spd": 85,
+            "spe": 115
+        },
+        "types": [
+            "Eau",
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 0.5,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 122,
+        "name": "M. Mime",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 65,
+            "spa": 100,
+            "spd": 120,
+            "spe": 90
+        },
+        "types": [
+            "Psy",
+            "Fée"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 1,
+            "poison": 2,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 2,
+            "acier": 2,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 0,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 123,
+        "name": "Insécateur",
+        "stats": {
+            "hp": 70,
+            "atk": 110,
+            "def": 80,
+            "spa": 55,
+            "spd": 80,
+            "spe": 105
+        },
+        "types": [
+            "Vol",
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.25,
+            "vol": 2,
+            "poison": 1,
+            "sol": 0,
+            "roche": 4,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.25,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 124,
+        "name": "Lippoutou",
+        "stats": {
+            "hp": 65,
+            "atk": 50,
+            "def": 35,
+            "spa": 115,
+            "spd": 95,
+            "spe": 95
+        },
+        "types": [
+            "Psy",
+            "Glace"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 2,
+            "feu": 2,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 125,
+        "name": "Élektek",
+        "stats": {
+            "hp": 65,
+            "atk": 83,
+            "def": 57,
+            "spa": 95,
+            "spd": 85,
+            "spe": 105
+        },
+        "types": [
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 126,
+        "name": "Magmar",
+        "stats": {
+            "hp": 65,
+            "atk": 95,
+            "def": 57,
+            "spa": 100,
+            "spd": 85,
+            "spe": 93
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 127,
+        "name": "Scarabrute",
+        "stats": {
+            "hp": 65,
+            "atk": 125,
+            "def": 100,
+            "spa": 55,
+            "spd": 70,
+            "spe": 85
+        },
+        "types": [
+            "Insecte"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 2,
+            "poison": 1,
+            "sol": 0.5,
+            "roche": 2,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 128,
+        "name": "Tauros",
+        "stats": {
+            "hp": 75,
+            "atk": 100,
+            "def": 95,
+            "spa": 40,
+            "spd": 70,
+            "spe": 110
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 129,
+        "name": "Magicarpe",
+        "stats": {
+            "hp": 20,
+            "atk": 10,
+            "def": 55,
+            "spa": 15,
+            "spd": 20,
+            "spe": 80
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 130,
+        "name": "Léviator",
+        "stats": {
+            "hp": 95,
+            "atk": 125,
+            "def": 79,
+            "spa": 60,
+            "spd": 100,
+            "spe": 81
+        },
+        "types": [
+            "Vol",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 1,
+            "électrik": 4,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 131,
+        "name": "Lokhlass",
+        "stats": {
+            "hp": 130,
+            "atk": 85,
+            "def": 80,
+            "spa": 85,
+            "spd": 95,
+            "spe": 60
+        },
+        "types": [
+            "Eau",
+            "Glace"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 2,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 1,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.25,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 132,
+        "name": "Métamorph",
+        "stats": {
+            "hp": 48,
+            "atk": 48,
+            "def": 48,
+            "spa": 48,
+            "spd": 48,
+            "spe": 48
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 133,
+        "name": "Évoli",
+        "stats": {
+            "hp": 55,
+            "atk": 55,
+            "def": 50,
+            "spa": 45,
+            "spd": 65,
+            "spe": 55
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 134,
+        "name": "Aquali",
+        "stats": {
+            "hp": 130,
+            "atk": 65,
+            "def": 60,
+            "spa": 110,
+            "spd": 95,
+            "spe": 65
+        },
+        "types": [
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 2,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 135,
+        "name": "Voltali",
+        "stats": {
+            "hp": 65,
+            "atk": 65,
+            "def": 60,
+            "spa": 110,
+            "spd": 95,
+            "spe": 130
+        },
+        "types": [
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 136,
+        "name": "Pyroli",
+        "stats": {
+            "hp": 65,
+            "atk": 130,
+            "def": 60,
+            "spa": 95,
+            "spd": 110,
+            "spe": 65
+        },
+        "types": [
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 2,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 137,
+        "name": "Porygon",
+        "stats": {
+            "hp": 65,
+            "atk": 60,
+            "def": 70,
+            "spa": 85,
+            "spd": 75,
+            "spe": 40
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 138,
+        "name": "Amonita",
+        "stats": {
+            "hp": 35,
+            "atk": 40,
+            "def": 100,
+            "spa": 90,
+            "spd": 55,
+            "spe": 35
+        },
+        "types": [
+            "Roche",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.25,
+            "eau": 1,
+            "plante": 4,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 139,
+        "name": "Amonistar",
+        "stats": {
+            "hp": 70,
+            "atk": 60,
+            "def": 125,
+            "spa": 115,
+            "spd": 70,
+            "spe": 55
+        },
+        "types": [
+            "Roche",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.25,
+            "eau": 1,
+            "plante": 4,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 140,
+        "name": "Kabuto",
+        "stats": {
+            "hp": 30,
+            "atk": 80,
+            "def": 90,
+            "spa": 55,
+            "spd": 45,
+            "spe": 55
+        },
+        "types": [
+            "Roche",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.25,
+            "eau": 1,
+            "plante": 4,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 141,
+        "name": "Kabutops",
+        "stats": {
+            "hp": 60,
+            "atk": 115,
+            "def": 105,
+            "spa": 65,
+            "spd": 70,
+            "spe": 80
+        },
+        "types": [
+            "Roche",
+            "Eau"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 2,
+            "vol": 0.5,
+            "poison": 0.5,
+            "sol": 2,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.25,
+            "eau": 1,
+            "plante": 4,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 0.5,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 142,
+        "name": "Ptéra",
+        "stats": {
+            "hp": 80,
+            "atk": 105,
+            "def": 65,
+            "spa": 60,
+            "spd": 75,
+            "spe": 130
+        },
+        "types": [
+            "Vol",
+            "Roche"
+        ],
+        "resistances": {
+            "normal": 0.5,
+            "combat": 1,
+            "vol": 0.5,
+            "poison": 0.5,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 1,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 143,
+        "name": "Ronflex",
+        "stats": {
+            "hp": 160,
+            "atk": 110,
+            "def": 65,
+            "spa": 65,
+            "spd": 110,
+            "spe": 30
+        },
+        "types": [
+            "Normal"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 2,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 0,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 144,
+        "name": "Artikodin",
+        "stats": {
+            "hp": 90,
+            "atk": 85,
+            "def": 100,
+            "spa": 95,
+            "spd": 125,
+            "spe": 85
+        },
+        "types": [
+            "Vol",
+            "Glace"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 4,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 2,
+            "feu": 2,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 145,
+        "name": "Électhor",
+        "stats": {
+            "hp": 90,
+            "atk": 90,
+            "def": 85,
+            "spa": 125,
+            "spd": 90,
+            "spe": 100
+        },
+        "types": [
+            "Vol",
+            "Électrik"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 0.5,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 1,
+            "eau": 1,
+            "plante": 0.5,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 1
+        }
+    },
+    {
+        "id": 146,
+        "name": "Sulfura",
+        "stats": {
+            "hp": 90,
+            "atk": 100,
+            "def": 90,
+            "spa": 125,
+            "spd": 85,
+            "spe": 90
+        },
+        "types": [
+            "Vol",
+            "Feu"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 4,
+            "insecte": 0.25,
+            "spectre": 1,
+            "acier": 0.5,
+            "feu": 0.5,
+            "eau": 2,
+            "plante": 0.25,
+            "électrik": 2,
+            "psy": 1,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 1,
+            "fée": 0.5
+        }
+    },
+    {
+        "id": 147,
+        "name": "Minidraco",
+        "stats": {
+            "hp": 41,
+            "atk": 64,
+            "def": 45,
+            "spa": 50,
+            "spd": 50,
+            "spe": 50
+        },
+        "types": [
+            "Dragon"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 2,
+            "ténèbres": 1,
+            "fée": 2
+        }
+    },
+    {
+        "id": 148,
+        "name": "Draco",
+        "stats": {
+            "hp": 61,
+            "atk": 84,
+            "def": 65,
+            "spa": 70,
+            "spd": 70,
+            "spe": 70
+        },
+        "types": [
+            "Dragon"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 1,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 1,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 0.5,
+            "électrik": 0.5,
+            "psy": 1,
+            "glace": 2,
+            "dragon": 2,
+            "ténèbres": 1,
+            "fée": 2
+        }
+    },
+    {
+        "id": 149,
+        "name": "Dracolosse",
+        "stats": {
+            "hp": 91,
+            "atk": 134,
+            "def": 95,
+            "spa": 100,
+            "spd": 100,
+            "spe": 80
+        },
+        "types": [
+            "Vol",
+            "Dragon"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 0,
+            "roche": 2,
+            "insecte": 0.5,
+            "spectre": 1,
+            "acier": 1,
+            "feu": 0.5,
+            "eau": 0.5,
+            "plante": 0.25,
+            "électrik": 1,
+            "psy": 1,
+            "glace": 4,
+            "dragon": 2,
+            "ténèbres": 1,
+            "fée": 2
+        }
+    },
+    {
+        "id": 150,
+        "name": "Mewtwo",
+        "stats": {
+            "hp": 106,
+            "atk": 110,
+            "def": 90,
+            "spa": 154,
+            "spd": 90,
+            "spe": 130
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    },
+    {
+        "id": 151,
+        "name": "Mew",
+        "stats": {
+            "hp": 100,
+            "atk": 100,
+            "def": 100,
+            "spa": 100,
+            "spd": 100,
+            "spe": 100
+        },
+        "types": [
+            "Psy"
+        ],
+        "resistances": {
+            "normal": 1,
+            "combat": 0.5,
+            "vol": 1,
+            "poison": 1,
+            "sol": 1,
+            "roche": 1,
+            "insecte": 2,
+            "spectre": 2,
+            "acier": 1,
+            "feu": 1,
+            "eau": 1,
+            "plante": 1,
+            "électrik": 1,
+            "psy": 0.5,
+            "glace": 1,
+            "dragon": 1,
+            "ténèbres": 2,
+            "fée": 1
+        }
+    }
+]
