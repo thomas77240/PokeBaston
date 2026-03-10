@@ -21,7 +21,7 @@ import l3miage.pokebaston.dto.PokemonDTO;
 public class PokemonRepository implements IPokemonRepository {
     private final Map<Integer, PokemonDTO> pokedex = new ConcurrentHashMap<>();
 
-    @Value("classpath:data/pokemons.json")
+    @Value("classpath:data/pokemons.json") // Assure-toi que c'est le nouveau fichier reformatté
     private Resource pokemonFile;
 
     @PostConstruct
@@ -29,17 +29,17 @@ public class PokemonRepository implements IPokemonRepository {
         try {
             ObjectMapper mapper = new ObjectMapper();
             try (InputStream inputStream = pokemonFile.getInputStream()) {
-                TypeReference<List<PokemonDTO>> typeReference = new TypeReference<>() {};
-                List<PokemonDTO> list = mapper.readValue(inputStream, typeReference);
-                
-                list.forEach(p -> pokedex.put(p.id, p));
+                // Jackson va mapper automatiquement le nouveau JSON vers le Record
+                List<PokemonDTO> list = mapper.readValue(inputStream, new TypeReference<List<PokemonDTO>>() {});
+
+                list.forEach(p -> pokedex.put(p.id(), p));
             }
         } catch (IOException e) {
-            System.err.println("JSON not found !");
+            System.err.println("Erreur lors de la lecture du JSON !");
             e.printStackTrace();
         }
     }
-    
+
     public List<PokemonDTO> findAll() {
         return new ArrayList<>(pokedex.values());
     }
@@ -50,8 +50,9 @@ public class PokemonRepository implements IPokemonRepository {
 
     public List<PokemonDTO> findByType(String type) {
         return pokedex.values().stream()
-                .filter(p -> p.types.stream()
-                        .anyMatch(t -> t.name.equalsIgnoreCase(type)))
+                // C'est ici que ça change : t est directement un String maintenant
+                .filter(p -> p.types().stream()
+                        .anyMatch(t -> t.equalsIgnoreCase(type)))
                 .toList();
     }
 }
