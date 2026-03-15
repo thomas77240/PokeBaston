@@ -1,4 +1,5 @@
 import type { Pokemon } from '../../types/pokemon.types';
+import { PokemonUtils } from '../../utils/pokemon.utils';
 
 interface SelectedPokemonCardProps {
     pokemon?: Pokemon;
@@ -15,7 +16,7 @@ const SelectedPokemonCard = ({ pokemon, openPokemonModal }: SelectedPokemonCardP
                 <div className="h-full aspect-square p-2 shrink-0 flex items-center justify-center">
                     <img
                         className='max-h-full max-w-full object-contain'
-                        src={pokemon.image}
+                        src={PokemonUtils.getImage(pokemon)}
                         alt={pokemon.name}
                     />
                 </div>
@@ -23,7 +24,7 @@ const SelectedPokemonCard = ({ pokemon, openPokemonModal }: SelectedPokemonCardP
                 <div className="ml-2 flex flex-col h-full">
                     <h2 className='font-title text-xl'>{pokemon.name}</h2>
 					<p className='text-muted'>
-						{pokemon.types.map((type) => `${type.name} `)}
+						{pokemon.types.join(' ')}
 					</p>
                 </div>
             </div>

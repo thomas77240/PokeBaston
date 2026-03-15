@@ -7,14 +7,14 @@ import PokemonOverviewModal from '../components/TeamConfig/PokemonOverviewModal'
 import { PokemonUtils } from '../utils/pokemon.utils';
 
 interface TeamConfigProps {
-	player: 1 | 2;
+	trainer: "A" | "B";
 }
 
-const TeamConfig = ({ player }: TeamConfigProps) => {
+const TeamConfig = ({ trainer }: TeamConfigProps) => {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-	const { addPokemon, teams, nextStep, prevStep } = useGameSetupContext();
+	const { addPokemon, trainers, nextStep, prevStep } = useGameSetupContext();
 	const [overviewedPokemon, setOverviewedPokemon] = useState<Pokemon | null>(null);
-	const playerKey = `player${player}` as const;
+	const trainerKey = `trainer${trainer}` as const;
 	const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
 	useEffect(() => {
@@ -45,7 +45,7 @@ const TeamConfig = ({ player }: TeamConfigProps) => {
 
 	const filteredPokemons = pokemons.filter((pokemon) => {
 		if (selectedTypes.length === 0) return true;
-		return pokemon.types.some((type) => selectedTypes.includes(type.name));
+		return pokemon.types.some((type) => selectedTypes.includes(type));
 	});
 
 	return (
@@ -56,12 +56,12 @@ const TeamConfig = ({ player }: TeamConfigProps) => {
 					<Button className="rounded-sm" onClick={prevStep}>
 						Retour
 					</Button>
-					<h1 className="font-title text-4xl">Configuration équipe joueur {player}</h1>
+					<h1 className="font-title text-4xl">Configuration équipe joueur {trainer}</h1>
 				</div>
 				<p>Configurez votre équipe. Choisissez les Pokémons qui vous accompagneront dans ce combat.</p>
 			</div>
 
-			
+
 			<div className="grid grid-cols-9 overflow-y-hidden h-full flex-1">
 				{/* Colonne gauche (Liste des pokemons) */}
 				<div className="col-span-7 flex overflow-hidden flex-col">
@@ -99,7 +99,7 @@ const TeamConfig = ({ player }: TeamConfigProps) => {
 					<div className="grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-10 w-full overflow-y-auto p-4">
 						{filteredPokemons.map((pokemon) => {
 							let inTeam = false;
-							if (teams[playerKey].team.includes(pokemon)) {
+							if (trainers[trainerKey].team.includes(pokemon)) {
 								inTeam = true;
 							}
 							return (
@@ -123,7 +123,7 @@ const TeamConfig = ({ player }: TeamConfigProps) => {
 				{/* Colonne droite (Pokemons selectionnés + Bouton validation) */}
 				<div className="col-span-2 flex flex-col pl-4 h-full min-h-0">
 					<div className="w-full grid grid-rows-6 flex-1 min-h-0 gap-y-2 mb-4 overflow-hidden">
-						{teams[playerKey].team.map((pokemon, index) => {
+						{trainers[trainerKey].team.map((pokemon, index) => {
 							return (
 								<SelectedPokemonCard
 									key={`selected-${index}`}
@@ -132,14 +132,14 @@ const TeamConfig = ({ player }: TeamConfigProps) => {
 								/>
 							);
 						})}
-						{[...new Array(6 - teams[playerKey].team.length)].map((_, index) => {
+						{[...new Array(6 - trainers[trainerKey].team.length)].map((_, index) => {
 							return <SelectedPokemonCard key={`empty-${index}`} />;
 						})}
 					</div>
 					<Button
 						onClick={() => nextStep()}
 						className="w-full shrink-0"
-						disabled={teams[playerKey].team.length != 6}
+						disabled={trainers[trainerKey].team.length == 0}
 					>
 						Valider
 					</Button>
@@ -149,7 +149,7 @@ const TeamConfig = ({ player }: TeamConfigProps) => {
 			{overviewedPokemon && (
 				<PokemonOverviewModal
 					pokemon={overviewedPokemon}
-					addPokemon={() => addPokemon(player, overviewedPokemon)}
+					addPokemon={() => addPokemon(trainer, overviewedPokemon)}
 					closeModal={() => closeModal()}
 				/>
 			)}

@@ -4,7 +4,7 @@ import { useGameSetupContext } from '../hooks/useGameSetupContext';
 import { GAME_MODES, type GameSettings } from '../types/gameSetup.types';
 
 const GameConfig = () => {
-	const { nextStep, settings, setSettings } = useGameSetupContext();
+	const { nextStep, settings, setSettings, trainers, changeName } = useGameSetupContext();
 
 	const updateMode = (value: GameSettings['mode']) => {
 		setSettings((prev) => ({
@@ -25,6 +25,15 @@ const GameConfig = () => {
 					name="Modes de jeu"
 					options={GAME_MODES.map((option) => ({ label: option, value: option }))}
 				/>
+
+				<div>
+					<label htmlFor={"trainerAName"}>Pseudo joueur 1</label>
+					<input type="text" id='trainerAName' onChange={e => changeName("A", e.target.value)} value={trainers.trainerA.name} />
+				</div>
+				<div>
+					<label htmlFor={"trainerBName"}>Pseudo joueur 2</label>
+					<input type="text" id='trainerBName' onChange={e => changeName("B", e.target.value)} value={trainers.trainerB.name} />
+				</div>
 			</div>
 
 			<Button onClick={nextStep}>Valider</Button>
