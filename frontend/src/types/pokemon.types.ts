@@ -1,33 +1,42 @@
 export type Pokemon = {
-    id: number;
-    name: string;
-    image: string;
-    sprite: string;
-    types: {name: PokemonType}[];
-    stats: PokemonStats;
-    resistances: PokemonResistance[];
-}
+	id: number;
+	name: string;
+	image: string;
+	sprite: string;
+	types: PokemonType[];
+	stats: PokemonStats;
+	resistances: PokemonResistance[];
+};
 
-
-
-export const POKEMON_TYPES = [
-    'Poison' , 'Plante' , 'Feu' , 'Vol' , 'Eau' , 'Insecte' , 'Normal' , 'Électrik' , 'Sol'
-]
+export const POKEMON_TYPES = ['Normal', 'Combat', 'Vol', 'Poison', 'Sol', 'Roche', 'Insecte','Spectre','Acier','Feu', 'Eau','Plante', 'Électrik', 'Psy', 'Glace', 'Dragon', 'Ténèbres', 'Fée'];
 export type PokemonType = (typeof POKEMON_TYPES)[number];
 
 export interface PokemonStats {
-    HP: number;
-    atk: number;
-    def: number;
-    spa: number;
-    spd: number;
-    spe: number;
+	HP: number;
+	atk: number;
+	def: number;
+	spa: number;
+	spd: number;
+	spe: number;
 }
 
 export interface PokemonResistance {
-    name: PokemonType;
-    damage_multiplier: number;
-    damage_relation: DamageRelation;
+	normal: number;
+	combat: number;
+	vol: number;
+	poison: number;
+	sol: number;
+	roche: number;
+	insecte: number;
+	spectre: number;
+	acier: number;
+	feu: number;
+	eau: number;
+	plante: number;
+	électrik: number;
+	psy: number;
+	glace: number;
+	dragon: number;
+	ténèbres: number;
+	fée: number;
 }
-
-export type DamageRelation = 'neutral' | 'resistant' | 'twice_resistant' | 'vulnerable' | 'twice_vulnerable' | 'immune';

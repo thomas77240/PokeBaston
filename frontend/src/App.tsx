@@ -4,6 +4,7 @@ import TeamConfig from './pages/TeamConfig';
 import BaseLayout from './layouts/BaseLayout';
 import CreateGameLayout from './layouts/GameSetupLayout';
 import GameConfig from './pages/GameSettings';
+import GameSetupSummary from './pages/GameSetupSummary';
 
 function App() {
 	return (
@@ -14,8 +15,9 @@ function App() {
 			</Route>
 			<Route path="/setup" element={<CreateGameLayout />}>
 				<Route index element={<GameConfig />} />
-				<Route path="player-1" element={<TeamConfig player={1} />} />
-				<Route path="player-2" element={<TeamConfig player={2} />} />
+				<Route path="trainer-1" element={<TeamConfig trainer={"A"} />} />
+				<Route path="trainer-2" element={<TeamConfig trainer={"B"} />} />
+				<Route path="summary" element={<GameSetupSummary />} />
 			</Route>
 		</Routes>
 	);

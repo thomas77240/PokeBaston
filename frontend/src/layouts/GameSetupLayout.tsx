@@ -1,19 +1,22 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { useLocation, useNavigate, useOutlet } from 'react-router-dom';
-import type { GameTeams, GameSettings } from '../types/gameSetup.types';
+import type { GameTrainers, GameSettings, GameSetupDTO } from '../types/gameSetup.types';
 import type { Pokemon } from '../types/pokemon.types';
 
 const CreateGameLayout = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const [teams, setTeams] = useState<GameTeams>({ player1: { team: [] }, player2: { team: [] } });
+	const [trainers, setTrainers] = useState<GameTrainers>({
+		trainerA: { name: '', team: [] },
+		trainerB: { name: '', team: [] },
+	});
 	const [settings, setSettings] = useState<GameSettings>({ mode: 'local', level: 50 });
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	// Navigation
-	const steps = ['/setup', '/setup/player-1', '/setup/player-2'];
+	const steps = ['', '/trainer-1', '/trainer-2', '/summary'].map(path => '/setup' + path);
 	const direction = location.state?.direction || 1;
 	const currentIndex = steps.indexOf(location.pathname);
 	const nextStep = () => {
@@ -29,36 +32,76 @@ const CreateGameLayout = () => {
 	};
 
 	// Ajouter un pokemon à une équipe
-	const addPokemon = (player: 1 | 2, pokemon: Pokemon) => {
-		const playerKey = `player${player}` as const;
+	const addPokemon = (trainer: 'A' | 'B', pokemon: Pokemon) => {
+		const trainerKey = `trainer${trainer}` as const;
 
-		if (teams[playerKey].team.length >= 6) return;
-		if (teams[playerKey].team.some((p) => p.id === pokemon.id)) return;
+		if (trainers[trainerKey].team.length >= 6) return;
+		if (trainers[trainerKey].team.some((p) => p.id === pokemon.id)) return;
 
-		setTeams((prev) => ({
+		setTrainers((prev) => ({
 			...prev,
-			[playerKey]: {
-				...prev[playerKey],
-				team: [...prev[playerKey].team, pokemon],
+			[trainerKey]: {
+				...prev[trainerKey],
+				team: [...prev[trainerKey].team, pokemon],
 			},
 		}));
 	};
 
 	// Supprimer un pokemon d'une équipe
-	const removePokemon = (player: 1 | 2, pokemon: Pokemon) => {
-		const playerKey = `player${player}` as const;
+	const removePokemon = (trainer: 'A' | 'B', pokemon: Pokemon) => {
+		const trainerKey = `trainer${trainer}` as const;
 
-		setTeams((prev) => ({
+		setTrainers((prev) => ({
 			...prev,
-			[playerKey]: {
-				...prev[playerKey],
-				team: [...prev[playerKey].team.filter((p) => p.id !== pokemon.id)],
+			[trainerKey]: {
+				...prev[trainerKey],
+				team: [...prev[trainerKey].team.filter((p) => p.id !== pokemon.id)],
 			},
 		}));
 	};
 
+	// Changer pseudo
+	const changeName = (trainer: 'A' | 'B', name: string) => {
+		const trainerKey = `trainer${trainer}` as const;
+		setTrainers((prev) => ({
+			...prev,
+			[trainerKey]: {
+				...prev[trainerKey],
+				name: name,
+			},
+		}));
+	};
+
+	// Envoyer requete pour créer partie
+	const submitSetup = async () => {
+		const payload: GameSetupDTO = {
+			level: settings.level,
+			trainerA: {
+				name: 'dqsds',
+				pokemonIds: trainers['trainerA'].team.map((p) => p.id),
+			},
+			trainerB: {
+				name: 'dqsds',
+				pokemonIds: trainers['trainerB'].team.map((p) => p.id),
+			},
+		};
+		const request = await fetch('/api/battle/start', {
+			method: 'POST',
+			headers: {
+                'Content-Type': 'application/json',
+            },
+			body: JSON.stringify(payload),
+		});
+		if (request.ok) {
+            const data = await request.json();
+            console.log("Partie créée :", data);
+        } else {
+            console.error("Erreur lors de la création :", request.statusText);
+        }
+	};
+
 	const contextValue = {
-		teams,
+		trainers,
 		settings,
 		setSettings,
 		isSubmitting,
@@ -67,6 +110,8 @@ const CreateGameLayout = () => {
 		prevStep,
 		addPokemon,
 		removePokemon,
+		changeName,
+		submitSetup,
 	};
 
 	const currentOutlet = useOutlet(contextValue);

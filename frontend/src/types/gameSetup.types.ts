@@ -1,31 +1,44 @@
-import type { Pokemon } from "./pokemon.types";
+import type { Pokemon } from './pokemon.types';
 
-
-export interface GameTeams {
-  player1 : {
-    team: Pokemon[]
-  },
-  player2 : {
-    team: Pokemon[]
-  }
+export interface GameTrainers {
+	trainerA: {
+		name: string;
+		team: Pokemon[];
+	};
+	trainerB: {
+		name: string;
+		team: Pokemon[];
+	};
 }
 
-export const GAME_MODES = [
-    'local' , 'online'
-]
+export const GAME_MODES = ['local', 'online'];
 
 export interface GameSettings {
-  mode: (typeof GAME_MODES)[number]
-  level: number
+	mode: (typeof GAME_MODES)[number];
+	level: number;
 }
 
 export interface GameSetupContextType {
-  teams: GameTeams;
-  settings: GameSettings,
-  setSettings: React.Dispatch<React.SetStateAction<GameSettings>>;
-  setGameTeams: React.Dispatch<React.SetStateAction<GameTeams>>;
-  nextStep: () => void;
-  prevStep: () => void;
-  addPokemon: (player: number, pokemon: Pokemon) => void;
-  removePokemon: (player: number, pokemon: Pokemon) => void;
+	trainers: GameTrainers;
+	settings: GameSettings;
+	setSettings: React.Dispatch<React.SetStateAction<GameSettings>>;
+	setGameTeams: React.Dispatch<React.SetStateAction<GameTrainers>>;
+	nextStep: () => void;
+	prevStep: () => void;
+	addPokemon: (trainer: 'A' | 'B', pokemon: Pokemon) => void;
+	removePokemon: (trainer: 'A' | 'B', pokemon: Pokemon) => void;
+	changeName: (trainer: 'A' | 'B', name: string) => void;
+	submitSetup: () => void;
+}
+
+export interface GameSetupDTO {
+	level: number;
+	trainerA: {
+		name: string;
+		pokemonIds: number[];
+	};
+	trainerB: {
+		name: string;
+		pokemonIds: number[];
+	};
 }
