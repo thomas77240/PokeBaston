@@ -5,7 +5,7 @@ const Home = () => {
 	return (
 		<>
 			<div className="flex flex-col gap-2 items-center justify-center h-screen">
-				<h1 className="text-7xl font-title">Acceuil PokeBaston</h1>
+				<h1 className="text-7xl font-title">Accueil PokeBaston</h1>
 				<Link
 					className="p-2 px-4 bg-background-light hover:bg-slate-300 cursor-pointer rounded-sm"
 					to={'/setup'}

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently -n \"BACK,FRONT\" -c \"blue,green\" \".\\mvnw spring-boot:run\" \"cd frontend && npm run dev\"",
     "build": ".\\mvnw clean package -DskipTests",
     "start": "java -jar target/app.jar --spring.profiles.active=prod"
@@ -14,6 +13,8 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
     "concurrently": "^9.2.1"
   }
 }
