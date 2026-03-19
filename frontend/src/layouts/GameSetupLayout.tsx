@@ -12,11 +12,11 @@ const CreateGameLayout = () => {
 		trainerA: { name: '', team: [] },
 		trainerB: { name: '', team: [] },
 	});
-	const [settings, setSettings] = useState<GameSettings>({ mode: 'local', level: 50 });
+	const [settings, setSettings] = useState<GameSettings>({ level: 50 });
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	// Navigation
-	const steps = ['', '/trainer-1', '/trainer-2', '/summary'].map(path => '/setup' + path);
+	const steps = ['', '/trainer-1', '/trainer-2', '/summary'].map((path) => '/setup' + path);
 	const direction = location.state?.direction || 1;
 	const currentIndex = steps.indexOf(location.pathname);
 	const nextStep = () => {
@@ -88,16 +88,16 @@ const CreateGameLayout = () => {
 		const request = await fetch('/api/battle/start', {
 			method: 'POST',
 			headers: {
-                'Content-Type': 'application/json',
-            },
+				'Content-Type': 'application/json',
+			},
 			body: JSON.stringify(payload),
 		});
 		if (request.ok) {
-            const data = await request.json();
-            console.log("Partie créée :", data);
-        } else {
-            console.error("Erreur lors de la création :", request.statusText);
-        }
+			const data = await request.json();
+			console.log('Partie créée :', data);
+		} else {
+			console.error('Erreur lors de la création :', request.statusText);
+		}
 	};
 
 	const contextValue = {
