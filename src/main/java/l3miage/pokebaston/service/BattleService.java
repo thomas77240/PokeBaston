@@ -8,9 +8,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import l3miage.pokebaston.dto.BattleStartResponse;
-import l3miage.pokebaston.dto.BattleStartResponse;
+import l3miage.pokebaston.dto.BattleActiveGamesResponse;
+import l3miage.pokebaston.dto.BattleStateResponse;
+import l3miage.pokebaston.dto.BattleStartRequest.Player.PokemonId;
 import l3miage.pokebaston.modele.BattleGame;
+import l3miage.pokebaston.modele.Move;
 import l3miage.pokebaston.modele.Pokemon;
 import l3miage.pokebaston.modele.Trainer;
 
@@ -21,20 +23,38 @@ public class BattleService implements IBattleService {
     @Autowired
     private IPokemonService pokemonService;
 
-    // public BattleGame createGame(String nameA, List<Integer> teamA, String nameB,
-    // List<Integer> teamB, int level) {
-    public BattleGame createGame(String nameA, List<Integer> teamA, String nameB, List<Integer> teamB, int level) {
+    @Autowired
+    private IMoveService moveService;
+
+    public BattleGame createGame(String nameA, List<PokemonId> teamA, String nameB, List<PokemonId> teamB, int level) {
         List<Pokemon> pokemonsA = new ArrayList<Pokemon>();
-        for (Integer index : teamA) {
-            Pokemon p = new Pokemon(pokemonService.getPokemonById(index));
+
+        for (PokemonId pokemonId : teamA) {
+            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()));
+
+            List<Move> moves = new ArrayList<Move>();
+            for (Integer moveId : pokemonId.movesIds()) {
+                Move m = new Move(moveService.getMoveById(moveId));
+                moves.add(m);
+            }
+            p.setMoves(moves);
             pokemonsA.add(p);
         }
 
         List<Pokemon> pokemonsB = new ArrayList<Pokemon>();
-        for (Integer index : teamB) {
-            Pokemon p = new Pokemon(pokemonService.getPokemonById(index));
+
+        for (PokemonId pokemonId : teamB) {
+            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()));
+
+            List<Move> moves = new ArrayList<Move>();
+            for (Integer moveId : pokemonId.movesIds()) {
+                Move m = new Move(moveService.getMoveById(moveId));
+                moves.add(m);
+            }
+            p.setMoves(moves);
             pokemonsB.add(p);
         }
+
 
         Trainer t1 = new Trainer(nameA, pokemonsA, 0);
         Trainer t2 = new Trainer(nameB, pokemonsB, 0);
@@ -48,5 +68,22 @@ public class BattleService implements IBattleService {
     public BattleGame getGame(String gameId) {
         BattleGame game = activeGames.get(gameId);
         return game;
+    }
+
+    public void saveGame(BattleGame game) {
+        activeGames.put(game.getId(), game);
+    }
+
+    public BattleActiveGamesResponse activeGames() {
+        if (activeGames.isEmpty()) {
+            return new BattleActiveGamesResponse();
+        }
+
+        List<BattleActiveGamesResponse.ActiveGameInfo> activeGameInfos = new ArrayList<>();
+        activeGames.forEach((id, game) -> {
+            activeGameInfos.add(new BattleActiveGamesResponse.ActiveGameInfo(id, game.getTrainerA().getName(), game.getTrainerB().getName()));
+        });
+
+        return new BattleActiveGamesResponse(activeGameInfos);
     }
 }

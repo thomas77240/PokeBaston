@@ -37,6 +37,7 @@ public class Pokemon {
         this.spe = p.stats().spe();
         this.spa = p.stats().spa();
         this.spd = p.stats().spd();
+        this.moves = new ArrayList<Move>();
     }
 
     public List<String> getType() {

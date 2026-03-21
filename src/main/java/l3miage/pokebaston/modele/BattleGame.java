@@ -20,6 +20,10 @@ public class BattleGame {
         this.logs.add("Le combat commence entre " + trainerA.getName() + " et " + trainerB.getName());
     }
 
+    public void addLogs(List<String> logs) {
+        this.logs.addAll(logs);
+    }
+
     public String getId() {
         return id;
     }

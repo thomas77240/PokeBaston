@@ -6,11 +6,16 @@ import l3miage.pokebaston.modele.Pokemon;
 
 import java.util.List;
 
-import l3miage.pokebaston.dto.BattleStartResponse;
-import l3miage.pokebaston.dto.BattleTurnResponse;
+import l3miage.pokebaston.dto.BattleActiveGamesResponse;
+import l3miage.pokebaston.dto.BattleStateResponse;
+import l3miage.pokebaston.dto.BattleStartRequest.Player.PokemonId;
 
 public interface IBattleService {
-    BattleGame createGame(String nameA, List<Integer> teamA, String nameB, List<Integer> teamB, int level);
+    BattleGame createGame(String nameA, List<PokemonId> teamA, String nameB, List<PokemonId> teamB, int level);
 
     BattleGame getGame(String gameId);
+
+    void saveGame(BattleGame game);
+    
+    BattleActiveGamesResponse activeGames();
 }

@@ -4,11 +4,16 @@ import java.util.List;
 
 public record BattleStartRequest(
 		int level,
-		Trainer trainerA,
-		Trainer trainerB) {
+		Player trainerA,
+		Player trainerB) {
 
-	public record Trainer(
+	public record Player(
 			String name,
-			List<Integer> pokemonIds) {
+			List<PokemonId> pokemons) {
+
+		public record PokemonId(
+				Integer id,
+				List<Integer> movesIds) {
+		}
 	}
 }
