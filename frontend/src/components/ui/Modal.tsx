@@ -1,14 +1,15 @@
 import { useEffect, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-
+import { motion } from 'framer-motion';
 interface ModalProps {
 	isOpen: boolean;
 	onClose: () => void;
 	title?: string;
 	children: ReactNode;
+	className?: string;
 }
 
-const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
 	useEffect(() => {
 		const handleEscape = (e: KeyboardEvent) => {
 			if (e.key === 'Escape') onClose();
@@ -29,15 +30,23 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 
 	return createPortal(
 		<div
-			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
 			onClick={onClose}
 		>
-			<div
-				className="bg-background-50 rounded-xl shadow-2xl w-full max-w-md overflow-hidden p-4"
+			<motion.div
+				layout
+				initial={{ opacity: 0, scale: 0.95, y: 20 }}
+				animate={{ opacity: 1, scale: 1, y: 0 }}
+				exit={{ opacity: 0, scale: 0.95, y: 20 }}
+				transition={{
+					layout: { type: 'spring', bounce: 0.2, duration: 0.4 },
+					opacity: { duration: 0.2 },
+				}}
+				className={`bg-background-50 rounded-xl shadow-2xl w-full overflow-hidden flex flex-col ${className}`}
 				onClick={(e) => e.stopPropagation()}
 			>
 				{children}
-			</div>
+			</motion.div>
 		</div>,
 		document.body, // Attacher la modale au body
 	);

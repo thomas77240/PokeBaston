@@ -6,9 +6,29 @@ export type Pokemon = {
 	types: PokemonType[];
 	stats: PokemonStats;
 	resistances: PokemonResistance[];
+	moves: number[];
 };
 
-export const POKEMON_TYPES = ['Normal', 'Combat', 'Vol', 'Poison', 'Sol', 'Roche', 'Insecte','Spectre','Acier','Feu', 'Eau','Plante', 'Électrik', 'Psy', 'Glace', 'Dragon', 'Ténèbres', 'Fée'];
+export const POKEMON_TYPES = [
+	'Normal',
+	'Combat',
+	'Vol',
+	'Poison',
+	'Sol',
+	'Roche',
+	'Insecte',
+	'Spectre',
+	'Acier',
+	'Feu',
+	'Eau',
+	'Plante',
+	'Électrik',
+	'Psy',
+	'Glace',
+	'Dragon',
+	'Ténèbres',
+	'Fée',
+];
 export type PokemonType = (typeof POKEMON_TYPES)[number];
 
 export interface PokemonStats {
@@ -19,6 +39,15 @@ export interface PokemonStats {
 	spd: number;
 	spe: number;
 }
+
+export const PokemonStatsText = {
+	HP: 'HP',
+	atk: 'Attaque',
+	def: 'Défense',
+	spa: 'Attaque spéciale',
+	spd: 'Défense spéciale',
+	spe: 'Vitesse',
+};
 
 export interface PokemonResistance {
 	normal: number;
@@ -39,4 +68,14 @@ export interface PokemonResistance {
 	dragon: number;
 	ténèbres: number;
 	fée: number;
+}
+
+export interface PokemonMove {
+	id: number;
+	name: string;
+	type: string;
+	category: 'physical' | 'special';
+	power: number;
+	accuracy: number;
+	PP: number;
 }

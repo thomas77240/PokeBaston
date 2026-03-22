@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { POKEMON_TYPES, type Pokemon } from '../types/pokemon.types';
+import { POKEMON_TYPES, type Pokemon, type PokemonMove } from '../types/pokemon.types';
 import { useGameSetupContext } from '../hooks/useGameSetupContext';
 import Button from '../components/ui/Button';
 import SelectedPokemonCard from '../components/TeamConfig/SelectedPokemonCard';
@@ -8,6 +8,7 @@ import { PokemonUtils } from '../utils/pokemon.utils';
 import ConfigHeader from '../components/TeamConfig/ConfigHeader';
 import { CircleCheck, Loader, PackageOpen, Search } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import TypeColoredItem from '../components/ui/TypeColoredItem';
 
 interface TeamConfigProps {
 	trainer: 'A' | 'B';
@@ -15,6 +16,7 @@ interface TeamConfigProps {
 
 const TeamConfig = ({ trainer }: TeamConfigProps) => {
 	const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+	const [moves, setMoves] = useState<PokemonMove[]>([]);
 	const { addPokemon, trainers, nextStep, prevStep, removePokemon } = useGameSetupContext();
 	const [overviewedPokemon, setOverviewedPokemon] = useState<Pokemon | null>(null);
 	const trainerKey = `trainer${trainer}` as const;
@@ -23,17 +25,31 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [showFilters, setShowFilters] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
-	useEffect(() => {
-		const getPokemons = () => {
-			setIsLoading(true);
-			fetch('/api/pokemons')
-				.then((res) => res.json())
-				.then(setPokemons);
-			setIsLoading(false);
-		};
-		getPokemons();
-	}, []);
 
+	useEffect(() => {
+		const fetchGameData = async () => {
+			setIsLoading(true);
+
+			try {
+				const [pokemonsRes, movesRes] = await Promise.all([fetch('/api/pokemons'), fetch('/api/moves')]);
+				const pokemonsData = await pokemonsRes.json();
+				const movesData = await movesRes.json();
+
+				setPokemons(
+					pokemonsData.map((pokemon : Pokemon) => { // Temporaire car l'API n'envoie pas les moves --------------
+						return { ...pokemon, moves: [1, 2, 3, 4,17,29,92,109,12,73] };
+					}),
+				);
+				setMoves(movesData);
+			} catch (error) {
+				console.error('Erreur lors du chargement des données :', error);
+			} finally {
+				setIsLoading(false);
+			}
+		};
+
+		fetchGameData();
+	}, []);
 	const closeModal = () => {
 		setOverviewedPokemon(null);
 	};
@@ -52,7 +68,6 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 	};
 
 	const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-		// Si on scrolle vers le bas de plus de 10 pixels, on affiche le dégradé
 		setIsScrolled(e.currentTarget.scrollTop > 10);
 	};
 
@@ -79,7 +94,8 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 					</div>
 					<div className="w-full bg-background-100 p-6 grid grid-rows-6 flex-1 min-h-0 gap-y-4 overflow-hidden">
 						<AnimatePresence mode="popLayout">
-							{trainers[trainerKey].team.map((pokemon, index) => {
+							{trainers[trainerKey].team.map((member, index) => {
+								const pokemon = member.pokemon;
 								return (
 									<motion.div
 										key={`selected-${pokemon.id}`}
@@ -192,18 +208,18 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 									<div className="flex flex-wrap gap-2">
 										{POKEMON_TYPES.map((type) => {
 											const isChecked = selectedTypes.includes(type);
-											const colors = PokemonUtils.getPokemonColors(type);
 
 											return (
-												<button
+												<TypeColoredItem
+													as='button'
+													pokemonType={type}
 													key={type}
-													type="button"
 													onClick={() => handleTypeToggle(type)}
 													className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 border cursor-pointer select-none
-                                    				${isChecked ? `bg-${colors.base} border-transparent text-white shadow-sm` : `bg-${colors.base}/10 text-${colors.base}`}`}
+                                    				${isChecked ? `bg-type border-transparent text-white shadow-sm` : `bg-type/10 text-type`}`}
 												>
 													{type}
-												</button>
+												</TypeColoredItem>
 											);
 										})}
 									</div>
@@ -230,7 +246,9 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 								<AnimatePresence mode="popLayout">
 									{filteredPokemons.map((pokemon) => {
 										let inTeam = false;
-										if (trainers[trainerKey].team.includes(pokemon)) {
+										if (
+											trainers[trainerKey].team.some((member) => member.pokemon.id === pokemon.id)
+										) {
 											inTeam = true;
 										}
 										return (
@@ -280,8 +298,11 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 			{overviewedPokemon && (
 				<PokemonOverviewModal
 					pokemon={overviewedPokemon}
-					addPokemon={() => addPokemon(trainer, overviewedPokemon)}
+					addPokemon={(moves) => addPokemon(trainer, overviewedPokemon, moves)}
 					closeModal={() => closeModal()}
+					availableMoves={moves.filter((move) => overviewedPokemon.moves.includes(move.id))}
+
+					trainer={trainers[trainerKey]}
 				/>
 			)}
 		</div>

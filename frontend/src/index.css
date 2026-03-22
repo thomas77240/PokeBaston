@@ -10,23 +10,6 @@
 	--theme-primary: #ff0000;
 }
 
-/* 🌙 THÈME SOMBRE (Automatique selon le système de l'utilisateur) */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --theme-bg: #070707;
-    --theme-bg-light: #1f1f1f;
-    --theme-fg: #f1f5f9;
-    --theme-muted: #94a3b8;
-  }
-} */
-
-/* 🌙 THÈME SOMBRE */
-/* :root.dark {
-  --theme-bg: #070707;
-  --theme-bg-light: #1f1f1f;
-  --theme-fg: #f1f5f9;
-  --theme-muted: #94a3b8;
-} */
 
 @theme {
 	--color-background: var(--theme-bg);
@@ -82,6 +65,9 @@
 	--color-pokemon-dragon: #7038f8;
 	--color-pokemon-dark: #705848;
 	--color-pokemon-fairy: #ee99ac;
+
+	/* "poke" devient une couleur Tailwind officielle */
+	--color-type: #000000;
 }
 
 @layer utilities {

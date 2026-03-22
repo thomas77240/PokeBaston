@@ -1,15 +1,21 @@
-import { Crown, X } from 'lucide-react';
+import { Award, X } from 'lucide-react';
 import type { Pokemon } from '../../types/pokemon.types';
 import { PokemonUtils } from '../../utils/pokemon.utils';
+import TypeColoredItem from '../ui/TypeColoredItem';
 
 interface SelectedPokemonCardProps {
 	pokemon?: Pokemon;
 	openPokemonModal?: () => void;
 	removePokemon?: () => void;
-	isCaptain?: boolean
+	isCaptain?: boolean;
 }
 
-const SelectedPokemonCard = ({ pokemon, openPokemonModal, removePokemon, isCaptain = false }: SelectedPokemonCardProps) => {
+const SelectedPokemonCard = ({
+	pokemon,
+	openPokemonModal,
+	removePokemon,
+	isCaptain = false,
+}: SelectedPokemonCardProps) => {
 	if (pokemon) {
 		return (
 			<div
@@ -25,18 +31,22 @@ const SelectedPokemonCard = ({ pokemon, openPokemonModal, removePokemon, isCapta
 				</div>
 
 				<div className="ml-2 flex flex-col h-full">
-					<h2 className="font-title text-xl flex items-center gap-2">{pokemon.name}{isCaptain && <Crown className='text-amber-300 bg-amber-100 p-1 rounded-full' size={24} />}</h2>
+					<h2 className="font-title text-xl flex items-center gap-2">
+						{pokemon.name}
+						{isCaptain && <Award className="text-amber-300 bg-amber-100 p-1 rounded-full" size={24} />}
+					</h2>
 					<div className="space-x-1">
 						{pokemon.types.map((type) => {
-							const colors = PokemonUtils.getPokemonColors(type);
 							return (
-								<span
-									key={type}
+								<TypeColoredItem
+									as='span'
+									pokemonType={type}
+									key={`filter-${type}`}
 									className={`px-2 py-0.5 rounded-full text-sm font-medium transition-all duration-200 border select-none
-										bg-${colors.base}/10 text-${colors.base}`}
+										bg-type/20 text-type`}
 								>
 									{type}
-								</span>
+								</TypeColoredItem>
 							);
 						})}
 					</div>

@@ -1,8 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import type { GameTrainers, GameSettings, GameSetupDTO } from '../types/gameSetup.types';
-import type { Pokemon } from '../types/pokemon.types';
+import type { Pokemon, PokemonMove } from '../types/pokemon.types';
+
+const STEPS = ['', '/trainer-1', '/trainer-2', '/summary'].map((path) => '/setup' + path);
 
 const CreateGameLayout = () => {
 	const navigate = useNavigate();
@@ -16,35 +18,94 @@ const CreateGameLayout = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	// Navigation
-	const steps = ['', '/trainer-1', '/trainer-2', '/summary'].map((path) => '/setup' + path);
 	const direction = location.state?.direction || 1;
-	const currentIndex = steps.indexOf(location.pathname);
+	const currentIndex = STEPS.indexOf(location.pathname);
+
+	// Validation étape de navigation (conditions pour afficher cette page)
+	const canAccessStep = useCallback(
+		(stepIndex: number) => {
+			if (stepIndex === 0) return true; // Paramètres
+
+			if (stepIndex === 1) return trainers.trainerA.name && trainers.trainerB.name; // Equipe 1
+
+			if (stepIndex === 2) {
+				return trainers.trainerA.team.length > 0; // Equipe 2
+			}
+
+			if (stepIndex === 3) {
+				return trainers.trainerA.team.length > 0 && trainers.trainerB.team.length > 0; // Résumé
+			}
+
+			return false;
+		},
+		[trainers.trainerA.team.length, trainers.trainerB.team.length, trainers.trainerA.name, trainers.trainerB.name],
+	);
+
+	useEffect(() => {
+		if (currentIndex === -1) {
+			navigate(STEPS[0], { replace: true });
+			return;
+		}
+
+		if (!canAccessStep(currentIndex)) {
+			navigate(STEPS[0], { replace: true });
+		}
+	}, [currentIndex, canAccessStep, navigate]);
+
 	const nextStep = () => {
-		if (currentIndex < steps.length - 1) {
-			navigate(steps[currentIndex + 1], { state: { direction: 1 } });
+		if (currentIndex < STEPS.length - 1) {
+			if (canAccessStep(currentIndex + 1)) {
+				navigate(STEPS[currentIndex + 1], { state: { direction: 1 } });
+			}
 		}
 	};
 
 	const prevStep = () => {
 		if (currentIndex > 0) {
-			navigate(steps[currentIndex - 1], { state: { direction: -1 } });
+			navigate(STEPS[currentIndex - 1], { state: { direction: -1 } });
 		}
 	};
 
 	// Ajouter un pokemon à une équipe
-	const addPokemon = (trainer: 'A' | 'B', pokemon: Pokemon) => {
+	const addPokemon = (trainer: 'A' | 'B', pokemon: Pokemon, moves: PokemonMove[]) => {
 		const trainerKey = `trainer${trainer}` as const;
 
-		if (trainers[trainerKey].team.length >= 6) return;
-		if (trainers[trainerKey].team.some((p) => p.id === pokemon.id)) return;
+		setTrainers((prev) => {
+			const currentTeam = prev[trainerKey].team;
+			const existingIndex = currentTeam.findIndex((member) => member.pokemon.id === pokemon.id);
 
-		setTrainers((prev) => ({
-			...prev,
-			[trainerKey]: {
-				...prev[trainerKey],
-				team: [...prev[trainerKey].team, pokemon],
-			},
-		}));
+			if (existingIndex !== -1) {
+				// Pokemon déja dans l'équipe
+
+				const updatedTeam = [...currentTeam];
+				updatedTeam[existingIndex] = {
+					...updatedTeam[existingIndex],
+					moves,
+				};
+
+				return {
+					...prev,
+					[trainerKey]: {
+						...prev[trainerKey],
+						team: updatedTeam,
+					},
+				};
+			} else {
+				// Nouveau Pokemon
+
+				if (currentTeam.length >= 6) {
+					return prev; // Equipe pleine
+				}
+
+				return {
+					...prev,
+					[trainerKey]: {
+						...prev[trainerKey],
+						team: [...currentTeam, { pokemon, moves }],
+					},
+				};
+			}
+		});
 	};
 
 	// Supprimer un pokemon d'une équipe
@@ -55,7 +116,7 @@ const CreateGameLayout = () => {
 			...prev,
 			[trainerKey]: {
 				...prev[trainerKey],
-				team: [...prev[trainerKey].team.filter((p) => p.id !== pokemon.id)],
+				team: [...prev[trainerKey].team.filter((member) => member.pokemon.id !== pokemon.id)],
 			},
 		}));
 	};
@@ -77,12 +138,22 @@ const CreateGameLayout = () => {
 		const payload: GameSetupDTO = {
 			level: settings.level,
 			trainerA: {
-				name: 'dqsds',
-				pokemonIds: trainers['trainerA'].team.map((p) => p.id),
+				name: trainers['trainerA'].name,
+				pokemons: trainers['trainerA'].team.map((member) => {
+					return {
+						id: member.pokemon.id,
+						movesIds: member.moves.map((move) => move.id),
+					};
+				}),
 			},
 			trainerB: {
-				name: 'dqsds',
-				pokemonIds: trainers['trainerB'].team.map((p) => p.id),
+				name: trainers['trainerB'].name,
+				pokemons: trainers['trainerB'].team.map((member) => {
+					return {
+						id: member.pokemon.id,
+						movesIds: member.moves.map((move) => move.id),
+					};
+				}),
 			},
 		};
 		const request = await fetch('/api/battle/start', {
