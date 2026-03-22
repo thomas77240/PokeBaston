@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 			onClick={onClose}
 		>
 			<div
-				className="bg-background-light rounded-xl shadow-2xl w-full max-w-md overflow-hidden p-4"
+				className="bg-background-50 rounded-xl shadow-2xl w-full max-w-md overflow-hidden p-4"
 				onClick={(e) => e.stopPropagation()}
 			>
 				{children}

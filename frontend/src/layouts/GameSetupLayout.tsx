@@ -120,7 +120,7 @@ const CreateGameLayout = () => {
 		<div className="overflow-hidden relative w-full h-screen">
 			<AnimatePresence custom={direction} initial={false}>
 				<motion.div
-					className="p-8 absolute inset-0"
+					className="absolute inset-0"
 					key={location.pathname}
 					custom={direction}
 					variants={{

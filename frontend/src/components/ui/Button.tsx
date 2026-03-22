@@ -12,7 +12,7 @@ const Button = ({ children, className = '', disabled = false, onClick }: ButtonP
 		<button
 			onClick={onClick}
 			disabled={disabled}
-			className={`${disabled || 'cursor-pointer hover:opacity-75'} bg-background-light p-2 rounded-full px-4 py-2  ${className}`}
+			className={`${disabled ? 'text-background-800 bg-background-500' : 'cursor-pointer bg-neutral-950 hover:bg-neutral-950/95 text-white'} block p-2 rounded-xl px-4 py-2 translate-0 ${className}`}
 		>
 			{children}
 		</button>
