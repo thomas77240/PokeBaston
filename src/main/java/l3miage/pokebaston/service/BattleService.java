@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import l3miage.pokebaston.dto.BattleActiveGamesResponse;
-import l3miage.pokebaston.dto.BattleStateResponse;
 import l3miage.pokebaston.dto.BattleStartRequest.Player.PokemonId;
 import l3miage.pokebaston.modele.BattleGame;
 import l3miage.pokebaston.modele.Move;
