@@ -35,11 +35,7 @@ const TeamConfig = ({ trainer }: TeamConfigProps) => {
 				const pokemonsData = await pokemonsRes.json();
 				const movesData = await movesRes.json();
 
-				setPokemons(
-					pokemonsData.map((pokemon : Pokemon) => { // Temporaire car l'API n'envoie pas les moves --------------
-						return { ...pokemon, moves: [1, 2, 3, 4,17,29,92,109,12,73] };
-					}),
-				);
+				setPokemons(pokemonsData);
 				setMoves(movesData);
 			} catch (error) {
 				console.error('Erreur lors du chargement des données :', error);
