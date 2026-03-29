@@ -1,13 +1,10 @@
 package l3miage.pokebaston.service;
 
 import l3miage.pokebaston.modele.BattleGame;
-import l3miage.pokebaston.modele.Move;
-import l3miage.pokebaston.modele.Pokemon;
 
 import java.util.List;
 
 import l3miage.pokebaston.dto.BattleActiveGamesResponse;
-import l3miage.pokebaston.dto.BattleStateResponse;
 import l3miage.pokebaston.dto.BattleStartRequest.Player.PokemonId;
 
 public interface IBattleService {

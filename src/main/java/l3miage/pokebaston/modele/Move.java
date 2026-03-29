@@ -37,6 +37,10 @@ public class Move {
         return power;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public int getpowerPoints() {
         return powerPoints;
     }

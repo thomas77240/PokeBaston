@@ -7,7 +7,8 @@ public record PokemonDTO(
                 String name,
                 StatsDTO stats,
                 List<String> types,
-                ResistanceDTO resistances) {
+                ResistanceDTO resistances,
+                List<Integer> moves) {
         public record StatsDTO(
                         int hp,
                         int atk,
