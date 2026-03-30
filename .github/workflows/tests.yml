@@ -2,10 +2,10 @@ name : Java CI Pokebaston
 on:
   push:
     branches: [ main, test-back ] 
-      pull_request:
+  pull_request:
         branches: [ main ]
 
-    jobs:
+jobs:
       build:
         runs-on: ubuntu-latest
         steps:
