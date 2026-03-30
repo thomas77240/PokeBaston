@@ -140,7 +140,7 @@ const GameSetupSummary = () => {
                             {trainers.trainerB.name}
                         </h2>
                         <span className="px-4 py-1 text-xs font-bold uppercase tracking-wider text-red-700 bg-red-100 rounded-full shadow-sm">
-                            Dresseur A
+                            Dresseur B
                         </span>
                     </div>
 
