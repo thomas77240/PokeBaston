@@ -12,8 +12,8 @@ import l3miage.pokebaston.dto.BattleActiveGamesResponse;
 import l3miage.pokebaston.dto.BattleStartRequest;
 import l3miage.pokebaston.dto.BattleStateResponse;
 import l3miage.pokebaston.dto.BattleTurnRequest;
-import l3miage.pokebaston.service.IBattleEngine;
-import l3miage.pokebaston.service.IBattleService;
+import l3miage.pokebaston.service.BattleEngine;
+import l3miage.pokebaston.service.BattleService;
 
 @RestController
 @RequestMapping("/api/battle")
@@ -28,10 +28,10 @@ public class BattleController {
     // Objets => nb utilisations restances/qté, tous les attributs
 
     @Autowired
-    private IBattleEngine battleEngine;
+    private BattleEngine battleEngine;
 
     @Autowired
-    private IBattleService battleService;
+    private BattleService battleService;
 
     @PostMapping(value = "/start")
     public BattleStateResponse startGame(@RequestBody BattleStartRequest request) {

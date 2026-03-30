@@ -28,15 +28,15 @@ public class Pokemon {
         this.spd = spd;
     }
 
-    public Pokemon(PokemonDTO p) {
+    public Pokemon(PokemonDTO p, int level) {
         this.types = p.types();
         this.name = p.name();
-        this.hp = p.stats().hp();
-        this.atk = p.stats().atk();
-        this.def = p.stats().def();
-        this.spe = p.stats().spe();
-        this.spa = p.stats().spa();
-        this.spd = p.stats().spd();
+        this.hp = p.stats().hp()*2*level/100 + 10 + level;
+        this.atk = p.stats().atk()*2*level/100 + 5;
+        this.def = p.stats().def()*2*level/100 + 5;
+        this.spe = p.stats().spe()*2*level/100 + 5;
+        this.spa = p.stats().spa()*2*level/100 + 5;
+        this.spd = p.stats().spd()*2*level/100 + 5;
         this.moves = new ArrayList<Move>();
     }
 
