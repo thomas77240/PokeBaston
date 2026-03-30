@@ -29,7 +29,7 @@ public class BattleServiceImpl implements BattleService {
         List<Pokemon> pokemonsA = new ArrayList<Pokemon>();
 
         for (PokemonId pokemonId : teamA) {
-            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()));
+            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()), level);
 
             List<Move> moves = new ArrayList<Move>();
             for (Integer moveId : pokemonId.movesIds()) {
@@ -43,7 +43,7 @@ public class BattleServiceImpl implements BattleService {
         List<Pokemon> pokemonsB = new ArrayList<Pokemon>();
 
         for (PokemonId pokemonId : teamB) {
-            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()));
+            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()), level);
 
             List<Move> moves = new ArrayList<Move>();
             for (Integer moveId : pokemonId.movesIds()) {
