@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import l3miage.pokebaston.dto.BattleActiveGamesResponse;
+import l3miage.pokebaston.dto.BattleStateResponse;
 import l3miage.pokebaston.dto.BattleStartRequest.Player.PokemonId;
 import l3miage.pokebaston.modele.BattleGame;
 import l3miage.pokebaston.modele.Move;
@@ -58,7 +59,7 @@ public class BattleServiceImpl implements BattleService {
         Trainer t1 = new Trainer(nameA, pokemonsA, 0);
         Trainer t2 = new Trainer(nameB, pokemonsB, 0);
 
-        BattleGame game = new BattleGame(t1, t2);
+        BattleGame game = new BattleGame(t1, t2, level);
         activeGames.put(game.getId(), game);
 
         return game;
@@ -80,9 +81,18 @@ public class BattleServiceImpl implements BattleService {
 
         List<BattleActiveGamesResponse.ActiveGameInfo> activeGameInfos = new ArrayList<>();
         activeGames.forEach((id, game) -> {
+            
             activeGameInfos.add(new BattleActiveGamesResponse.ActiveGameInfo(id, game.getTrainerA().getName(), game.getTrainerB().getName()));
         });
 
         return new BattleActiveGamesResponse(activeGameInfos);
+    }
+
+    public BattleStateResponse gameState(String gameId) {
+        BattleGame game = activeGames.get(gameId);
+        if (game != null) {
+            return new BattleStateResponse(gameId, game.getTrainerA(), game.getTrainerB(), game.getLogs());
+        }
+        return null;
     }
 }

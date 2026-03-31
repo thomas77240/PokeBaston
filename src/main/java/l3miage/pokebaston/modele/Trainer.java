@@ -4,13 +4,13 @@ import java.util.List;
 
 public class Trainer {
     private String name;
-    private List<Pokemon> equipPokemons;
-    private int isActivePokemon;
+    private List<Pokemon> team;
+    private int activePokemon;
 
-    public Trainer(String name, List<Pokemon> equipPokemons, int isActivePokemon) {
+    public Trainer(String name, List<Pokemon> team, int activePokemon) {
         this.name = name;
-        this.equipPokemons = equipPokemons;
-        this.isActivePokemon = isActivePokemon;
+        this.team = team;
+        this.activePokemon = activePokemon;
     }
 
     public String getName() {
@@ -21,20 +21,20 @@ public class Trainer {
         this.name = name;
     }
 
-    public List<Pokemon> getEquipPokemons() {
-        return equipPokemons;
+    public List<Pokemon> getTeam() {
+        return team;
     }
 
-    public void setEquipPokemons(List<Pokemon> equipPokemons) {
-        this.equipPokemons = equipPokemons;
+    public void setteam(List<Pokemon> team) {
+        this.team = team;
     }
 
-    public int getIsActivePokemon() {
-        return isActivePokemon;
+    public int getActivePokemon() {
+        return activePokemon;
     }
 
-    public void setIsActivePokemon(int isActivePokemon) {
-        this.isActivePokemon = isActivePokemon;
+    public void setactivePokemon(int activePokemon) {
+        this.activePokemon = activePokemon;
     }
 
     public String toString() {
@@ -42,11 +42,11 @@ public class Trainer {
         sb.append("Name : " + name);
         sb.append("Equipe : ");
 
-        for (Pokemon p : equipPokemons) {
+        for (Pokemon p : team) {
             sb.append(p + ", ");
         }
 
-        sb.append("Numéro du pokémon actif : " + isActivePokemon);
+        sb.append("Numéro du pokémon actif : " + activePokemon);
 
         return sb.toString();
     }
