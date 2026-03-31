@@ -33,7 +33,7 @@ public class Trainer {
         return activePokemon;
     }
 
-    public void setactivePokemon(int activePokemon) {
+    public void setActivePokemon(int activePokemon) {
         this.activePokemon = activePokemon;
     }
 

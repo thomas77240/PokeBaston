@@ -17,6 +17,9 @@ public class Pokemon {
     private int spa;
     private int spd;
 
+    public record baseStats(int hp, int atk, int def, int spe, int spa, int spd) {
+    }
+
     public Pokemon(List<String> type, String name, int hp, int atk, int def, int spe, int spa, int spd) {
         this.types = type;
         this.name = name;

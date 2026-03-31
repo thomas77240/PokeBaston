@@ -44,15 +44,16 @@ public class BattleServiceImpl implements BattleService {
         List<Pokemon> pokemonsB = new ArrayList<Pokemon>();
 
         for (PokemonId pokemonId : teamB) {
-            Pokemon p = new Pokemon(pokemonService.getPokemonById(pokemonId.id()), level);
+            
+            Pokemon pokemon = new Pokemon(pokemonService.getPokemonById(pokemonId.id()), level);
 
             List<Move> moves = new ArrayList<Move>();
             for (Integer moveId : pokemonId.movesIds()) {
                 Move m = new Move(moveService.getMoveById(moveId));
                 moves.add(m);
             }
-            p.setMoves(moves);
-            pokemonsB.add(p);
+            pokemon.setMoves(moves);
+            pokemonsB.add(pokemon);
         }
 
 

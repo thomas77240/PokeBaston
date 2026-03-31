@@ -14,16 +14,16 @@ import java.lang.reflect.Field;
 
 class PokemonRepositoryTest {
 
-    private PokemonRepository repository;
+    private PokemonRepositoryImpl repository;
     private Resource mockResource;
 
     @BeforeEach
     void setUp() throws Exception {
-        repository = new PokemonRepository();
+        repository = new PokemonRepositoryImpl();
         mockResource = mock(Resource.class);
         
         // Injection par réflexion du mock dans le champ privé 'pokemonFile'
-        Field field = PokemonRepository.class.getDeclaredField("pokemonFile");
+        Field field = PokemonRepositoryImpl.class.getDeclaredField("pokemonFile");
         field.setAccessible(true);
         field.set(repository, mockResource);
 
