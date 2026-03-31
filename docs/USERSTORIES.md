@@ -39,9 +39,9 @@ Ce document recense les besoins fonctionnels classés par priorité (Méthode Mo
 
 ### ⚔️ Système de Combat (Suite)
 * **En tant que** Joueur, **je veux** pouvoir consulter la liste des pokémon en réserve **afin** de sélectionner un pokémon valide.
-* **En tant que** Joueur, **je veux** visualiser mon inventaire d'objet **afin** d'utiliser un consommable sur le pokémon sélectionné.
+
 #### 🚨 Gestions des erreurs
-* **En tant que** Système, **je veux** exécuter les changements de Pokémon et les utilisations d'objets avant les attaques **afin** de respecter la chronologie stratégique.
+
 * **En tant que** Système, **je veux** que mon attaque soit impossible à cliquer si ses PP sont à zéro **afin** de me forcer à changer de stratégie ou de Pokémon.
 
 ### 🧠 Stratégie et Validation (Suite)
@@ -53,9 +53,6 @@ Ce document recense les besoins fonctionnels classés par priorité (Méthode Mo
 #### 🚨 Gestions des erreurs
 * **En tant que** Joueur, **je veux** être bloqué sur l'écran de sélection de réserve tant que je n'ai pas remplacé mon Pokémon KO **afin** de ne pas briser la logique de tour par tour.
 
-### 🎒 Options avancées des Objets
-* **En tant que** Joueur, **je veux** que le soin d'une potion ne dépasse pas le maximum de HP du Pokémon **afin** d'éviter d'avoir des points de vie incohérents.
-* **En tant que** Joueur, **je veux** que l'objet soit consommé et disparaisse de mon inventaire après utilisation **afin** de ne pas pouvoir me soigner à l'infini.
 
 ### 🔄 Options de changement (Switch)
 * **En tant que** Joueur, **je veux** que mon tour soit consommé lorsque je change de Pokémon **afin** que l'adversaire puisse attaquer le Pokémon entrant.
@@ -64,10 +61,6 @@ Ce document recense les besoins fonctionnels classés par priorité (Méthode Mo
 
 ## 🟢 PRIORITÉ 3 : Finitions et Bonus (Could Have)
 *Options de confort, détails visuels et cas particuliers à traiter si le planning le permet.*
-
-### 🎒 Options avancées des Objets (Suite)
-#### 🚨 Gestions des erreurs
-* **En tant que** Joueur, **je veux** recevoir un message d'erreur si je tente de mettre une potion sur un Pokémon déjà KO **afin** de respecter les règles de réanimation.
 
 ### 🔄 Options de changement (Suite)
 * **En tant que** Système, **je veux** empêcher le changement de Pokémon s'il ne reste qu'un Pokémon en vie **afin** d'éviter une boucle infinie dans l'interface.
