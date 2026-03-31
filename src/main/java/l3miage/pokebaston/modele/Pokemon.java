@@ -7,6 +7,7 @@ import l3miage.pokebaston.dto.PokemonDTO;
 
 public class Pokemon {
 
+    private int id;
     private List<String> types;
     private String name;
     private int hp;
@@ -32,6 +33,7 @@ public class Pokemon {
     }
 
     public Pokemon(PokemonDTO p, int level) {
+        this.id = p.id();
         this.types = p.types();
         this.name = p.name();
         this.hp = p.stats().hp()*2*level/100 + 10 + level;
@@ -41,6 +43,10 @@ public class Pokemon {
         this.spa = p.stats().spa()*2*level/100 + 5;
         this.spd = p.stats().spd()*2*level/100 + 5;
         this.moves = new ArrayList<Move>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public List<String> getType() {

@@ -8,13 +8,15 @@ public class Move {
     private String category;
     private int power;
     private int powerPoints;
+    private int accuracy;
 
-    public Move(String name, String type, String category, int power, int powerPoints) {
+    public Move(String name, String type, String category, int power, int powerPoints, int accuracy) {
         this.name = name;
         this.type = type;
         this.category = category;
         this.power = power;
         this.powerPoints = powerPoints;
+        this.accuracy = accuracy;
     }
 
     public Move(MoveDTO m) {
@@ -23,6 +25,7 @@ public class Move {
         this.power = m.power();
         this.powerPoints = m.pp();
         this.category = m.category();
+        this.accuracy = m.accuracy();
     }
 
     public String getName() {
@@ -35,6 +38,10 @@ public class Move {
 
     public int getPower() {
         return power;
+    }
+
+    public int getAccuracy() {
+        return accuracy;
     }
 
     public String getCategory() {
