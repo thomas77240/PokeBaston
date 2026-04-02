@@ -1,13 +1,14 @@
+import type { GamePokemon } from '@/types/game.types';
 import type { Pokemon, PokemonType } from '../types/pokemon.types';
 
 export const PokemonUtils = {
-	getSprite: (pokemon: Pokemon): string =>
+	getSprite: (pokemon: Pokemon | GamePokemon): string =>
 		`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`,
 
-	getBackSprite: (pokemon: Pokemon): string =>
+	getBackSprite: (pokemon: Pokemon | GamePokemon): string =>
 		`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/${pokemon.id}.gif`,
 
-	getImage: (pokemon: Pokemon): string =>
+	getImage: (pokemon: Pokemon | GamePokemon): string =>
 		`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`,
 
 	getPokemonColorVar: (type: string): string => {
