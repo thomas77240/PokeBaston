@@ -1,6 +1,5 @@
 package l3miage.pokebaston.service;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -9,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import l3miage.pokebaston.dto.PokemonDTO;
-
+import l3miage.pokebaston.dto.BattleStateResponse.BattleLog;
+import l3miage.pokebaston.dto.BattleStateResponse.LogType;
 import l3miage.pokebaston.modele.BattleGame;
 import l3miage.pokebaston.modele.Move;
 import l3miage.pokebaston.modele.Pokemon;
@@ -28,226 +28,133 @@ public class BattleEngineImpl implements BattleEngine {
     private PokemonService pokemonService;
 
     public BattleStateResponse proceedTurn(BattleTurnRequest btr) {
+        BattleGame battle = battleService.getGame(btr.gameId());
+        Trainer trainerA = battle.getTrainerA();
+        Trainer trainerB = battle.getTrainerB();
 
-        // If trainer A & trainer B attacks
-        if (btr.actionA() == Action.ATTACK && btr.actionB() == Action.ATTACK) {
+        if (btr.actionA() == Action.SWITCH && trainerA.getTeam().get(btr.newPokemonA()).getHP() <= 0) {
+            return null;
+        }
+        if (btr.actionB() == Action.SWITCH && trainerB.getTeam().get(btr.newPokemonB()).getHP() <= 0) {
+            return null;
+        }
 
-            BattleGame battle = battleService.getGame(btr.gameId());
+        List<BattleLog> battleLogs = new ArrayList<>();
 
-            Trainer trainerA = battle.getTrainerA();
-            int activePokemonIndexA = trainerA.getActivePokemon();
-            List<Pokemon> teamA = trainerA.getTeam();
-            Pokemon activePokemonA = teamA.get(activePokemonIndexA);
+        if (btr.actionA() == Action.SWITCH) {
+            executeSwitch(trainerA, btr.newPokemonA(), battleLogs);
+        }
+        if (btr.actionB() == Action.SWITCH) {
+            executeSwitch(trainerB, btr.newPokemonB(), battleLogs);
+        }
 
-            Trainer trainerB = battle.getTrainerB();
-            int activePokemonIndexB = trainerB.getActivePokemon();
-            List<Pokemon> teamB = trainerB.getTeam();
-            Pokemon activePokemonB = teamB.get(activePokemonIndexB);
+        boolean aAttacks = btr.actionA() == Action.ATTACK;
+        boolean bAttacks = btr.actionB() == Action.ATTACK;
 
-            int moveIndexA = btr.moveTrainerA();
-            int moveIndexB = btr.moveTrainerB();
+        Pokemon activeA = trainerA.getTeam().get(trainerA.getActivePokemon());
+        Pokemon activeB = trainerB.getTeam().get(trainerB.getActivePokemon());
 
-            List<Move> movesA = activePokemonA.getMoves();
-            List<Move> movesB = activePokemonB.getMoves();
-
-            Move moveA = movesA.get(moveIndexA);
-            Move moveB = movesB.get(moveIndexB);
-
-            List<String> logs = new ArrayList<>();
-
-            // Determine the order of attack based on speed
-            if (activePokemonA.getSPE() > activePokemonB.getSPE()) {
-                int damageAToB = attack(activePokemonA, activePokemonB, moveA, battle.getLevel());
-                logs.add("Trainer A's " + activePokemonA.getName() + " attacks " + activePokemonB.getName() + " with " + moveA.getName() + " for " + damageAToB + " damage!");
-                if (activePokemonB.getHP() > 0) {
-                    int damageBToA = attack(activePokemonB, activePokemonA, moveB, battle.getLevel());
-                    logs.add("Trainer B's " + activePokemonB.getName() + " attacks " + activePokemonA.getName() + " with " + moveB.getName() + " for " + damageBToA + " damage!");
+        if (aAttacks && bAttacks) {
+            if (activeA.getSPE() > activeB.getSPE()) {
+                executeAttackSequence(activeA, activeB, btr.moveTrainerA(), battle.getLevel(), battleLogs);
+                if (activeB.getHP() > 0) {
+                    executeAttackSequence(activeB, activeA, btr.moveTrainerB(), battle.getLevel(), battleLogs);
                 }
             } else {
-                int damageBToA = attack(activePokemonB, activePokemonA, moveB, battle.getLevel());
-                logs.add(activePokemonB.getName() + " attacks " + activePokemonA.getName() + " with " + moveB.getName() + " for " + damageBToA + " damage!");
-                if (activePokemonA.getHP() > 0) {
-                    int damageAToB = attack(activePokemonA, activePokemonB, moveA, battle.getLevel());
-                    logs.add("Trainer A's " + activePokemonA.getName() + " attacks " + activePokemonB.getName() + " with " + moveA.getName() + " for " + damageAToB + " damage!");
+                executeAttackSequence(activeB, activeA, btr.moveTrainerB(), battle.getLevel(), battleLogs);
+                if (activeA.getHP() > 0) {
+                    executeAttackSequence(activeA, activeB, btr.moveTrainerA(), battle.getLevel(), battleLogs);
                 }
             }
-
-            // Save the updated game state
-            battle.addLogs(logs);
-            battleService.saveGame(battle);
-
-            // Create the battle state response
-            BattleStateResponse gameState = new BattleStateResponse(btr.gameId(), trainerA, trainerB, logs);
-
-            return gameState;
+        } else if (aAttacks) {
+            executeAttackSequence(activeA, activeB, btr.moveTrainerA(), battle.getLevel(), battleLogs);
+        } else if (bAttacks) {
+            executeAttackSequence(activeB, activeA, btr.moveTrainerB(), battle.getLevel(), battleLogs);
         }
 
-        // If trainer A attacks and trainer B switches
-        if (btr.actionA() == Action.ATTACK && btr.actionB() == Action.SWITCH) {
-            BattleGame battle = battleService.getGame(btr.gameId());
-            int battleLevel = battle.getLevel();
-
-            Trainer trainerA = battle.getTrainerA();
-            int activePokemonIndexA = trainerA.getActivePokemon();
-            List<Pokemon> teamA = trainerA.getTeam();
-            Pokemon activePokemonA = teamA.get(activePokemonIndexA);
-
-            int moveIndexA = btr.moveTrainerA();
-            List<Move> movesA = activePokemonA.getMoves();
-            Move moveA = movesA.get(moveIndexA);
-
-            Trainer trainerB = battle.getTrainerB();
-            List<Pokemon> teamB = trainerB.getTeam();
-            int newPokemonB = btr.newPokemonB();
-
-            Pokemon newActivePokemonB = teamB.get(newPokemonB);
-
-            if (newActivePokemonB.getHP() <= 0) {
-                return null;
-            }
-            else{
-                
-                List<String> logs = new ArrayList<>();
-
-                logs.add(trainerB.getName() + " switches to " + newActivePokemonB.getName() + "!");
-                trainerB.setActivePokemon(newPokemonB);
-                
-                int damageAToB = attack(activePokemonA, newActivePokemonB, moveA, battleLevel);
-                logs.add(activePokemonA.getName() + " attacks " + newActivePokemonB.getName() + " with " + moveA.getName() + " for " + damageAToB + " damage!");
-
-                // Save the updated game state
-                battleService.saveGame(battle);
-
-                // Create the battle state response
-                BattleStateResponse gameState = new BattleStateResponse(btr.gameId(), trainerA, trainerB, logs);
-
-                return gameState;
-            }
-        }
-
-        // If trainer A attacks and trainer B switches
-        if (btr.actionA() == Action.SWITCH && btr.actionB() == Action.ATTACK) {
-            BattleGame battle = battleService.getGame(btr.gameId());
-            int battleLevel = battle.getLevel();
-
-            Trainer trainerA = battle.getTrainerA();
-            List<Pokemon> teamA = trainerA.getTeam();
-            int newPokemonA = btr.newPokemonA();
-
-            Pokemon newActivePokemonA = teamA.get(newPokemonA);
-
-            if (newActivePokemonA.getHP() <= 0) {
-                return null;
-            }
-            else{
-                List<String> logs = new ArrayList<>();
-
-                trainerA.setActivePokemon(newPokemonA);
-                logs.add(trainerA.getName() + " switches to " + newActivePokemonA.getName() + "!");
-                System.out.println(trainerA.getName() + " switches to " + newActivePokemonA.getName() + "!");
-
-                Trainer trainerB = battle.getTrainerB();
-                int activePokemonIndexB = trainerB.getActivePokemon();
-                List<Pokemon> teamB = trainerB.getTeam();
-                Pokemon activePokemonB = teamB.get(activePokemonIndexB);
-
-                int moveIndexB = btr.moveTrainerB();
-                List<Move> movesB = activePokemonB.getMoves();
-                Move moveB = movesB.get(moveIndexB);
-
-                int damageBToA = attack(activePokemonB, newActivePokemonA, moveB, battleLevel);
-                logs.add(activePokemonB.getName() + " attacks " + newActivePokemonA.getName() + " with " + moveB.getName() + " for " + damageBToA + " damage!");
-
-                // Save the updated game state
-                battleService.saveGame(battle);
-
-                // Create the battle state response
-                BattleStateResponse gameState = new BattleStateResponse(btr.gameId(), trainerA, trainerB, logs);
-
-                return gameState;
-            }
-        }
-
-        // If both trainers switch
-        if (btr.actionA() == Action.SWITCH && btr.actionB() == Action.SWITCH) {
-            BattleGame battle = battleService.getGame(btr.gameId());
-
-            Trainer trainerA = battle.getTrainerA();
-            List<Pokemon> teamA = trainerA.getTeam();
-            int newPokemonA = btr.newPokemonA();
-
-            Pokemon newActivePokemonA = teamA.get(newPokemonA);
-
-            Trainer trainerB = battle.getTrainerB();
-            List<Pokemon> teamB = trainerB.getTeam();
-            int newPokemonB = btr.newPokemonB();
-
-            Pokemon newActivePokemonB = teamB.get(newPokemonB);
-
-            if (newActivePokemonA.getHP() <= 0 || newActivePokemonB.getHP() <= 0) {
-                return null;
-            }
-            else{
-                List<String> logs = new ArrayList<>();
-
-                trainerA.setActivePokemon(newPokemonA);
-                logs.add(trainerA.getName() + " switches to " + newActivePokemonA.getName() + "!");
-                System.out.println(trainerA.getName() + " switches to " + newActivePokemonA.getName() + "!");
-
-                trainerB.setActivePokemon(newPokemonB);
-                logs.add(trainerB.getName() + " switches to " + newActivePokemonB.getName() + "!");
-                System.out.println(trainerB.getName() + " switches to " + newActivePokemonB.getName() + "!");
-
-                // Save the updated game state
-                battleService.saveGame(battle);
-
-                // Create the battle state response
-                BattleStateResponse gameState = new BattleStateResponse(btr.gameId(), trainerA, trainerB, logs);
-
-                return gameState;
-            }
-        }
-        return null;
+        battleService.saveGame(battle);
+        return new BattleStateResponse(btr.gameId(), trainerA, trainerB, battleLogs);
     }
 
-    public int attack(Pokemon attacker, Pokemon target, Move move, int level) {
-        if (!moveHits(move)) {
-            System.out.println(attacker.getName() + " attacks " + target.getName() + " with " + move.getName() + " but misses!");
-            return 0;
+
+    private void executeSwitch(Trainer trainer, int newPokemonIndex, List<BattleLog> battleLogs) {
+        Pokemon currentPokemon = trainer.getTeam().get(trainer.getActivePokemon());
+        Pokemon newPokemon = trainer.getTeam().get(newPokemonIndex);
+
+        List<String> switchLogs = new ArrayList<>();
+        switchLogs.add(currentPokemon.getName() + " repose-toi !");
+        
+        BattleLog log = new BattleLog(LogType.SWITCH, switchLogs);
+        log.addAnimation();
+        log.add(newPokemon.getName() + " entre en jeu !");
+        battleLogs.add(log);
+
+        trainer.setActivePokemon(newPokemonIndex);
+    }
+
+    private void executeAttackSequence(Pokemon attacker, Pokemon target, int moveIndex, int level, List<BattleLog> battleLogs) {
+        Move move = attacker.getMoves().get(moveIndex);
+        List<String> logs = new ArrayList<>();
+        
+        logs.add(attacker.getName() + " utilise " + move.getName() + " !");
+        logs.add("_ANIMATION_");
+
+        attack(attacker, target, move, level, logs);
+        battleLogs.add(new BattleLog(LogType.ATTACK, logs));
+
+        if (target.getHP() <= 0) {
+            List<String> faintLogs = new ArrayList<>();
+            faintLogs.add(target.getName() + " est KO !");
+            BattleLog faintLog = new BattleLog(LogType.KO, faintLogs);
+            faintLog.addAnimation();
+            battleLogs.add(faintLog);
+
+            /// ACTION A FAIRE APRES LE KO DU POKEMON
+            /// /// ACTION A FAIRE APRES LE KO DU POKEMON
+            /// /// ACTION A FAIRE APRES LE KO DU POKEMON
         }
-        int damage = calculateDamage(attacker, target, move, level);
+    }
+
+
+    public void attack(Pokemon attacker, Pokemon target, Move move, int level, List<String> logs) {
+        if (!moveHits(move)) {
+            logs.add(attacker.getName() + " utilise " + move.getName() + " mais rate sa cible !");
+            return;
+        }
+        int damage = calculateDamage(attacker, target, move, level, logs);
         target.setHP(target.getHP() - damage);
-        System.out.println(attacker.getName() + " attacks " + target.getName() + " with " + move.getName() + " for "
-                + damage + " damage!");
-        return damage;
     }
 
     private boolean moveHits(Move move) {
         int accuracy = move.getAccuracy();
-        if (accuracy >= 100) {
-            return true;
-        }
-        int roll = ThreadLocalRandom.current().nextInt(1, 101);
-        return roll <= accuracy;
+        if (accuracy >= 100) return true;
+        return ThreadLocalRandom.current().nextInt(1, 101) <= accuracy;
     }
 
-    public int calculateDamage(Pokemon attacker, Pokemon target, Move move, int level) {
+    public int calculateDamage(Pokemon attacker, Pokemon target, Move move, int level, List<String> logs) {
         double baseDamage = calculateBaseDamage(attacker, target, move, level);
         double effectiveness = getResistanceMultiplier(target, move.getType());
+        
         System.out.println("Base damage: " + baseDamage + ", Effectiveness: " + effectiveness);
-        System.out.println("Move type: " + move.getType());
+        
         double range = 0.85 + ThreadLocalRandom.current().nextDouble() * 0.15;
         double stabMultiplier = isSTAB(attacker, move) ? 1.5 : 1.0;
 
+        if (effectiveness > 1) {
+            logs.add("C'est super efficace !");
+        } else if (effectiveness < 1 && effectiveness > 0) {
+            logs.add("Ce n'est pas très efficace...");
+        } else if (effectiveness == 0) {
+            logs.add("Ça n'affecte pas du tout " + target.getName() + " !");
+        }
 
-        double totalDamage = baseDamage * stabMultiplier * effectiveness * range;
-        return (int) totalDamage;
+        return (int) (baseDamage * stabMultiplier * effectiveness * range);
     }
 
     private double calculateBaseDamage(Pokemon attacker, Pokemon target, Move move, int level) {
-        if (move.getCategory().equalsIgnoreCase("physical")) {
+        if ("physical".equalsIgnoreCase(move.getCategory())) {
             return ((level * 0.4 + 2) * attacker.getATK() * move.getPower() / target.getDEF() / 50) + 2;
-        } else if (move.getCategory().equalsIgnoreCase("special")) {
+        } else if ("special".equalsIgnoreCase(move.getCategory())) {
             return ((level * 0.4 + 2) * attacker.getSPA() * move.getPower() / target.getSPD() / 50) + 2;
         }
         return 0;
