@@ -32,5 +32,5 @@ public class PokemonController {
     @GetMapping("/search")
     public List<PokemonDTO> getByType(@RequestParam String type) {
         return pokemonService.getPokemonsByType(type);
-}
+    }
 }
