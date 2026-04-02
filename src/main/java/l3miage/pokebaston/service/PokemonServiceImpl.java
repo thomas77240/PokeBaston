@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import l3miage.pokebaston.dto.PokemonDTO;
 import l3miage.pokebaston.exceptions.PokemonNotFoundException;
-import l3miage.pokebaston.repositories.IPokemonRepository;
+import l3miage.pokebaston.repositories.PokemonRepository;
 
 @Service
 public class PokemonServiceImpl implements PokemonService {
     @Autowired
-    private IPokemonRepository pokemonRepository;
+    private PokemonRepository pokemonRepository;
 
     public List<PokemonDTO> getAllPokemons() {
         return pokemonRepository.findAll();

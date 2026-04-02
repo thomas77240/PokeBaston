@@ -8,7 +8,7 @@ import l3miage.pokebaston.dto.BattleTurnRequest;
 public interface BattleEngine {
     BattleStateResponse proceedTurn(BattleTurnRequest btr);
 
-    void attack(Pokemon attacker, Pokemon defender, Move move);
+    int attack(Pokemon attacker, Pokemon defender, Move move, int level);
 
-    int calculateDamage(Pokemon attacker, Pokemon defender, Move move);
+    int calculateDamage(Pokemon attacker, Pokemon defender, Move move, int level);
 }

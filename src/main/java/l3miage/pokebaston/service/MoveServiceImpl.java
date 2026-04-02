@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import l3miage.pokebaston.dto.MoveDTO;
 import l3miage.pokebaston.exceptions.MoveNotFoundException;
-import l3miage.pokebaston.repositories.IMoveRepository;
+import l3miage.pokebaston.repositories.MoveRepository;
 
 @Service
 public class MoveServiceImpl implements MoveService {
 
     @Autowired
-    private IMoveRepository moveRepository;
+    private MoveRepository moveRepository;
 
     @Override
     public List<MoveDTO> getAllMoves() {
