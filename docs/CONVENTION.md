@@ -12,6 +12,7 @@ Pour maintenir un historique clair et professionnel au sein de notre équipe de 
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ✨ | `:sparkles:` | **feat** | Fonctionnalité | Ajout d'une nouveauté | `✨ feat: add type advantage logic` |
 | 🐛 | `:bug:` | **fix** | Bug | Correction d'un problème | `🐛 fix: resolve HP calculation glitch` |
+| 💚 | `:green_heart:` | **fix** | Bug CI | Correction CI | `💚 fix: update in tests.yml` |
 | 📝 | `:memo:` | **docs** | Documentation | Modification de la doc | `📝 docs: update project readme` |
 | 🎨 | `:art:` | **style** | Style | UI, CSS, formatage | `🎨 style: adjust battle arena layout` |
 | ⚡ | `:zap:` | **perf** | Performance | Amélioration de la rapidité | `⚡ perf: optimize sprite loading time` |
