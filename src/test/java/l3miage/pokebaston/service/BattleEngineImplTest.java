@@ -2,6 +2,7 @@ package l3miage.pokebaston.service;
 
 import l3miage.pokebaston.dto.BattleTurnRequest;
 import l3miage.pokebaston.dto.BattleStateResponse;
+import l3miage.pokebaston.dto.BattleStateResponse.BattleLog;
 import l3miage.pokebaston.dto.PokemonDTO;
 import l3miage.pokebaston.modele.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,7 +59,8 @@ public class BattleEngineImplTest {
 
     @Test
     void testAttack() {
-        PokemonDTO.StatsDTO stats = new PokemonDTO.StatsDTO(40, 40, 40, 40, 40, 40);
+        
+    PokemonDTO.StatsDTO stats = new PokemonDTO.StatsDTO(40, 40, 40, 40, 40, 40);
     PokemonDTO.ResistanceDTO res = new PokemonDTO.ResistanceDTO(
         1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 
         1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f
@@ -68,17 +70,25 @@ public class BattleEngineImplTest {
     // L'ID doit correspondre à celui de carapuce (0 par défaut avec ton constructeur actuel)
     PokemonDTO carapuceDto = new PokemonDTO(0, "Carapuce", stats, List.of("Eau"), res, List.of(1));
     when(pokemonService.getPokemonById(anyInt())).thenReturn(carapuceDto);
+        
         int initialHP = carapuce.getHP();
+        List<String> logs = new ArrayList<>();
         
         // Exécution de l'attaque via le moteur
-        int damage = battleEngine.attack(pika, carapuce, charge, 50);
+        battleEngine.attack(pika, carapuce, charge, 50, logs);
 
-        assertTrue(damage > 0, "L'attaque devrait infliger des dégâts");
-        assertEquals(initialHP - damage, carapuce.getHP(), "Les PV de Carapuce devraient avoir baissé");
+        int postHp = carapuce.getHP();
+
+        assertTrue(postHp < initialHP, "Les PV devraient avoir baissé (Attaque inflige des dégâts)");
+        assertFalse(logs.isEmpty(), "La liste de logs ne devrait pas être vide");
+        assertTrue(logs.get(0).contains("Pikachu"), "Le log devrait mentionner Pikachu");
     }
 
     @Test
 void testCalculateDamage() {
+
+    // 0. On ajoute une liste pour les logs
+    List<String> logs = new ArrayList<>();
     // 1. On prépare un Move de type Électrik
     Move tonnerre = new Move("Tonnerre", "Électrik", "special", 90, 15, 100);
     
@@ -106,7 +116,7 @@ void testCalculateDamage() {
     when(pokemonService.getPokemonById(anyInt())).thenReturn(fakeDto);
 
     // Calcul
-    int damage = battleEngine.calculateDamage(pika, carapuce, tonnerre, 50);
+    int damage = battleEngine.calculateDamage(pika, carapuce, tonnerre, 50, logs);
 
     // Vérification
     assertTrue(damage > 0, "Les dégâts devraient être calculés");
@@ -146,8 +156,19 @@ void testCalculateDamage() {
         BattleStateResponse response = battleEngine.proceedTurn(btr);
 
         
-        assertNotNull(response);
-        // On vérifie que Pikachu (SPE 90) a bien attaqué avant Carapuce (SPE 45)
-        assertTrue(response.logs().get(0).contains("Pikachu attacks"), "Pikachu devrait attaquer en premier");
-    }
+        assertNotNull(response, "La réponse ne doit pas être nulle");
+    assertFalse(response.logs().isEmpty(), "Il devrait y avoir des logs de combat");
+
+    // On récupère le premier bloc de logs (BattleLog)
+    BattleLog firstTurnBlock = response.logs().get(0);
+
+    // On vérifie que Pikachu (le plus rapide) est mentionné dans ce premier bloc
+    boolean pikachuFound = firstTurnBlock.logs().stream()
+            .anyMatch(msg -> msg.contains("Pikachu"));
+
+    assertTrue(pikachuFound, "Pikachu (SPE 90) devrait avoir attaqué dans le premier bloc de logs");
+    
+    // Optionnel : Vérifier que Carapuce a bien perdu des HP
+    assertTrue(game.getTrainerB().getTeam().get(0).getHP() < 100, "Carapuce aurait dû perdre des PV");
+}
 }
