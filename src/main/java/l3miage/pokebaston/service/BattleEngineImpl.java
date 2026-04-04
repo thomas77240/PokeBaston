@@ -73,7 +73,7 @@ public class BattleEngineImpl implements BattleEngine {
         }
 
         battleService.saveGame(battle);
-        return new BattleStateResponse(btr.gameId(), trainerA, trainerB, battleLogs);
+        return new BattleStateResponse(battle.getId(), battle.getLevel(), trainerA, trainerB, battleLogs);
     }
 
 
@@ -94,6 +94,15 @@ public class BattleEngineImpl implements BattleEngine {
 
     private void executeAttackSequence(Pokemon attacker, Pokemon target, int moveIndex, int level, List<BattleLog> battleLogs) {
         Move move = attacker.getMoves().get(moveIndex);
+
+        if (move.getPowerPoints() <= 0) {
+            List<String> noPPLogs = new ArrayList<>();
+            noPPLogs.add(attacker.getName() + " utilise " + move.getName() + " mais n'a plus de PP !");
+            battleLogs.add(new BattleLog(LogType.ATTACK, noPPLogs));
+            return;
+        }
+        move.setPowerPoints(move.getPowerPoints() - 1);
+
         List<String> logs = new ArrayList<>();
         
         logs.add(attacker.getName() + " utilise " + move.getName() + " !");

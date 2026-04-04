@@ -48,15 +48,15 @@ public class Move {
         return category;
     }
 
-    public int getpowerPoints() {
+    public int getPowerPoints() {
         return powerPoints;
     }
 
-    public void setpowerPoints(int powerPoints) {
+    public void setPowerPoints(int powerPoints) {
         this.powerPoints = powerPoints;
     }
 
     public String toString() {
-        return name + " (" + type + ", Power: " + power + ")";
+        return name + " (" + type + ", Puissance: " + power + ")";
     }
 }

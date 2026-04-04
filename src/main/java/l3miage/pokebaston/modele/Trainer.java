@@ -39,7 +39,7 @@ public class Trainer {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Name : " + name);
+        sb.append("Nom : " + name);
         sb.append("Equipe : ");
 
         for (Pokemon p : team) {

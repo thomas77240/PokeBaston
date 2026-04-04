@@ -57,10 +57,10 @@ public class BattleServiceImpl implements BattleService {
         }
 
 
-        Trainer t1 = new Trainer(nameA, pokemonsA, 0);
-        Trainer t2 = new Trainer(nameB, pokemonsB, 0);
+        Trainer trainerA = new Trainer(nameA, pokemonsA, 0);
+        Trainer trainerB = new Trainer(nameB, pokemonsB, 0);
 
-        BattleGame game = new BattleGame(t1, t2, level);
+        BattleGame game = new BattleGame(trainerA, trainerB, level);
         activeGames.put(game.getId(), game);
 
         return game;
@@ -83,7 +83,7 @@ public class BattleServiceImpl implements BattleService {
         List<BattleActiveGamesResponse.ActiveGameInfo> activeGameInfos = new ArrayList<>();
         activeGames.forEach((id, game) -> {
             
-            activeGameInfos.add(new BattleActiveGamesResponse.ActiveGameInfo(id, game.getTrainerA().getName(), game.getTrainerB().getName()));
+            activeGameInfos.add(new BattleActiveGamesResponse.ActiveGameInfo(id, game.getLevel(), game.getTrainerA().getName(), game.getTrainerB().getName()));
         });
 
         return new BattleActiveGamesResponse(activeGameInfos);
@@ -92,7 +92,7 @@ public class BattleServiceImpl implements BattleService {
     public BattleStateResponse gameState(String gameId) {
         BattleGame game = activeGames.get(gameId);
         if (game != null) {
-            return new BattleStateResponse(gameId, game.getTrainerA(), game.getTrainerB());
+            return new BattleStateResponse(gameId, game.getLevel(), game.getTrainerA(), game.getTrainerB());
         }
         return null;
     }

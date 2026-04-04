@@ -7,6 +7,7 @@ import l3miage.pokebaston.modele.Trainer;
 
 public record BattleStateResponse(
 		String gameId,
+		int gameLevel,
 		Trainer trainerA,
 		Trainer trainerB,
 		List<BattleLog> logs) {
@@ -34,9 +35,9 @@ public record BattleStateResponse(
 			ATTACK, SWITCH, KO
 		};
 
-	public BattleStateResponse(String gameId, Trainer trainerA, Trainer trainerB) {
+	public BattleStateResponse(String gameId, int level, Trainer trainerA, Trainer trainerB) {
 		// On appelle le constructeur principal du record avec 'this'
 		// en lui passant une nouvelle ArrayList vide pour les logs
-		this(gameId, trainerA, trainerB, new ArrayList<BattleLog>());
+		this(gameId, level, trainerA, trainerB, new ArrayList<BattleLog>());
 	}
 }
