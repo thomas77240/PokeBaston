@@ -101,13 +101,10 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 							</div>
 
 							{/* Affichage des PP en haut à droite */}
-							<div className="flex flex-col min-w-15 px-2 bg-background-50 rounded-xl border-2 border-background-200 border-b-4">
-								<span className="flex items-center justify-center gap-1 text-md font-main text-neutral-500 uppercase font-bold tracking-tighter mb-0.5">
-									<Repeat size={14} /> PP
-								</span>
-								<span className="text-lg font-title font-black text-neutral-800 text-center leading-none">
-									{currentOverviewedMove.PP}
-								</span>
+							<div className="flex min-w-15 px-2 bg-background-50 rounded-xl border-2 border-background-200 border-b-4">
+								<div className="flex items-center justify-center gap-1 text-md font-main text-neutral-500 uppercase font-bold tracking-tighter mb-0.5">
+									<Repeat size={14} /> {currentOverviewedMove.powerPoints} PP
+								</div>
 							</div>
 						</div>
 
