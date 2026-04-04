@@ -26,6 +26,6 @@ public class Object {
     }
 
     public String toString() {
-        return effect + " (Power: " + power + ")";
+        return effect + " (Puissance: " + power + ")";
     }
 }

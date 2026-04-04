@@ -2,13 +2,16 @@ package l3miage.pokebaston.service;
 
 import l3miage.pokebaston.modele.Move;
 import l3miage.pokebaston.modele.Pokemon;
+
+import java.util.List;
+
 import l3miage.pokebaston.dto.BattleStateResponse;
 import l3miage.pokebaston.dto.BattleTurnRequest;
 
 public interface BattleEngine {
     BattleStateResponse proceedTurn(BattleTurnRequest btr);
 
-    int attack(Pokemon attacker, Pokemon defender, Move move, int level);
+    void attack(Pokemon attacker, Pokemon defender, Move move, int level, List<String> logs);
 
-    int calculateDamage(Pokemon attacker, Pokemon defender, Move move, int level);
+    int calculateDamage(Pokemon attacker, Pokemon defender, Move move, int level, List<String> logs);
 }
