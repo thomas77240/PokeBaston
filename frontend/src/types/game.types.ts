@@ -4,18 +4,25 @@ export interface GamePokemon {
     id: number;
     name: string;
     type: PokemonType[];
-    SPE: number;
-    HP: number;
-    ATK: number;
-    DEF: number;
-    SPA: number;
-    SPD: number;
-    maxHP: number;
+    hp: number;
+    atk: number;
+    def: number;
+    spa: number;
+    spd: number;
+    spe: number;
+    baseStats: {
+        HP: number;
+        ATK: number;
+        DEF: number;
+        SPA: number;
+        SPD: number;
+        SPE: number;
+    };
     moves: GamePokemonMove[];
 }
 
-export interface GamePokemonMove extends PokemonMove {
-    maxPP: number;
+export interface GamePokemonMove extends Omit<PokemonMove,'PP'> {
+    powerPoints: number;
 }
 
 export interface GameTrainer {
@@ -51,7 +58,7 @@ export interface GameStore {
     currentTurnUI: 'A' | 'B';
     pendingChoices: { A: PlayerChoice | null; B: PlayerChoice | null };
     gameId: string;
-    level: number;
+    gameLevel: number;
     trainerA: GameTrainer | null;
     trainerB: GameTrainer | null;
 
@@ -66,16 +73,38 @@ export interface GameStore {
 
 export type GameDataResponse = {
     gameId: string;
-    level: number;
+    gameLevel: number;
     trainerA: GameTrainer;
     trainerB: GameTrainer;
 };
 
 export type TurnDataResponse = GameDataResponse & {
-    logs: string[];
+    logs: BatlleLog[];
 };
 
 export type GameAction =
     | { type: 'REGISTER_CHOICE'; payload: { player: 'A' | 'B'; choice: PlayerChoice } }
     | { type: 'SERVER_RESPONSE'; payload: { newBattleData: unknown } }
     | { type: 'START_NEXT_TURN' };
+
+
+
+export type BatlleLog = AttackLog | SwitchLog | KOLog;
+
+export type AttackLog = {
+    type: 'ATTACK';
+    trainer: 'A' | 'B';
+    logs: string[];
+}
+
+export type SwitchLog = {
+    type: 'SWITCH';
+    trainer: 'A' | 'B';
+    logs: string[];
+}
+
+export type KOLog = {
+    type: 'KO';
+    trainer: 'A' | 'B';
+    logs: string[];
+}

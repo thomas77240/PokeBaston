@@ -13,7 +13,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 	currentTurnUI: 'A',
 	pendingChoices: { A: null, B: null },
 	gameId: '',
-	level: 50,
+	gameLevel: 50,
 	trainerA: null,
 	trainerB: null,
 
@@ -28,18 +28,10 @@ export const useGameStore = create<GameStore>((set, get) => ({
 			});
 
 			const result: GameDataResponse = await response.json();
-			result.trainerA.team.map((pokemon) => {
-				pokemon.maxHP = pokemon.HP;
-				return pokemon;
-			});
-			result.trainerB.team.map((pokemon) => {
-				pokemon.maxHP = pokemon.HP;
-				return pokemon;
-			});
 			set({
 				trainerA: result.trainerA,
 				trainerB: result.trainerB,
-				level: result.level,
+				gameLevel: result.gameLevel,
 			});
 		} catch (error) {
 			console.error('Erreur lors du chargement de la partie', error);
@@ -89,14 +81,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
 				body: JSON.stringify(payload),
 			});
 			const result: TurnDataResponse = await response.json();
-			result.trainerA.team.map((pokemon) => {
-				pokemon.maxHP = 250;
-				return pokemon;
-			});
-			result.trainerB.team.map((pokemon) => {
-				pokemon.maxHP = 250;
-				return pokemon;
-			});
 
 			// On met à jour l'état avec la réponse du back
 			set({

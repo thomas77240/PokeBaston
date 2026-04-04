@@ -34,11 +34,11 @@ const TeamView = ({ goBack, trainerKey, activePokemon }: TeamViewProps) => {
                 <div className="flex flex-col gap-3">
                     {trainer?.team?.map((pokemon, index) => {
                         const isActive = pokemon.id === activePokemon?.id;
-                        const isFainted = pokemon.HP <= 0;
+                        const isFainted = pokemon.hp <= 0;
                         const isDisabled = isActive || isFainted;
 
                         // Calcul pour la barre de vie
-                        const hpPercentage = Math.max(0, Math.min(100, (pokemon.HP / pokemon.maxHP) * 100));
+                        const hpPercentage = Math.max(0, Math.min(100, (pokemon.hp / pokemon.baseStats.HP) * 100));
                         const hpColorClass = hpPercentage > 50
                             ? 'bg-green-500'
                             : hpPercentage > 20
@@ -96,7 +96,7 @@ const TeamView = ({ goBack, trainerKey, activePokemon }: TeamViewProps) => {
                                     <div className="flex justify-between items-end px-0.5 mb-0.5">
                                         <span className="text-[9px] font-bold text-neutral-500 uppercase">PV</span>
                                         <span className={`text-[11px] font-bold leading-none ${isFainted ? 'text-red-500' : 'text-neutral-700'}`}>
-                                            {pokemon.HP}/{pokemon.maxHP}
+                                            {pokemon.hp}/{pokemon.baseStats.HP}
                                         </span>
                                     </div>
                                     <div className="w-full bg-background-300 rounded-full h-2 border border-background-400 overflow-hidden">
