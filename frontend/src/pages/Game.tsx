@@ -75,7 +75,7 @@ const Game = () => {
 				animate={{ x: cameraX }}
 				transition={{ duration: 0.5, ease: 'easeInOut' }}
 			>
-				<div className="w-[30vw] h-full bg-background-300">
+				<div className="w-[30vw] h-full">
 					{trainerA && <TrainerMenu trainer={trainerA} trainerKey="A" />}
 				</div>
 
@@ -84,7 +84,7 @@ const Game = () => {
 					<Scene />
 				</div>
 
-				<div className="w-[30vw] h-full bg-background-300">
+				<div className="w-[30vw] h-full">
 					{trainerB && <TrainerMenu trainer={trainerB} trainerKey="B" />}
 				</div>
 			</motion.div>

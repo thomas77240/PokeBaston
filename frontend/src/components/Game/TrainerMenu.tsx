@@ -17,7 +17,7 @@ const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
 	const xExit = trainerKey === 'A' ? '-100%' : '100%';
 
 	return (
-		<div className="w-full h-full relative overflow-hidden">
+		<div className="w-full h-full relative overflow-hidden bg-background-300 border-x border-background-600">
 			<AnimatePresence initial={false}>
 				{/* VUE HOME */}
 				{activeView === 'home' && (
@@ -74,7 +74,7 @@ const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
 						animate={{ x: 0, opacity: 1 }}
 						exit={{ x: xExit, opacity: 0 }}
 						transition={{ duration: 0.3, ease: 'easeInOut' }}
-						className="absolute inset-0"
+						className="absolute inset-0 h-full border-blue-400"
 					>
 						<AttacksView
 							trainerKey={trainerKey}

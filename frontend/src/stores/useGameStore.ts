@@ -1,4 +1,10 @@
-import { ActionType, type GameData, type GameStore, type GameTurnPayload, type TurnData } from '@/types/game.types';
+import {
+	ActionType,
+	type GameDataResponse,
+	type GameStore,
+	type GameTurnPayload,
+	type TurnDataResponse,
+} from '@/types/game.types';
 import { create } from 'zustand';
 
 // --- LE STORE ---
@@ -7,6 +13,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 	currentTurnUI: 'A',
 	pendingChoices: { A: null, B: null },
 	gameId: '',
+	level: 50,
 	trainerA: null,
 	trainerB: null,
 
@@ -20,11 +27,19 @@ export const useGameStore = create<GameStore>((set, get) => ({
 				headers: { 'Content-Type': 'application/json' },
 			});
 
-			const result : GameData = await response.json();
-
+			const result: GameDataResponse = await response.json();
+			result.trainerA.team.map((pokemon) => {
+				pokemon.maxHP = pokemon.HP;
+				return pokemon;
+			});
+			result.trainerB.team.map((pokemon) => {
+				pokemon.maxHP = pokemon.HP;
+				return pokemon;
+			});
 			set({
 				trainerA: result.trainerA,
 				trainerB: result.trainerB,
+				level: result.level,
 			});
 		} catch (error) {
 			console.error('Erreur lors du chargement de la partie', error);
@@ -39,12 +54,10 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
 		set({
 			pendingChoices: newChoices,
-			// Si les deux sont prêts, on bloque l'UI. Sinon, on passe au joueur suivant.
 			phase: bothReady ? 'WAITING_FOR_SERVER' : 'SELECTING_ACTIONS',
 			currentTurnUI: bothReady ? state.currentTurnUI : player === 'A' ? 'B' : 'A',
 		});
 
-		// Si les deux joueurs ont fait leur choix, on déclenche automatiquement l'appel API !
 		if (bothReady) {
 			get().submitTurnToBackend();
 		}
@@ -75,24 +88,43 @@ export const useGameStore = create<GameStore>((set, get) => ({
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(payload),
 			});
-
-			const result : TurnData = await response.json();
+			const result: TurnDataResponse = await response.json();
+			result.trainerA.team.map((pokemon) => {
+				pokemon.maxHP = 250;
+				return pokemon;
+			});
+			result.trainerB.team.map((pokemon) => {
+				pokemon.maxHP = 250;
+				return pokemon;
+			});
 
 			// On met à jour l'état avec la réponse du back
 			set({
 				phase: 'ANIMATING_RESULTS',
-				trainerA: result.trainerA,
-				trainerB: result.trainerB,
 			});
+			get().handleAnimation(result);
 		} catch (error) {
 			console.error('Erreur lors de la résolution du tour', error);
-			// Remettre l'état à SELECTING_ACTIONS en cas d'erreur
 			set({
 				phase: 'SELECTING_ACTIONS',
 				currentTurnUI: 'A',
 				pendingChoices: { A: null, B: null },
 			});
 		}
+	},
+
+	handleAnimation: (turnResult: TurnDataResponse) => {
+		setTimeout(() => {
+			set({
+				trainerA: turnResult.trainerA,
+				trainerB: turnResult.trainerB,
+			});
+			console.log('Résultat du tour:', turnResult.logs);
+		}, 2000);
+
+		setTimeout(() => {
+			get().startNextTurn();
+		}, 4000);
 	},
 
 	getTrainer: (key: 'A' | 'B') => {

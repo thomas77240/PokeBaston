@@ -11,7 +11,11 @@ export interface GamePokemon {
     SPA: number;
     SPD: number;
     maxHP: number;
-    moves: PokemonMove[];
+    moves: GamePokemonMove[];
+}
+
+export interface GamePokemonMove extends PokemonMove {
+    maxPP: number;
 }
 
 export interface GameTrainer {
@@ -43,10 +47,11 @@ export type PlayerChoice =
 
 export interface GameStore {
     // Variables d'état
-    phase: 'SELECTING_ACTIONS' | 'WAITING_FOR_SERVER' | 'ANIMATING_RESULTS';
+    phase: 'SELECTING_ACTIONS' | 'WAITING_FOR_SERVER' | 'ANIMATING_RESULTS' |'WAITING_FOR_POKEMON_SELECTION_A ' | 'WAITING_FOR_POKEMON_SELECTION_B';
     currentTurnUI: 'A' | 'B';
     pendingChoices: { A: PlayerChoice | null; B: PlayerChoice | null };
     gameId: string;
+    level: number;
     trainerA: GameTrainer | null;
     trainerB: GameTrainer | null;
 
@@ -55,16 +60,18 @@ export interface GameStore {
     getTrainer: (key: 'A' | 'B') => GameTrainer | null;
     registerChoice: (player: 'A' | 'B', choice: PlayerChoice) => void;
     submitTurnToBackend: () => Promise<void>;
+    handleAnimation: (turnResult: TurnDataResponse) => void;
     startNextTurn: () => void;
 }
 
-export type GameData = {
+export type GameDataResponse = {
     gameId: string;
+    level: number;
     trainerA: GameTrainer;
     trainerB: GameTrainer;
 };
 
-export type TurnData = GameData & {
+export type TurnDataResponse = GameDataResponse & {
     logs: string[];
 };
 

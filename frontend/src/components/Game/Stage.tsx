@@ -24,31 +24,42 @@ const Stage = () => {
 
 				{/* Les Pokémon */}
 				<div className="absolute inset-0 h-full flex flex-col justify-end items-center pb-12">
-					{activePokemonA && (
-						<>
-							<img
-								src={PokemonUtils.getBackSprite(activePokemonA)}
-								alt={activePokemonA?.name}
-								className="h-36 object-contain absolute bottom-12 left-[20%]" // Positionné à gauche
-							/>
-							<div className="absolute right-[20%] bottom-[25%]">
-								<ActivePokemonStatusCard pokemon={activePokemonA} />
-							</div>
-						</>
-					)}
-					{activePokemonB && (
-						<>
-							<img
-								src={PokemonUtils.getSprite(activePokemonB)}
-								alt={activePokemonB?.name}
-								className="h-36 object-contain absolute top-[25%] right-[20%]"
-							/>
-							<div className="absolute left-[20%] top-[25%]">
-								<ActivePokemonStatusCard pokemon={activePokemonB} />
-							</div>
-						</>
-					)}
-				</div>
+    {activePokemonA && (
+        <>
+            <div className="absolute bottom-[18%] left-[10%] h-48 w-64 flex items-end justify-center">
+                <img
+                    src={PokemonUtils.getBackSprite(activePokemonA)}
+                    alt={activePokemonA?.name}
+                    // scale-[2] double la taille d'origine (ou scale-[2.5], scale-[3] selon tes besoins)
+                    // origin-bottom s'assure qu'en grandissant, les pieds restent au sol
+                    // [image-rendering:pixelated] garde les pixels nets et empêche le flou
+                    className="h-auto w-auto object-contain scale-[3.5] origin-bottom [image-rendering:pixelated]"
+                />
+            </div>
+
+            <div className="absolute right-[3%] bottom-[5%]">
+                <ActivePokemonStatusCard pokemon={activePokemonA} />
+            </div>
+        </>
+    )}
+
+    {activePokemonB && (
+        <>
+            <div className="absolute top-[40%] right-[22%] h-40 w-56 flex items-end justify-center">
+                <img
+                    src={PokemonUtils.getSprite(activePokemonB)}
+                    alt={activePokemonB?.name}
+                    // Souvent le Pokémon adverse est un poil plus petit pour l'effet de perspective (ex: 1.5 au lieu de 2)
+                    className="h-auto w-auto object-contain scale-[2] origin-bottom [image-rendering:pixelated]"
+                />
+            </div>
+
+            <div className="absolute left-[3%] top-[5%]">
+                <ActivePokemonStatusCard pokemon={activePokemonB} />
+            </div>
+        </>
+    )}
+</div>
 			</div>
 
 			{/* 2. LA ZONE DE LOGS (En bas, prend le reste de la place) */}
