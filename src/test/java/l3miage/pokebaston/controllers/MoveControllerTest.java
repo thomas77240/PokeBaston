@@ -14,7 +14,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import l3miage.pokebaston.dto.MoveDTO;
-import l3miage.pokebaston.service.IMoveService;
+import l3miage.pokebaston.service.MoveServiceImpl;
 
 @WebMvcTest(MoveController.class)
 public class MoveControllerTest {
@@ -23,7 +23,7 @@ public class MoveControllerTest {
     private MockMvc mockMvc;
 
     @MockitoBean 
-    private IMoveService moveService;
+    private MoveServiceImpl moveService;
 
     @Test
     public void testGetAllMoves() throws Exception {

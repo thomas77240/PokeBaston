@@ -9,22 +9,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import l3miage.pokebaston.dto.BattleActiveGamesResponse;
 import l3miage.pokebaston.modele.BattleGame;
-import l3miage.pokebaston.modele.Pokemon;
 import l3miage.pokebaston.modele.Trainer;
-import l3miage.pokebaston.service.IBattleEngine;
-import l3miage.pokebaston.service.IBattleService;
+import l3miage.pokebaston.service.BattleEngineImpl;
+import l3miage.pokebaston.service.BattleServiceImpl;
 
 @WebMvcTest(BattleController.class)
 public class BattleControllerTest {
@@ -32,11 +30,11 @@ public class BattleControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private IBattleEngine battleEngine;
+    @MockitoBean
+    private BattleEngineImpl battleEngine;
 
-    @MockBean
-    private IBattleService battleService;
+    @MockitoBean
+    private BattleServiceImpl battleService;
 
     @Test
     public void testActiveGamesShouldReturnStatusOk() throws Exception {
@@ -55,7 +53,7 @@ public class BattleControllerTest {
         
         Trainer tA = new Trainer("Sacha", new ArrayList<>(), 0);
         Trainer tB = new Trainer("Regis", new ArrayList<>(), 0);
-        BattleGame mockBattle = new BattleGame(tA, tB); 
+        BattleGame mockBattle = new BattleGame(tA, tB, 1); 
 
         when(battleService.createGame(any(), any(), any(), any(), anyInt()))
                 .thenReturn(mockBattle);

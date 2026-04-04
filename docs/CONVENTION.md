@@ -21,6 +21,7 @@ Pour maintenir un historique clair et professionnel au sein de notre équipe de 
 | 🔧 | `:wrench:` | **chore** | Maintenance | Config, outils, dépendances | `🔧 chore: install axios dependency` |
 | ⏪ | `:rewind:` | **revert** | Revert | Annulation d'un commit | `⏪ revert: undo last broken feature` |
 | 🧱 | `:bricks:` | **arch** | Architecture | Structure du projet | `🧱 arch: initializing pokebaston project` |
+| 🔀 | `:twisted_rightwards_arrows:`| **merge** | Fusion | ` 🔀 merge : sync test-back-1 into test-back`|
 
 ---
 

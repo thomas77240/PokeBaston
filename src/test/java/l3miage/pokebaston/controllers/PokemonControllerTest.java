@@ -11,11 +11,11 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import l3miage.pokebaston.dto.PokemonDTO;
-import l3miage.pokebaston.service.IPokemonService;
+import l3miage.pokebaston.service.PokemonServiceImpl;
 
 @WebMvcTest(PokemonController.class)
 public class PokemonControllerTest {
@@ -23,8 +23,8 @@ public class PokemonControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private IPokemonService pokemonService;
+    @MockitoBean
+    private PokemonServiceImpl pokemonService;
 
     
     private final PokemonDTO.StatsDTO defaultStats = new PokemonDTO.StatsDTO(10, 10, 10, 10, 10, 10);
