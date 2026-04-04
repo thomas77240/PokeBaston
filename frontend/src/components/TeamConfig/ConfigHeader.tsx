@@ -3,7 +3,7 @@ import { ChevronLeft } from 'lucide-react';
 interface ConfigHeaderProps {
 	className?: string;
 	title: string;
-	backButtonAction: () => unknown;
+	backButtonAction: () => void;
 }
 
 const ConfigHeader = ({ className, title, backButtonAction }: ConfigHeaderProps) => {
