@@ -5,6 +5,7 @@ import BaseLayout from './layouts/BaseLayout';
 import CreateGameLayout from './layouts/GameSetupLayout';
 import GameConfig from './pages/GameSettings';
 import GameSetupSummary from './pages/GameSetupSummary';
+import Game from './pages/Game';
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<Route path="trainer-2" element={<TeamConfig trainer={"B"} />} />
 				<Route path="summary" element={<GameSetupSummary />} />
 			</Route>
+				<Route path='/game/:gameId' element={<Game />} />
 		</Routes>
 	);
 }

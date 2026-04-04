@@ -23,6 +23,7 @@ import l3miage.pokebaston.modele.BattleGame;
 import l3miage.pokebaston.modele.Trainer;
 import l3miage.pokebaston.service.BattleEngineImpl;
 import l3miage.pokebaston.service.BattleServiceImpl;
+import l3miage.pokebaston.service.PokemonService;
 
 @WebMvcTest(BattleController.class)
 public class BattleControllerTest {
@@ -35,6 +36,9 @@ public class BattleControllerTest {
 
     @MockitoBean
     private BattleServiceImpl battleService;
+
+    @MockitoBean
+    private PokemonService pokemonService;
 
     @Test
     public void testActiveGamesShouldReturnStatusOk() throws Exception {

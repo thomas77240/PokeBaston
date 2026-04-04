@@ -11,6 +11,7 @@ public record BattleActiveGamesResponse(List<ActiveGameInfo> activeGames) {
 
     public record ActiveGameInfo(
             String gameId, 
+            int gameLevel,
             String playerA, 
             String playerB
     ) {}
