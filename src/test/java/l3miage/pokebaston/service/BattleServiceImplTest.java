@@ -75,17 +75,17 @@ public class BattleServiceImplTest {
 
     @Test
     void testActiveGames_ShouldReturnSummary() {
-        // GIVEN
+        
         // On crée manuellement une partie pour remplir la map (en appelant createGame par exemple)
         PokemonId pId = new PokemonId(25, List.of(1));
         when(pokemonService.getPokemonById(25)).thenReturn(pikaDto);
         when(moveService.getMoveById(1)).thenReturn(chargeDto);
         battleService.createGame("Sacha", List.of(pId), "Regis", List.of(pId), 50);
 
-        // WHEN
+        
         BattleActiveGamesResponse response = battleService.activeGames();
 
-        // THEN
+        
         assertNotNull(response);
         assertFalse(response.activeGames().isEmpty());
         assertEquals(1, response.activeGames().size());
@@ -94,10 +94,10 @@ public class BattleServiceImplTest {
 
     @Test
     void testGameState_NotFound_ReturnsNull() {
-        // WHEN
+        
         var response = battleService.gameState("invalid-id");
 
-        // THEN
+        
         assertNull(response);
     }
 }
