@@ -7,6 +7,7 @@ import l3miage.pokebaston.dto.PokemonDTO;
 
 public class Pokemon {
 
+    private int id;
     private List<String> types;
     private String name;
     private int hp;
@@ -16,6 +17,9 @@ public class Pokemon {
     private List<Move> moves;
     private int spa;
     private int spd;
+
+    public record baseStats(int hp, int atk, int def, int spe, int spa, int spd) {
+    }
 
     public Pokemon(List<String> type, String name, int hp, int atk, int def, int spe, int spa, int spd) {
         this.types = type;
@@ -28,16 +32,21 @@ public class Pokemon {
         this.spd = spd;
     }
 
-    public Pokemon(PokemonDTO p) {
+    public Pokemon(PokemonDTO p, int level) {
+        this.id = p.id();
         this.types = p.types();
         this.name = p.name();
-        this.hp = p.stats().hp();
-        this.atk = p.stats().atk();
-        this.def = p.stats().def();
-        this.spe = p.stats().spe();
-        this.spa = p.stats().spa();
-        this.spd = p.stats().spd();
+        this.hp = p.stats().hp()*2*level/100 + 10 + level;
+        this.atk = p.stats().atk()*2*level/100 + 5;
+        this.def = p.stats().def()*2*level/100 + 5;
+        this.spe = p.stats().spe()*2*level/100 + 5;
+        this.spa = p.stats().spa()*2*level/100 + 5;
+        this.spd = p.stats().spd()*2*level/100 + 5;
         this.moves = new ArrayList<Move>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public List<String> getType() {

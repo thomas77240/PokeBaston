@@ -6,11 +6,11 @@ public record BattleTurnRequest(
                 Action actionB,
                 Integer moveTrainerA,
                 Integer moveTrainerB,
-                Integer changementPokemonA,
-                Integer changementPokemonB) {
+                Integer newPokemonA,
+                Integer newPokemonB) {
 
         public enum Action {
-                ATTACK, CHANGE_POKEMON
+                ATTACK, SWITCH
         };
 
 }

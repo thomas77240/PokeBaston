@@ -78,6 +78,9 @@
 
 ### 🖥️ Options d'Affichage et Système
 
-* **En tant que** Système, **je veux**
+* **En tant que** Système, **je veux** voir les statistiques actuelles de mon Pokémon (HP restants / HP max) affichées en chiffres **afin** de calculer précisément ma survie
 
+* **En tant que** Joueur, **je veux** pouvoir abandonner le combat via un bouton "Quitter" **afin** de terminer la partie sans fermer l'application
+
+* **En tant que** Système, **je veux** enregistrer le log complet du combat dans un fichier texte à la fin de la partie **afin** de pouvoir le consulter plus tard
 ---

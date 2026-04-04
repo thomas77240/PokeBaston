@@ -2,6 +2,7 @@ package l3miage.pokebaston.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +13,8 @@ import l3miage.pokebaston.dto.BattleActiveGamesResponse;
 import l3miage.pokebaston.dto.BattleStartRequest;
 import l3miage.pokebaston.dto.BattleStateResponse;
 import l3miage.pokebaston.dto.BattleTurnRequest;
-import l3miage.pokebaston.service.IBattleEngine;
-import l3miage.pokebaston.service.IBattleService;
+import l3miage.pokebaston.service.BattleEngine;
+import l3miage.pokebaston.service.BattleService;
 
 @RestController
 @RequestMapping("/api/battle")
@@ -28,10 +29,10 @@ public class BattleController {
     // Objets => nb utilisations restances/qté, tous les attributs
 
     @Autowired
-    private IBattleEngine battleEngine;
+    private BattleEngine battleEngine;
 
     @Autowired
-    private IBattleService battleService;
+    private BattleService battleService;
 
     @PostMapping(value = "/start")
     public BattleStateResponse startGame(@RequestBody BattleStartRequest request) {
@@ -50,5 +51,10 @@ public class BattleController {
     @GetMapping(value = "/activegames")
     public BattleActiveGamesResponse activeGames() {
         return battleService.activeGames();
+    }
+
+    @GetMapping(value = "/gamestate/{gameId}")
+    public BattleStateResponse gameState(@PathVariable String gameId) {
+        return battleService.gameState(gameId);
     }
 }

@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import l3miage.pokebaston.dto.PokemonDTO;
-import l3miage.pokebaston.service.IPokemonService;
+import l3miage.pokebaston.service.PokemonService;
 
 @RestController
 @RequestMapping("/api/pokemons")
 public class PokemonController {
 
     @Autowired
-    private IPokemonService pokemonService;
+    private PokemonService pokemonService;
 
     @GetMapping
     public List<PokemonDTO> getAll() {
