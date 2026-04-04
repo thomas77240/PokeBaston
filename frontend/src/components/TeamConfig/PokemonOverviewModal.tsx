@@ -38,7 +38,7 @@ const PokemonOverviewModal = ({
 
 	const isAlreadyInTeam = trainer.team.some((member) => member.pokemon.id === pokemon.id);
 	const isTeamFull = trainer.team.length === 6;
-	const hasValidMoves = selectedMoves.length === 4;
+	const hasValidMoves = selectedMoves.length > 0;
 
 	const add = () => {
 		addPokemon(selectedMoves);
@@ -53,7 +53,7 @@ const PokemonOverviewModal = ({
 			return [...prev, move];
 		});
 
-		if (selectedMoves.length === 4) setShowButtons(true);
+		if (selectedMoves.length > 0) setShowButtons(true);
 	};
 
 	return (
@@ -354,7 +354,7 @@ const PokemonOverviewModal = ({
 
 			{/* FOOTER ACTIONS avec Framer Motion */}
 			<AnimatePresence>
-				{(showButtons || selectedMoves.length === 4) && (
+				{(showButtons || selectedMoves.length > 0) && (
 					<motion.div
 						key={`pokemon-${pokemon.id}-overview-modal-footer`}
 						initial={{ opacity: 0, y: 50 }}
