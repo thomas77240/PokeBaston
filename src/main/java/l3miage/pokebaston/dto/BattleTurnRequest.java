@@ -10,7 +10,7 @@ public record BattleTurnRequest(
                 Integer newPokemonB) {
 
         public enum Action {
-                ATTACK, SWITCH
+                ATTACK, SWITCH, NONE
         };
 
 }
