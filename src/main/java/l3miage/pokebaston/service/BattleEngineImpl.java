@@ -36,19 +36,20 @@ public class BattleEngineImpl implements BattleEngine {
             throw new IllegalArgumentException("La partie est terminée.");
         }
 
-        Pokemon activeA = trainerA.getTeam().get(trainerA.getActivePokemon());
-        Pokemon activeB = trainerB.getTeam().get(trainerB.getActivePokemon());
+        Integer indexA = trainerA.getActivePokemon();
+        Integer indexB = trainerB.getActivePokemon();
+        Pokemon activeA = indexA != null ? trainerA.getTeam().get(indexA) : null;
+        Pokemon activeB = indexB != null ? trainerB.getTeam().get(indexB) : null;
         List<BattleLog> battleLogs = new ArrayList<>();
 
-
         if (battle.isWaitingForTrainerToSwitch()) {
-            if (activeA.getHP() <= 0) {
+            if (activeA == null) { 
                 if (btr.actionA() != Action.SWITCH || btr.newPokemonA() == null) {
                     throw new IllegalArgumentException("Le Pokémon de " + trainerA.getName() + " est KO, il doit choisir de le remplacer.");
                 }
                 validateTrainerTurn(trainerA, btr.actionA(), btr.newPokemonA());
                 executeSwitch(trainerA, btr.newPokemonA(), "A", battleLogs);
-            } else if (activeB.getHP() <= 0) {
+            } else if (activeB == null) {
                 if (btr.actionB() != Action.SWITCH || btr.newPokemonB() == null) {
                     throw new IllegalArgumentException("Le Pokémon de " + trainerB.getName() + " est KO, il doit choisir de le remplacer.");
                 }
@@ -56,10 +57,10 @@ public class BattleEngineImpl implements BattleEngine {
                 executeSwitch(trainerB, btr.newPokemonB(), "B", battleLogs);
             }
             
-            battle.setWaitingForTrainerToSwitch(false);
+            battle.setStatus(BattleGame.Status.WAITING_FOR_TURN);
             battleService.saveGame(battle);
             
-            return new BattleStateResponse(battle.getId(), battle.getLevel(), trainerA, trainerB, battleLogs);
+            return new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), trainerA, trainerB, battleLogs);
         }
 
         validateTrainerTurn(trainerA, btr.actionA(), btr.newPokemonA());
@@ -75,8 +76,8 @@ public class BattleEngineImpl implements BattleEngine {
         boolean aAttacks = btr.actionA() == Action.ATTACK;
         boolean bAttacks = btr.actionB() == Action.ATTACK;
 
-        activeA = trainerA.getTeam().get(trainerA.getActivePokemon());
-        activeB = trainerB.getTeam().get(trainerB.getActivePokemon());
+        activeA = trainerA.getActivePokemon() != null ? trainerA.getTeam().get(trainerA.getActivePokemon()) : null;
+        activeB = trainerB.getActivePokemon() != null ? trainerB.getTeam().get(trainerB.getActivePokemon()) : null;
 
         if (aAttacks && bAttacks) {
             if (activeA.getSPE() > activeB.getSPE()) {
@@ -96,36 +97,60 @@ public class BattleEngineImpl implements BattleEngine {
             executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A", battleLogs);
         }
 
+        if (activeA != null && activeA.getHP() <= 0) {
+            trainerA.setActivePokemon(null);
+        }
+        if (activeB != null && activeB.getHP() <= 0) {
+            trainerB.setActivePokemon(null);
+        }
+
         if (!hasAlivePokemon(trainerA)) {
-            battle.setFinished(true);
+            battle.setStatus(BattleGame.Status.FINISHED);
             List<String> defeatLogs = new ArrayList<>();
             defeatLogs.add(trainerA.getName() + " n'a plus de Pokémon en état de combattre.");
             battleLogs.add(new BattleLog(LogType.ENDGAME, "A", defeatLogs));
         }
         if (!hasAlivePokemon(trainerB)) {
-            battle.setFinished(true);
+            battle.setStatus(BattleGame.Status.FINISHED);
             List<String> defeatLogs = new ArrayList<>();
             defeatLogs.add(trainerB.getName() + " n'a plus de Pokémon en état de combattre.");
             battleLogs.add(new BattleLog(LogType.ENDGAME, "B", defeatLogs));
         }
 
         battleService.saveGame(battle);
-        return new BattleStateResponse(battle.getId(), battle.getLevel(), trainerA, trainerB, battleLogs);
+        return new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), trainerA, trainerB, battleLogs);
     }
 
+    private void validateTrainerTurn(Trainer trainer, Action action, Integer newPokemonIndex) {
+            Integer activeIndex = trainer.getActivePokemon();
+            
+            if (activeIndex == null) {
+                if (action != Action.SWITCH) {
+                    throw new IllegalArgumentException("Impossible d'attaquer, un des dresseurs doit changer de Pokémon.");
+                }
+                if (!canSwitchTo(trainer, newPokemonIndex)) {
+                    throw new IllegalArgumentException("Choix de Pokémon invalide pour le remplacement.");
+                }
+                return;
+            }
 
-    private boolean validateTrainerTurn(Trainer trainer, Action action, Integer newPokemonIndex) {
-        Pokemon activePokemon = trainer.getTeam().get(trainer.getActivePokemon());
+        Pokemon activePokemon = trainer.getTeam().get(activeIndex);
 
         if (activePokemon.getHP() <= 0) {
-            return action == Action.SWITCH && canSwitchTo(trainer, newPokemonIndex);
+            if (action != Action.SWITCH) {
+                throw new IllegalArgumentException("Impossible d'attaquer, un des dresseurs doit changer de Pokémon.");
+            }
+            if (!canSwitchTo(trainer, newPokemonIndex)) {
+                throw new IllegalArgumentException("Choix de Pokémon invalide pour le remplacement.");
+            }
+            return;
         }
 
         if (action == Action.SWITCH) {
-            return canSwitchTo(trainer, newPokemonIndex);
+            if (!canSwitchTo(trainer, newPokemonIndex)) {
+                throw new IllegalArgumentException("Choix de Pokémon invalide pour le remplacement.");
+            }
         }
-
-        return true;
     }
 
     private boolean canSwitchTo(Trainer trainer, Integer newPokemonIndex) {
@@ -152,15 +177,19 @@ public class BattleEngineImpl implements BattleEngine {
     }
 
     private void executeSwitch(Trainer trainer, int newPokemonIndex, String trainerLetter, List<BattleLog> battleLogs) {
-        if (newPokemonIndex == trainer.getActivePokemon()) {
+        Integer currentIndex = trainer.getActivePokemon();
+
+        if (currentIndex != null && newPokemonIndex == currentIndex) {
             throw new IllegalArgumentException("Impossible de changer avec le Pokémon déjà actif.");
         }
 
-        Pokemon currentPokemon = trainer.getTeam().get(trainer.getActivePokemon());
         Pokemon newPokemon = trainer.getTeam().get(newPokemonIndex);
-
         List<String> switchLogs = new ArrayList<>();
-        switchLogs.add(currentPokemon.getName() + " repose-toi !");
+        
+        if (currentIndex != null) {
+            Pokemon currentPokemon = trainer.getTeam().get(currentIndex);
+            switchLogs.add(currentPokemon.getName() + " repose-toi !");
+        }
         
         BattleLog log = new BattleLog(LogType.SWITCH, trainerLetter, switchLogs);
         log.addAnimation();
@@ -195,7 +224,11 @@ public class BattleEngineImpl implements BattleEngine {
 
         if (target.getHP() <= 0) {
             target.setHP(0);
-            battle.setWaitingForTrainerToSwitch(true);
+            if (targetLetter.equals("A")) {
+                battle.setStatus(BattleGame.Status.WAITING_FOR_A_TO_SWITCH);
+            } else {
+                battle.setStatus(BattleGame.Status.WAITING_FOR_B_TO_SWITCH);
+            }
             List<String> faintLogs = new ArrayList<>();
             faintLogs.add(target.getName() + " est KO !");
             BattleLog faintLog = new BattleLog(LogType.KO, targetLetter, faintLogs);

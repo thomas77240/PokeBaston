@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import l3miage.pokebaston.modele.Trainer;
+import l3miage.pokebaston.modele.BattleGame.Status;
 
 public record BattleStateResponse(
 		String gameId,
 		int gameLevel,
+		Status gameStatus,
 		Trainer trainerA,
 		Trainer trainerB,
 		List<BattleLog> logs) {
@@ -37,9 +39,9 @@ public record BattleStateResponse(
 			ATTACK, SWITCH, KO, ENDGAME
 		};
 
-	public BattleStateResponse(String gameId, int level, Trainer trainerA, Trainer trainerB) {
+	public BattleStateResponse(String gameId, int level, Status gameStatus, Trainer trainerA, Trainer trainerB) {
 		// On appelle le constructeur principal du record avec 'this'
 		// en lui passant une nouvelle ArrayList vide pour les logs
-		this(gameId, level, trainerA, trainerB, new ArrayList<BattleLog>());
+		this(gameId, level, gameStatus, trainerA, trainerB, new ArrayList<BattleLog>());
 	}
 }

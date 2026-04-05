@@ -42,7 +42,7 @@ public class BattleController {
         BattleGame battle = battleService.createGame(request.trainerA().name(), request.trainerA().pokemons(),
                 request.trainerB().name(), request.trainerB().pokemons(), request.level());
 
-        BattleStateResponse response = new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getTrainerA(), battle.getTrainerB());
+        BattleStateResponse response = new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), battle.getTrainerA(), battle.getTrainerB());
         return response;
     }
 
