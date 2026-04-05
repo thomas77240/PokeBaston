@@ -92,7 +92,7 @@ public class BattleServiceImpl implements BattleService {
     public BattleStateResponse gameState(String gameId) {
         BattleGame game = activeGames.get(gameId);
         if (game != null) {
-            return new BattleStateResponse(gameId, game.getLevel(), game.getTrainerA(), game.getTrainerB());
+            return new BattleStateResponse(gameId, game.getLevel(), game.getStatus(), game.getTrainerA(), game.getTrainerB());
         }
         return null;
     }
