@@ -6,25 +6,42 @@ public class BattleGame {
     private final String id;
     private final Trainer trainerA;
     private final Trainer trainerB;
-    private boolean isWaitingForTrainerToSwitch;
-    private boolean isFinished;
     private int level;
+    private Status status;
+
+    public enum Status {
+        WAITING_FOR_TURN,
+        WAITING_FOR_A_TO_SWITCH,
+        WAITING_FOR_B_TO_SWITCH,
+        FINISHED
+    }
 
     public BattleGame(Trainer trainerA, Trainer trainerB, int level) {
         this.id = UUID.randomUUID().toString();
         this.trainerA = trainerA;
         this.trainerB = trainerB;
-        this.isWaitingForTrainerToSwitch = false;
-        this.isFinished = false;
+        this.status = Status.WAITING_FOR_TURN;
         this.level = level;
     }
 
     public boolean isWaitingForTrainerToSwitch() {
-        return isWaitingForTrainerToSwitch;
+        return status == Status.WAITING_FOR_A_TO_SWITCH || status == Status.WAITING_FOR_B_TO_SWITCH;
     }
 
     public void setWaitingForTrainerToSwitch(boolean isWaitingForTrainerToSwitch) {
-        this.isWaitingForTrainerToSwitch = isWaitingForTrainerToSwitch;
+        if (isWaitingForTrainerToSwitch) {
+            this.status = Status.WAITING_FOR_A_TO_SWITCH;
+        } else {
+            this.status = Status.WAITING_FOR_TURN;
+        }
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public int getLevel() {
@@ -48,15 +65,17 @@ public class BattleGame {
     }
 
     public boolean isFinished() {
-        return isFinished;
+        return status == Status.FINISHED;
     }
 
     public void setFinished(boolean isFinished) {
-        this.isFinished = isFinished;
+        if (isFinished) {
+            this.status = Status.FINISHED;
+        }
     }
 
     public String toString() {
-        return "BattleGame [id=" + id + ", level=" + level + ", trainerA=" + trainerA.getName() + ", trainerB=" + trainerB.getName()
-                + ", isFinished=" + isFinished + ", isWaitingForTrainerToSwitch=" + isWaitingForTrainerToSwitch + "]";
+        return "BattleGame [id=" + id + ", level=" + level + ", trainerA=" + trainerA.getName() 
+                + ", trainerB=" + trainerB.getName() + ", status=" + status + "]";
     }
 }
