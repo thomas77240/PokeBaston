@@ -18,3 +18,20 @@ jobs:
             cache: maven
         - name: Build and Test
           run: mvn test
+
+
+      build-frontend:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20' # Version LTS recommandée
+            cache: 'npm'
+            cache-dependency-path: ./package-lock.json
+        - name: Install Dependencies
+          run: npm install
+        - name: Run Vitest
+      # On lance les tests du dossier frontend depuis la racine
+          run: npm test -- run
