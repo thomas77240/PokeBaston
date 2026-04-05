@@ -14,11 +14,13 @@ public record BattleStateResponse(
 
 		public record BattleLog(
 			LogType type,
+			String trainer,
 			List<String> logs	
 		) {
 
-			public BattleLog(LogType type, List<String> logs) {
+			public BattleLog(LogType type, String trainer, List<String> logs) {
 				this.type = type;
+				this.trainer = trainer;
 				this.logs = logs;
 			}
 
@@ -32,7 +34,7 @@ public record BattleStateResponse(
 		}
 
 		public enum LogType {
-			ATTACK, SWITCH, KO
+			ATTACK, SWITCH, KO, ENDGAME
 		};
 
 	public BattleStateResponse(String gameId, int level, Trainer trainerA, Trainer trainerB) {
