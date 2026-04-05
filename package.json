@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "concurrently -n \"BACK,FRONT\" -c \"blue,green\" \".\\mvnw spring-boot:run\" \"cd frontend && npm run dev\"",
     "build": ".\\mvnw clean package -DskipTests",
-    "start": "java -jar target/app.jar --spring.profiles.active=prod"
+    "start": "java -jar target/app.jar --spring.profiles.active=prod",
+    "test":  "vitest",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
