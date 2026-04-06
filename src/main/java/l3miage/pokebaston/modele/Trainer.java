@@ -5,9 +5,9 @@ import java.util.List;
 public class Trainer {
     private String name;
     private List<Pokemon> team;
-    private int activePokemon;
+    private Integer activePokemon;
 
-    public Trainer(String name, List<Pokemon> team, int activePokemon) {
+    public Trainer(String name, List<Pokemon> team, Integer activePokemon) {
         this.name = name;
         this.team = team;
         this.activePokemon = activePokemon;
@@ -29,11 +29,11 @@ public class Trainer {
         this.team = team;
     }
 
-    public int getActivePokemon() {
+    public Integer getActivePokemon() {
         return activePokemon;
     }
 
-    public void setActivePokemon(int activePokemon) {
+    public void setActivePokemon(Integer activePokemon) {
         this.activePokemon = activePokemon;
     }
 
