@@ -10,6 +10,7 @@
 - **[INSTALLATION](docs/INSTALLATION.md)** - Instructions détaillées sur l'installation
 - **[USER STORIES](docs/USERSTORIES.md)** - Description des User Stories
 - **[CONVENTION COMMITS](docs/CONVENTION.md)** - Notre convention de commits utilisé
+- **[CAHIER DE TESTS](docs/TESTS.md)** - Cahier de tests
 - **[RAPPORT](docs/docs/RAPPORT.md)** - Rapport de fin de projet 
 
 ---
