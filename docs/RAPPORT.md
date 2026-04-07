@@ -73,10 +73,11 @@ En concevant le simulateur, nous avons réalisé qu'un jeu d'apparence simple co
 Le but était d'aider Mike, Rayen et Doryan en leur évitant de se poser des questions sur "comment doit réagir le jeu" pendant qu'ils codaient. Par exemple, en définissant précisément les priorité d'attaque ou la gestion des KO, ils ont pu se concentrer sur le code sans ambiguïté. 
 Ce module m’a vraiment montré qu’une bonne préparation des besoins (le "quoi") est la clé pour réussir un développement (le "comment"). J’ai aussi appris à gérer les priorités : décider de retirer le système d'objets a été difficile, mais nécessaire pour garantir un rendu stable et fonctionnel dans les temps. 
 
-* **Doryan :**  
+* **Doryan :**  Sur ce projet j'ai pu monter en competence sur les tests, et aussi sur le developpement en React et Java par le biais de l'analyse du code. De plus il etait important de mettre en place une automatisation des tests afin de voir si les evolutions/ajouts de features n'allait pas casser le code. la partie la plus interessante a ce niveau etait les changement architecturaux mis en place afin d'integrer les tests dans le projet. 
 
-* **Rayen :**  
+* **Rayen :** Ce projet m'a beaucoup aidé sur le travail au sein d'une équipe de plusieurs devs donc améliorer mon utilisation de git / GitHub, car jusqu'à présent je n'ai pas eu l'occasion de travailler dans une équipe de plus de 2 personnes. En ce qui concerne le module je le trouve assez complet et sur des thématiques intérressantes (pas le markdown... mais ca reste important à connaitre). Très satisfait.
 
-* **Thibault :**  
+* **Thibault :**  Grace à ce projet j'ai beaucoup appris sur le déroulement de projets de programmation, travailler sur les user stories et le pilotage du projet m'aidera dans les futures missions. Travailler avec une équipe transverse comprenant plusieurs roles définis était également une nouvelle étape et aider à fluidifier la communication entre les équipes. J'ai aussi pu profiter de certains principes de projet vu en cours pour éviter des erreurs dues au manque d'anticipation.
 
-* **Mike :**
+* **Mike :** j'ai pu monter en compétences en Java, notamment avec des technologies comme Spring. J'ai également beaucoup gagné en expérience sur l'utilisation de Git, ce module m'a rendu capable de réaliser des projets collaboratifs de grande ampleur. Occuper un poste à responsabilité dans ce projet me donne désormais une réelle capacité de leadership, pas seulement dans les projets informatiques mais aussi dans la vie en général. 
+Coté organisation, j'ai appris à travailler en collaboration avec plusieurs personnes suivant un rapport entre dev front et dev backend.
