@@ -165,7 +165,6 @@ const CreateGameLayout = () => {
 		});
 		if (request.ok) {
 			const data = await request.json();
-			console.log('Partie créée :', data);
 			navigate(`/game/${data.gameId}`);
 
 		} else {

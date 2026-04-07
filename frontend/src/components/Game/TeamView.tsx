@@ -5,40 +5,40 @@ import { TypeColoredItem } from '../ui/TypeColoredItem';
 import { PokemonUtils } from '@/utils/pokemon.utils';
 
 interface TeamViewProps {
-    goBack: () => void;
+    goBack?: () => void;
     trainerKey: 'A' | 'B';
     activePokemon: GamePokemon | null;
 }
 
 const TeamView = ({ goBack, trainerKey, activePokemon }: TeamViewProps) => {
-    const { registerChoice, getTrainer } = useGameStore();
+    const { registerChoice, getTrainer, getWaitingForReplacement } = useGameStore();
     const trainer = getTrainer(trainerKey);
 
     const selectPokemon = (pokemonId: number) => {
         registerChoice(trainerKey, { type: 'SWITCH', pokemonId });
         setTimeout(() => {
-            goBack();
+            goBack?.();
         }, 200);
     };
 
     return (
         <div className="h-full w-full flex flex-col">
-            <ConfigHeader title={`Équipe`} backButtonAction={goBack} className="px-6!" />
+            <ConfigHeader title={`Équipe`} backButtonAction={getWaitingForReplacement() === trainerKey ? undefined : goBack} className="px-6!" />
 
             <div className="p-6 flex-1 overflow-y-auto">
                 <h2 className="text-2xl font-title font-bold text-neutral-800 text-center mb-8">
-                    Qui envoyer au combat ?
+                    {getWaitingForReplacement() === trainerKey ? 'Quel Pokémon envoyer au combat ?' : 'Votre équipe'}
                 </h2>
 
                 {/* Container empilé (Liste verticale) */}
                 <div className="flex flex-col gap-3">
                     {trainer?.team?.map((pokemon, index) => {
                         const isActive = pokemon.id === activePokemon?.id;
-                        const isFainted = pokemon.HP <= 0;
+                        const isFainted = pokemon.hp <= 0;
                         const isDisabled = isActive || isFainted;
 
                         // Calcul pour la barre de vie
-                        const hpPercentage = Math.max(0, Math.min(100, (pokemon.HP / pokemon.maxHP) * 100));
+                        const hpPercentage = Math.max(0, Math.min(100, (pokemon.hp / pokemon.baseStats.HP) * 100));
                         const hpColorClass = hpPercentage > 50
                             ? 'bg-green-500'
                             : hpPercentage > 20
@@ -96,7 +96,7 @@ const TeamView = ({ goBack, trainerKey, activePokemon }: TeamViewProps) => {
                                     <div className="flex justify-between items-end px-0.5 mb-0.5">
                                         <span className="text-[9px] font-bold text-neutral-500 uppercase">PV</span>
                                         <span className={`text-[11px] font-bold leading-none ${isFainted ? 'text-red-500' : 'text-neutral-700'}`}>
-                                            {pokemon.HP}/{pokemon.maxHP}
+                                            {pokemon.hp}/{pokemon.baseStats.HP}
                                         </span>
                                     </div>
                                     <div className="w-full bg-background-300 rounded-full h-2 border border-background-400 overflow-hidden">

@@ -7,10 +7,8 @@ interface ActivePokemonStatusCardProps {
 }
 
 const ActivePokemonStatusCard = ({ pokemon }: ActivePokemonStatusCardProps) => {
-	// const maxHP = pokemon.maxHP || 250;
-	const hpPercentage = Math.max(0, Math.min(100, (pokemon.HP / pokemon.maxHP) * 100));
-    const { level, phase } = useGameStore();
-	// Détermination de la couleur de la barre de PV (standard Pokémon)
+	const hpPercentage = Math.max(0, Math.min(100, (pokemon.hp / pokemon.baseStats.HP) * 100));
+    const { gameLevel, phase } = useGameStore();
 	const getHealthColor = () => {
 		if (hpPercentage > 50) return 'bg-green-500';
 		if (hpPercentage > 20) return 'bg-yellow-500';
@@ -21,7 +19,7 @@ const ActivePokemonStatusCard = ({ pokemon }: ActivePokemonStatusCardProps) => {
 		<div className={`bg-background-400 border-background-600 border-b-4 border-r-4 p-4 rounded-2xl shadow-xl w-full min-w-xs scale-95 ${phase === 'ANIMATING_RESULTS' ? 'scale-100' : ''}`}>
 			<div className="flex justify-between items-center mb-2">
 				<h2 className="text-2xl font-title font-bold text-neutral-800 capitalize">{pokemon.name}</h2>
-				<span className="font-main text-neutral-500 text-sm font-bold">Lvl {level || 50}</span>
+				<span className="font-main text-neutral-500 text-sm font-bold">Lvl {gameLevel}</span>
 			</div>
 
 			{/* Conteneur de la barre de vie */}
@@ -47,8 +45,8 @@ const ActivePokemonStatusCard = ({ pokemon }: ActivePokemonStatusCardProps) => {
 					))}
 				</div>
 				<p className="text-neutral-600 text-sm">
-					<span className="font-bold text-neutral-900">{pokemon.HP}</span>
-					<span className="text-neutral-400"> / {pokemon.maxHP} HP</span>
+					<span className="font-bold text-neutral-900">{pokemon.hp}</span>
+					<span className="text-neutral-400"> / {pokemon.baseStats.HP} HP</span>
 				</p>
 			</div>
 		</div>

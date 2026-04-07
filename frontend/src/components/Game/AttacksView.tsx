@@ -25,7 +25,6 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 	};
 
 	const overviewAttack = (move: GamePokemon['moves'][0]) => {
-		console.log('Overviewing move:', move);
 		if (currentOverviewedMove?.name === move.name) {
 			setCurrentOverviewedMove(null);
 		} else {
@@ -49,7 +48,7 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 							onMouseEnter={() => overviewAttack(move)}
 							onMouseLeave={() => setCurrentOverviewedMove(null)}
 							key={move.name}
-							className="bg-background-100 border-background-600 border-2 active:scale-95 transition-all shadow rounded-2xl p-4 flex items-center justify-between gap-2 cursor-pointer"
+							className="bg-background-100 border-background-600 py-6 border-2 active:scale-95 transition-all shadow rounded-2xl p-4 flex items-center justify-between gap-2 cursor-pointer"
 						>
 							<h3 className="font-title font-bold text-lg text-neutral-800 leading-tight">{move.name}</h3>
 							<TypeColoredItem
@@ -77,7 +76,7 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 									<TypeColoredItem
 										as="span"
 										pokemonType={currentOverviewedMove.type}
-										className="inline-flex px-3 py-0.5 bg-type rounded-full text-[10px] font-bold uppercase tracking-widest text-white shadow-sm justify-center items-center"
+										className="inline-flex px-3 py-0.5 bg-type rounded-sm text-[10px] font-bold uppercase tracking-widest text-white shadow-sm justify-center items-center"
 									>
 										{currentOverviewedMove.type}
 									</TypeColoredItem>
@@ -101,13 +100,10 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 							</div>
 
 							{/* Affichage des PP en haut à droite */}
-							<div className="flex flex-col min-w-15 px-2 bg-background-50 rounded-xl border-2 border-background-200 border-b-4">
-								<span className="flex items-center justify-center gap-1 text-md font-main text-neutral-500 uppercase font-bold tracking-tighter mb-0.5">
-									<Repeat size={14} /> PP
-								</span>
-								<span className="text-lg font-title font-black text-neutral-800 text-center leading-none">
-									{currentOverviewedMove.PP}
-								</span>
+							<div className="flex min-w-15 px-2 bg-background-50 rounded-xl border-2 border-background-200 border-b-4">
+								<div className="flex items-center justify-center gap-1 text-md font-main text-neutral-500 uppercase font-bold tracking-tighter whitespace-nowrap mb-0.5">
+									<Repeat size={14} /> {currentOverviewedMove.powerPoints} PP
+								</div>
 							</div>
 						</div>
 
