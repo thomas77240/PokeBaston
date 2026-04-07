@@ -44,7 +44,7 @@ public class BattleServiceImpl implements BattleService {
         List<Pokemon> pokemonsB = new ArrayList<Pokemon>();
 
         for (PokemonId pokemonId : teamB) {
-            
+
             Pokemon pokemon = new Pokemon(pokemonService.getPokemonById(pokemonId.id()), level);
 
             List<Move> moves = new ArrayList<Move>();
@@ -55,7 +55,6 @@ public class BattleServiceImpl implements BattleService {
             pokemon.setMoves(moves);
             pokemonsB.add(pokemon);
         }
-
 
         Trainer trainerA = new Trainer(nameA, pokemonsA, 0);
         Trainer trainerB = new Trainer(nameB, pokemonsB, 0);
@@ -82,8 +81,9 @@ public class BattleServiceImpl implements BattleService {
 
         List<BattleActiveGamesResponse.ActiveGameInfo> activeGameInfos = new ArrayList<>();
         activeGames.forEach((id, game) -> {
-            
-            activeGameInfos.add(new BattleActiveGamesResponse.ActiveGameInfo(id, game.getLevel(), game.getTrainerA().getName(), game.getTrainerB().getName()));
+
+            activeGameInfos.add(new BattleActiveGamesResponse.ActiveGameInfo(id, game.getLevel(),
+                    game.getTrainerA().getName(), game.getTrainerB().getName()));
         });
 
         return new BattleActiveGamesResponse(activeGameInfos);
@@ -92,7 +92,12 @@ public class BattleServiceImpl implements BattleService {
     public BattleStateResponse gameState(String gameId) {
         BattleGame game = activeGames.get(gameId);
         if (game != null) {
-            return new BattleStateResponse(gameId, game.getLevel(), game.getStatus(), game.getTrainerA(), game.getTrainerB());
+            if (game.getStatus() == BattleGame.Status.FINISHED) {
+                return new BattleStateResponse(gameId, game.getLevel(), game.getStatus(), game.getTrainerA(),
+                        game.getTrainerB(), new ArrayList<BattleStateResponse.BattleLog>(), game.getWinner());
+            }
+            return new BattleStateResponse(gameId, game.getLevel(), game.getStatus(), game.getTrainerA(),
+                    game.getTrainerB());
         }
         return null;
     }

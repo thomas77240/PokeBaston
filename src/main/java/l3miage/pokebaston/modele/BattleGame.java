@@ -8,6 +8,7 @@ public class BattleGame {
     private final Trainer trainerB;
     private int level;
     private Status status;
+    private String winner;
 
     public enum Status {
         WAITING_FOR_TURN,
@@ -74,8 +75,16 @@ public class BattleGame {
         }
     }
 
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+
     public String toString() {
-        return "BattleGame [id=" + id + ", level=" + level + ", trainerA=" + trainerA.getName() 
+        return "BattleGame [id=" + id + ", level=" + level + ", trainerA=" + trainerA.getName()
                 + ", trainerB=" + trainerB.getName() + ", status=" + status + "]";
     }
 }
