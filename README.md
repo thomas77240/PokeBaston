@@ -52,3 +52,76 @@ Un objet se définit par :
 * **Nom**
 * **Effet**
 * **Puissance**
+
+---
+
+## 🛠️ Architecture technique
+
+### Structure du backend (Java / Spring Boot)
+- **Architecture en couches** :
+  - `controllers/` : Expose les endpoints REST (API pokémons, moteur de combat, test)
+  - `service/` : Logique métier (moteur de combat, gestion des pokémons)
+  - `repositories/` : Accès aux données (chargement du pokédex depuis un fichier JSON)
+  - `modele/` : Modèles métiers (Pokémon, Attaque, Objet)
+  - `dto/` : Objets de transfert pour l'API
+  - `exceptions/` : Gestion centralisée des erreurs (404, erreurs serveur)
+- **Swagger / OpenAPI** : Documentation interactive de l’API accessible en dev (`/docs`)
+- **Données** :
+  - Les pokémons sont chargés depuis `src/main/resources/data/pokemons.json` au démarrage
+  - Pas de base de données relationnelle, persistance en mémoire
+
+### Structure du frontend (React + Vite)
+- **Frontend** dans le dossier `frontend/` (TypeScript, React, Vite)
+- Buildé et servi automatiquement par le backend Spring Boot (copie dans `static/`)
+
+---
+
+## 📦 Dépendances principales (backend)
+
+| Dépendance | Version | Rôle |
+|---|---|---|
+| spring-boot-starter-webmvc | 4.0.3 | Serveur web, endpoints REST |
+| springdoc-openapi-starter-webmvc-ui | 2.8.5 | Documentation Swagger/OpenAPI |
+| frontend-maven-plugin | 1.15.4 | Build et intégration du frontend |
+| jackson-databind | - | Sérialisation JSON |
+
+---
+
+## ⚙️ Configuration
+
+- **application.properties** :
+```properties
+spring.application.name=pokebaston
+springdoc.swagger-ui.path=/docs
+spring.profiles.active=dev
+```
+- **Données** : `src/main/resources/data/pokemons.json`
+- **Swagger** : http://localhost:8080/docs (profil non-prod)
+
+---
+
+## 🌐 API REST (extraits)
+
+| Méthode | Route | Description |
+|---|---|---|
+| GET | /api/pokemons | Liste tous les pokémons |
+| GET | /api/pokemons/{id} | Détail d’un pokémon |
+| GET | /api/pokemons/search?type={type} | Recherche par type |
+| POST | /api/battle/turn | Calcul d’un tour de combat |
+| GET | /api/test | Endpoint de test |
+
+---
+
+## 🔒 Gestion des erreurs
+- **404** : Pokémon non trouvé → message explicite
+- **500** : Erreur serveur → message générique
+- Gestion centralisée via `GlobalExceptionHandler`
+
+---
+
+## 🧩 Bonnes pratiques & évolutions possibles
+- **Découplage** : Respect du pattern Controller/Service/Repository
+- **Extensibilité** : Ajout facile de nouveaux types de données ou endpoints
+- **Sécurité** : (non implémentée) Peut être ajoutée via Spring Security
+- **Persistance** : Passage possible à une base de données relationnelle (Spring Data JPA)
+- **Tests** : Couverture unitaire et d’intégration possible via JUnit/Spring Test
