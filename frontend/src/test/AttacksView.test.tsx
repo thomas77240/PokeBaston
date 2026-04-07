@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
-import * as React from 'react'; 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 import AttacksView from '@/components/Game/AttacksView'; 

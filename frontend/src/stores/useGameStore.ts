@@ -19,6 +19,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
 	trainerB: null,
 	winner: undefined,
 	isLoading: true,
+	attacking: null,
+	takingDamage: null,
 
 	initGame: async (id) => {
 		set({ gameId: id, isLoading: true });
@@ -36,7 +38,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
 			await wait(1000);
 			if (result.gameStatus !== 'FINISHED') {
-				set({winner: result.trainerA.activePokemon === null  ? result.trainerA : result.trainerB});
+				set({ winner: result.trainerA.activePokemon === null ? result.trainerA : result.trainerB });
 			}
 			console.log(get().winner);
 			set({
@@ -49,7 +51,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
 				currentLog: undefined,
 				winner: result.winner === 'A' ? result.trainerA : result.winner === 'B' ? result.trainerB : undefined,
 			});
-
 
 			wait(500).then(() => set({ isLoading: false }));
 		} catch (error) {
@@ -162,8 +163,16 @@ export const useGameStore = create<GameStore>((set, get) => ({
 									: null,
 							}));
 							continue;
-						case 'ATTACK':
-							await wait(2000); // Simule la durée de l'animation
+						case 'ATTACK': {
+							const attacker = trainerKey === 'trainerA' ? 'A' : 'B';
+							const defender = trainerKey === 'trainerA' ? 'B' : 'A';
+
+							set({ attacking: attacker });
+							await wait(400); // Durée du dash
+
+							set({ attacking: null, takingDamage: defender });
+							await wait(400); // Durée du clignotement rouge
+
 							set((state) => {
 								const trainer = state[opponentKey];
 								if (!trainer) return {};
@@ -180,7 +189,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
 									},
 								};
 							});
+
+							await wait(1000);
+							set({ takingDamage: null });
 							continue;
+						}
 						case 'KO':
 							await wait(2000);
 							set((state) => ({

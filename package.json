@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently -n \"BACK,FRONT\" -c \"blue,green\" \".\\mvnw spring-boot:run\" \"cd frontend && npm run dev\"",
-    "build": ".\\mvnw clean package -DskipTests",
-    "start": "java -jar target/app.jar --spring.profiles.active=prod",
+    "dev": "concurrently -n \"BACK,FRONT\" -c \"blue,green\" \"mvnw spring-boot:run || ./mvnw spring-boot:run\" \"cd frontend && vite --host\"",
+    "build": "mvnw clean package -DskipTests || ./mvnw clean package -DskipTests",
+    "start": "java -jar target/pokebaston-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod",
     "test": "vitest",
     "lint": "eslint ."
   },

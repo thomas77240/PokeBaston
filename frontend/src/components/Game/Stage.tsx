@@ -7,7 +7,7 @@ import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import TypewriterText from '../ui/TypewriterText';
 
 const Stage = () => {
-    const { trainerA, trainerB, phase, currentLog } = useGameStore();
+    const { trainerA, trainerB, phase, currentLog, attacking, takingDamage } = useGameStore();
 
     const activePokemonA = trainerA?.activePokemon !== undefined && trainerA?.activePokemon !== null
         ? trainerA.team[trainerA.activePokemon]
@@ -17,38 +17,62 @@ const Stage = () => {
         ? trainerB.team[trainerB.activePokemon]
         : null;
 
+    // Définition des animations physiques
     const spriteVariants: Record<'A' | 'B', Variants> = {
         A: {
-            initial: { scale: 0, opacity: 0, x: -50 },
-            animate: { scale: 1, opacity: 1, x: 0, transition: { type: 'spring', bounce: 0.4, duration: 0.6 } },
+            initial: { scale: 0, opacity: 0, x: -50, y: 0 },
+            idle: { scale: 1, opacity: 1, x: 0, y: 0, filter: 'brightness(1) sepia(0) hue-rotate(0deg) saturate(1)', transition: { type: 'spring', bounce: 0.4, duration: 0.6 } },
+            attack: { x: [0, 60, 0], y: [0, -40, 0], transition: { duration: 0.4, ease: "easeInOut" } },
+            hurt: {
+                opacity: [1, 0.3, 1, 0.3, 1],
+                x: [0, -10, 10, -10, 10, 0],
+                filter: [
+                    'brightness(1) sepia(0) hue-rotate(0deg) saturate(1)',
+                    'brightness(0.5) sepia(1) hue-rotate(315deg) saturate(5)',
+                    'brightness(1) sepia(0) hue-rotate(0deg) saturate(1)'
+                ],
+                transition: { duration: 0.5 }
+            },
             exit: { scale: 0, opacity: 0, x: -50, transition: { duration: 0.3 } },
         },
         B: {
-            initial: { scale: 0, opacity: 0, x: 50 },
-            animate: { scale: 1, opacity: 1, x: 0, transition: { type: 'spring', bounce: 0.4, duration: 0.6 } },
+            initial: { scale: 0, opacity: 0, x: 50, y: 0 },
+            idle: { scale: 1, opacity: 1, x: 0, y: 0, filter: 'brightness(1) sepia(0) hue-rotate(0deg) saturate(1)', transition: { type: 'spring', bounce: 0.4, duration: 0.6 } },
+            attack: { x: [0, -60, 0], y: [0, 40, 0], transition: { duration: 0.4, ease: "easeInOut" } },
+            hurt: {
+                opacity: [1, 0.3, 1, 0.3, 1],
+                x: [0, 10, -10, 10, -10, 0],
+                filter: [
+                    'brightness(1) sepia(0) hue-rotate(0deg) saturate(1)',
+                    'brightness(0.5) sepia(1) hue-rotate(315deg) saturate(5)',
+                    'brightness(1) sepia(0) hue-rotate(0deg) saturate(1)'
+                ],
+                transition: { duration: 0.5 }
+            },
             exit: { scale: 0, opacity: 0, x: 50, transition: { duration: 0.3 } },
         },
     };
 
+    // Helper pour générer le tableau des états d'animation en cours
+    const getAnimationState = (player: 'A' | 'B') => {
+        const states = ['idle'];
+        if (attacking === player) states.push('attack');
+        if (takingDamage === player) states.push('hurt');
+        return states;
+    };
+
     return (
         <div className="w-full h-full bg-neutral-900 flex flex-col items-center">
-
             <div className="w-full flex-1 flex flex-col justify-start items-center overflow-hidden bg-black relative">
-
                 <div className="relative w-full aspect-video max-w-[calc((100vh-120px)*16/9)] shadow-2xl">
 
                     {/* Image de fond */}
                     <div className="absolute inset-0 h-full w-full">
-                        <img
-                            src={stage}
-                            alt="Stage"
-                            className="w-full h-full object-cover"
-                        />
+                        <img src={stage} alt="Stage" className="w-full h-full object-cover" />
                     </div>
 
                     <div className="absolute inset-0 h-full w-full z-10">
-
-                        {/* --- POKEMON JOUEUR A (En bas à gauche) --- */}
+                        {/* --- POKEMON JOUEUR A --- */}
                         <div className="absolute bottom-[10%] left-[15%] flex items-end justify-center">
                             <AnimatePresence mode="wait">
                                 {activePokemonA && (
@@ -56,7 +80,7 @@ const Stage = () => {
                                         key={`A-${activePokemonA.id}`}
                                         variants={spriteVariants.A}
                                         initial="initial"
-                                        animate="animate"
+                                        animate={getAnimationState('A')}
                                         exit="exit"
                                         src={PokemonUtils.getBackSprite(activePokemonA)}
                                         alt={activePokemonA.name}
@@ -73,7 +97,7 @@ const Stage = () => {
                             </div>
                         )}
 
-                        {/* --- POKEMON JOUEUR B (En haut à droite) --- */}
+                        {/* --- POKEMON JOUEUR B --- */}
                         <div className="absolute bottom-[40%] left-[70%] flex items-end justify-center">
                             <AnimatePresence mode="wait">
                                 {activePokemonB && (
@@ -81,7 +105,7 @@ const Stage = () => {
                                         key={`B-${activePokemonB.id}`}
                                         variants={spriteVariants.B}
                                         initial="initial"
-                                        animate="animate"
+                                        animate={getAnimationState('B')}
                                         exit="exit"
                                         src={PokemonUtils.getSprite(activePokemonB)}
                                         alt={activePokemonB.name}
@@ -97,12 +121,11 @@ const Stage = () => {
                                 <ActivePokemonStatusCard pokemon={activePokemonB} />
                             </div>
                         )}
-
                     </div>
                 </div>
             </div>
 
-            {/* 2. LA ZONE DE LOGS : shrink-0 pour garantir qu'elle ne se fait jamais écraser */}
+            {/* ZONE DE LOGS */}
             <div className="w-full shrink-0 min-h-30 px-4 py-4 flex flex-col justify-center items-center bg-black text-white">
                 <div
                     className={`
