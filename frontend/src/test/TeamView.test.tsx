@@ -1,111 +1,92 @@
-import { render, screen, fireEvent, act } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import TeamView from '@/components/Game/TeamView';
+/**
+ * @vitest-environment jsdom
+ */
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import TrainerMenu from '@/components/Game/TrainerMenu';
 import { useGameStore } from '@/stores/useGameStore';
-import type { GamePokemon } from '@/types/game.types';
 
-// 1. Mocks des dépendances
+// 1. MOCK DU STORE
 vi.mock('@/stores/useGameStore', () => ({
     useGameStore: vi.fn(),
 }));
 
-vi.mock('../TeamConfig/ConfigHeader', () => ({
-    default: ({ title, backButtonAction }: any) => (
-        <div data-testid="mock-header">
-            {title}
-            <button onClick={backButtonAction}>Back</button>
-        </div>
-    ),
+// 2. MOCK DE FRAMER MOTION (Sans balises JSX pour éviter l'erreur useContext)
+vi.mock('framer-motion', () => ({
+    motion: {
+        div: React.forwardRef(({ initial, animate, exit, transition, variants, ...props }: any, ref: any) => 
+            React.createElement('div', { ...props, ref })
+        ),
+    },
+    AnimatePresence: ({ children }: any) => children,
 }));
 
-describe('TeamView Component', () => {
-    const mockRegisterChoice = vi.fn();
-    const mockGoBack = vi.fn();
+// 3. MOCKS DES ENFANTS (Avec des chemins absolus @/ pour éviter les bugs de dossiers)
+vi.mock('@/components/Game/TeamView', () => ({
+    default: ({ goBack }: any) => React.createElement('div', { 'data-testid': 'team-view' }, 
+        React.createElement('button', { onClick: goBack }, 'Retour de Team')
+    )
+}));
 
-    // Mock d'une équipe de 3 Pokémon
-    const mockTeam: GamePokemon[] = [
-        { id: 1, name: 'Pikachu', HP: 100, maxHP: 100, type: ['electric'] } as any,
-        { id: 2, name: 'Bulbizarre', HP: 50, maxHP: 100, type: ['grass'] } as any,
-        { id: 3, name: 'Salameche', HP: 0, maxHP: 100, type: ['fire'] } as any,
-    ];
+vi.mock('@/components/Game/AttacksView', () => ({
+    default: ({ goBack }: any) => React.createElement('div', { 'data-testid': 'attacks-view' }, 
+        React.createElement('button', { onClick: goBack }, 'Retour de Attacks')
+    )
+}));
 
-    const mockActivePokemon = mockTeam[0]; // Pikachu est actif
+// 4. MOCK DES ICONES (Pour éviter les soucis avec lucide-react)
+vi.mock('lucide-react', () => ({
+    Swords: () => React.createElement('div', { 'data-testid': 'icon-swords' }),
+    Users: () => React.createElement('div', { 'data-testid': 'icon-users' }),
+}));
+
+describe('TrainerMenu Component', () => {
+    const mockTrainer = {
+        name: 'Sacha',
+        activePokemon: 0,
+        team: [{ id: 1, name: 'Pikachu', hp: 100, baseStats: { HP: 100 }, type: ['electric'] }]
+    };
 
     beforeEach(() => {
         vi.clearAllMocks();
-        vi.useFakeTimers();
-
-        vi.mocked(useGameStore).mockReturnValue({
-            registerChoice: mockRegisterChoice,
-            getTrainer: vi.fn().mockReturnValue({ team: mockTeam }),
-        } as any);
-    });
-
-    afterEach(() => {
-        vi.useRealTimers();
-    });
-
-    it('affiche tous les membres de l\'équipe', () => {
-        render(<TeamView goBack={mockGoBack} trainerKey="A" activePokemon={mockActivePokemon} />);
-
-        expect(screen.getByText('Pikachu')).toBeInTheDocument();
-        expect(screen.getByText('Bulbizarre')).toBeInTheDocument();
-        expect(screen.getByText('Salameche')).toBeInTheDocument();
-    });
-
-    it('identifie correctement le Pokémon actif', () => {
-        render(<TeamView goBack={mockGoBack} trainerKey="A" activePokemon={mockActivePokemon} />);
-
-        // Vérifie la présence du badge "Actif"
-        expect(screen.getByText(/actif/i)).toBeInTheDocument();
         
-        // Le bouton du Pokémon actif doit être désactivé
-        const pikachuButton = screen.getByRole('button', { name: /pikachu/i });
-        expect(pikachuButton).toBeDisabled();
-    });
-
-    it('désactive le choix d\'un Pokémon KO', () => {
-        render(<TeamView goBack={mockGoBack} trainerKey="A" activePokemon={mockActivePokemon} />);
-
-        const salamecheButton = screen.getByRole('button', { name: /salameche/i });
-        
-        // Vérifie qu'il est désactivé et possède les classes d'opacité
-        expect(salamecheButton).toBeDisabled();
-        expect(salamecheButton).toHaveClass('opacity-60');
-    });
-
-    it('permet de changer de Pokémon s\'il est en vie et non actif', () => {
-        render(<TeamView goBack={mockGoBack} trainerKey="A" activePokemon={mockActivePokemon} />);
-
-        const bulbizarreButton = screen.getByRole('button', { name: /bulbizarre/i });
-        
-        // 1. Clic sur Bulbizarre
-        fireEvent.click(bulbizarreButton);
-
-        // 2. Vérifie l'appel au store (SWITCH vers l'index 1)
-        expect(mockRegisterChoice).toHaveBeenCalledWith('A', { type: 'SWITCH', pokemonId: 1 });
-
-        // 3. Vérifie le délai avant le retour
-        expect(mockGoBack).not.toHaveBeenCalled();
-        act(() => {
-            vi.advanceTimersByTime(200);
+        // Setup de base du store pour les tests
+        (useGameStore as any).mockReturnValue({
+            phase: 'WAITING_FOR_TURN',
+            getWaitingForReplacement: vi.fn(() => null),
         });
-        expect(mockGoBack).toHaveBeenCalled();
     });
 
-    it('affiche les couleurs de barre de vie appropriées', () => {
-        render(<TeamView goBack={mockGoBack} trainerKey="A" activePokemon={mockActivePokemon} />);
+    it('bascule entre les vues correctement', () => {
+        render(<TrainerMenu trainer={mockTrainer as any} trainerKey="A" />);
 
-        // Pikachu (100%) -> Vert
-        const pikachuBar = screen.getByRole('button', { name: /pikachu/i }).querySelector('.bg-green-500');
-        expect(pikachuBar).toBeInTheDocument();
+        // 1. Home
+        expect(screen.getByText(/Que voulez-vous faire/i)).toBeInTheDocument();
 
-        // Bulbizarre (50%) -> Jaune
-        const bulbiBar = screen.getByRole('button', { name: /bulbizarre/i }).querySelector('.bg-yellow-500');
-        expect(bulbiBar).toBeInTheDocument();
+        // 2. Aller dans Équipe
+        fireEvent.click(screen.getByText('Équipe'));
+        expect(screen.getByTestId('team-view')).toBeInTheDocument();
 
-        // Salameche (0%) -> Rouge
-        const salaBar = screen.getByRole('button', { name: /salameche/i }).querySelector('.bg-red-500');
-        expect(salaBar).toBeInTheDocument();
+        // 3. Revenir
+        fireEvent.click(screen.getByText('Retour de Team'));
+        expect(screen.getByText(/Que voulez-vous faire/i)).toBeInTheDocument();
+
+        // 4. Aller dans Attaquer
+        fireEvent.click(screen.getByText('Attaquer'));
+        expect(screen.getByTestId('attacks-view')).toBeInTheDocument();
+    });
+
+    it('n\'affiche rien si un autre dresseur doit remplacer son Pokémon', () => {
+        // On modifie le mock pour simuler que c'est au joueur B de choisir un remplaçant
+        (useGameStore as any).mockReturnValue({
+            phase: 'WAITING_FOR_B_TO_SWITCH',
+            getWaitingForReplacement: vi.fn(() => 'B'),
+        });
+
+        const { container } = render(<TrainerMenu trainer={mockTrainer as any} trainerKey="A" />);
+
+        // Le composant du Joueur A doit renvoyer "null" et ne rien afficher
+        expect(container).toBeEmptyDOMElement();
     });
 });

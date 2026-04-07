@@ -1,28 +1,39 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
-import ActivePokemonStatusCard from '../components/Game/ActivePokemonStatusCard.tsx';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import ActivePokemonStatusCard from '../components/Game/ActivePokemonStatusCard';
 import { useGameStore } from '@/stores/useGameStore'; 
 import type { GamePokemon } from '@/types/game.types';
 
-// 1. On prépare le mock global de Zustand
+// 1. Mock global de Zustand
 vi.mock('@/stores/useGameStore', () => ({
     useGameStore: vi.fn(),
 }));
 
+// 2. Mock du sous-composant TypeColoredItem pour isoler le test
+vi.mock('../ui/TypeColoredItem', () => ({
+    TypeColoredItem: ({ children }: any) => <div data-testid="type-colored-item">{children}</div>,
+}));
+
 describe('ActivePokemonStatusCard', () => {
-    // 2. Création d'un mock robuste avec le "double cast" pour éviter les erreurs de stats manquantes
+    // Création d'un mock robuste
     const mockPokemon = {
         id: 1,
         name: 'Pikachu',
-        HP: 100,
-        maxHP: 200,
+        hp: 100,
+        baseStats: {
+            HP: 200
+        },
         type: ['electric'],
     } as unknown as GamePokemon;
 
+    beforeEach(() => {
+        vi.clearAllMocks();
+    });
+
     it('affiche correctement le nom et le niveau', () => {
-        // On définit la valeur de retour du store pour ce test
-        vi.mocked(useGameStore).mockReturnValue({ 
-            level: 50, 
+        // On force le type avec 'as any' pour éviter les erreurs TypeScript
+        (useGameStore as any).mockReturnValue({ 
+            gameLevel: 50, 
             phase: 'IDLE' 
         });
 
@@ -33,9 +44,14 @@ describe('ActivePokemonStatusCard', () => {
     });
 
     it('affiche la barre en rouge quand les PV sont < 20%', () => {
-        vi.mocked(useGameStore).mockReturnValue({ level: 50, phase: 'IDLE' });
+        // CORRECTION : gameLevel au lieu de level
+        (useGameStore as any).mockReturnValue({ 
+            gameLevel: 50, 
+            phase: 'IDLE' 
+        });
 
-        const criticalPokemon = { ...mockPokemon, HP: 20, maxHP: 200 } as unknown as GamePokemon;
+        // Les baseStats.HP sont déjà à 200 grâce au spread object, on a juste à changer hp
+        const criticalPokemon = { ...mockPokemon, hp: 20 } as unknown as GamePokemon;
         const { container } = render(<ActivePokemonStatusCard pokemon={criticalPokemon} />);
         
         // Sélectionne la div interne de la barre de vie
@@ -46,8 +62,8 @@ describe('ActivePokemonStatusCard', () => {
 
     it('applique la classe de scale quand la phase est ANIMATING_RESULTS', () => {
         // Changement dynamique de la phase pour ce test précis
-        vi.mocked(useGameStore).mockReturnValue({ 
-            level: 50, 
+        (useGameStore as any).mockReturnValue({ 
+            gameLevel: 50, 
             phase: 'ANIMATING_RESULTS' 
         });
 
