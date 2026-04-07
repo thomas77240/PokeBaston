@@ -43,24 +43,27 @@ public class BattleEngineImpl implements BattleEngine {
         List<BattleLog> battleLogs = new ArrayList<>();
 
         if (battle.isWaitingForTrainerToSwitch()) {
-            if (activeA == null) { 
+            if (activeA == null) {
                 if (btr.actionA() != Action.SWITCH || btr.newPokemonA() == null) {
-                    throw new IllegalArgumentException("Le Pokémon de " + trainerA.getName() + " est KO, il doit choisir de le remplacer.");
+                    throw new IllegalArgumentException(
+                            "Le Pokémon de " + trainerA.getName() + " est KO, il doit choisir de le remplacer.");
                 }
                 validateTrainerTurn(trainerA, btr.actionA(), btr.newPokemonA());
                 executeSwitch(trainerA, btr.newPokemonA(), "A", battleLogs);
             } else if (activeB == null) {
                 if (btr.actionB() != Action.SWITCH || btr.newPokemonB() == null) {
-                    throw new IllegalArgumentException("Le Pokémon de " + trainerB.getName() + " est KO, il doit choisir de le remplacer.");
+                    throw new IllegalArgumentException(
+                            "Le Pokémon de " + trainerB.getName() + " est KO, il doit choisir de le remplacer.");
                 }
                 validateTrainerTurn(trainerB, btr.actionB(), btr.newPokemonB());
                 executeSwitch(trainerB, btr.newPokemonB(), "B", battleLogs);
             }
-            
+
             battle.setStatus(BattleGame.Status.WAITING_FOR_TURN);
             battleService.saveGame(battle);
-            
-            return new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), trainerA, trainerB, battleLogs);
+
+            return new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), trainerA, trainerB,
+                    battleLogs, battle.getWinner());
         }
 
         validateTrainerTurn(trainerA, btr.actionA(), btr.newPokemonA());
@@ -81,20 +84,26 @@ public class BattleEngineImpl implements BattleEngine {
 
         if (aAttacks && bAttacks) {
             if (activeA.getSPE() > activeB.getSPE()) {
-                executeAttackSequence(battle, activeA, activeB, btr.moveTrainerA(), battle.getLevel(), "A", "B", battleLogs);
+                executeAttackSequence(battle, activeA, activeB, btr.moveTrainerA(), battle.getLevel(), "A", "B",
+                        battleLogs);
                 if (activeB.getHP() > 0) {
-                    executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A", battleLogs);
+                    executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A",
+                            battleLogs);
                 }
             } else {
-                executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A", battleLogs);
+                executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A",
+                        battleLogs);
                 if (activeA.getHP() > 0) {
-                    executeAttackSequence(battle, activeA, activeB, btr.moveTrainerA(), battle.getLevel(), "A", "B", battleLogs);
+                    executeAttackSequence(battle, activeA, activeB, btr.moveTrainerA(), battle.getLevel(), "A", "B",
+                            battleLogs);
                 }
             }
         } else if (aAttacks) {
-            executeAttackSequence(battle, activeA, activeB, btr.moveTrainerA(), battle.getLevel(), "A", "B", battleLogs);
+            executeAttackSequence(battle, activeA, activeB, btr.moveTrainerA(), battle.getLevel(), "A", "B",
+                    battleLogs);
         } else if (bAttacks) {
-            executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A", battleLogs);
+            executeAttackSequence(battle, activeB, activeA, btr.moveTrainerB(), battle.getLevel(), "B", "A",
+                    battleLogs);
         }
 
         if (activeA != null && activeA.getHP() <= 0) {
@@ -106,11 +115,13 @@ public class BattleEngineImpl implements BattleEngine {
 
         if (!hasAlivePokemon(trainerA)) {
             battle.setStatus(BattleGame.Status.FINISHED);
+            battle.setWinner("B");
             List<String> defeatLogs = new ArrayList<>();
             defeatLogs.add(trainerA.getName() + " n'a plus de Pokémon en état de combattre.");
             battleLogs.add(new BattleLog(LogType.ENDGAME, "A", defeatLogs));
         }
         if (!hasAlivePokemon(trainerB)) {
+            battle.setWinner("A");
             battle.setStatus(BattleGame.Status.FINISHED);
             List<String> defeatLogs = new ArrayList<>();
             defeatLogs.add(trainerB.getName() + " n'a plus de Pokémon en état de combattre.");
@@ -118,21 +129,22 @@ public class BattleEngineImpl implements BattleEngine {
         }
 
         battleService.saveGame(battle);
-        return new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), trainerA, trainerB, battleLogs);
+        return new BattleStateResponse(battle.getId(), battle.getLevel(), battle.getStatus(), trainerA, trainerB,
+                battleLogs, battle.getWinner());
     }
 
     private void validateTrainerTurn(Trainer trainer, Action action, Integer newPokemonIndex) {
-            Integer activeIndex = trainer.getActivePokemon();
-            
-            if (activeIndex == null) {
-                if (action != Action.SWITCH) {
-                    throw new IllegalArgumentException("Impossible d'attaquer, un des dresseurs doit changer de Pokémon.");
-                }
-                if (!canSwitchTo(trainer, newPokemonIndex)) {
-                    throw new IllegalArgumentException("Choix de Pokémon invalide pour le remplacement.");
-                }
-                return;
+        Integer activeIndex = trainer.getActivePokemon();
+
+        if (activeIndex == null) {
+            if (action != Action.SWITCH) {
+                throw new IllegalArgumentException("Impossible d'attaquer, un des dresseurs doit changer de Pokémon.");
             }
+            if (!canSwitchTo(trainer, newPokemonIndex)) {
+                throw new IllegalArgumentException("Choix de Pokémon invalide pour le remplacement.");
+            }
+            return;
+        }
 
         Pokemon activePokemon = trainer.getTeam().get(activeIndex);
 
@@ -185,12 +197,12 @@ public class BattleEngineImpl implements BattleEngine {
 
         Pokemon newPokemon = trainer.getTeam().get(newPokemonIndex);
         List<String> switchLogs = new ArrayList<>();
-        
+
         if (currentIndex != null) {
             Pokemon currentPokemon = trainer.getTeam().get(currentIndex);
             switchLogs.add(currentPokemon.getName() + " repose-toi !");
         }
-        
+
         BattleLog log = new BattleLog(LogType.SWITCH, trainerLetter, switchLogs);
         log.addAnimation();
         log.add(newPokemon.getName() + " entre en jeu !");
@@ -199,7 +211,8 @@ public class BattleEngineImpl implements BattleEngine {
         trainer.setActivePokemon(newPokemonIndex);
     }
 
-    private void executeAttackSequence(BattleGame battle, Pokemon attacker, Pokemon target, int moveIndex, int level, String attackerLetter, String targetLetter, List<BattleLog> battleLogs) {
+    private void executeAttackSequence(BattleGame battle, Pokemon attacker, Pokemon target, int moveIndex, int level,
+            String attackerLetter, String targetLetter, List<BattleLog> battleLogs) {
         if (battle.isWaitingForTrainerToSwitch()) {
             throw new IllegalArgumentException("Impossible d'attaquer, un des dresseurs doit changer de Pokémon.");
         }
@@ -215,7 +228,7 @@ public class BattleEngineImpl implements BattleEngine {
         move.setPowerPoints(move.getPowerPoints() - 1);
 
         List<String> logs = new ArrayList<>();
-        
+
         logs.add(attacker.getName() + " utilise " + move.getName() + " !");
         logs.add("_ANIMATION_");
 
@@ -237,7 +250,6 @@ public class BattleEngineImpl implements BattleEngine {
         }
     }
 
-
     public void attack(Pokemon attacker, Pokemon target, Move move, int level, List<String> logs) {
         if (!moveHits(move)) {
             logs.add(attacker.getName() + " utilise " + move.getName() + " mais rate sa cible !");
@@ -249,16 +261,17 @@ public class BattleEngineImpl implements BattleEngine {
 
     private boolean moveHits(Move move) {
         int accuracy = move.getAccuracy();
-        if (accuracy >= 100) return true;
+        if (accuracy >= 100)
+            return true;
         return ThreadLocalRandom.current().nextInt(1, 101) <= accuracy;
     }
 
     public int calculateDamage(Pokemon attacker, Pokemon target, Move move, int level, List<String> logs) {
         double baseDamage = calculateBaseDamage(attacker, target, move, level);
         double effectiveness = getResistanceMultiplier(target, move.getType());
-        
+
         System.out.println("Base damage: " + baseDamage + ", Effectiveness: " + effectiveness);
-        
+
         double range = 0.85 + ThreadLocalRandom.current().nextDouble() * 0.15;
         double stabMultiplier = isSTAB(attacker, move) ? 1.5 : 1.0;
 
