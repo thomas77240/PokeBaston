@@ -70,6 +70,9 @@ export interface GameStore {
 	currentLog?: string;
 	winner?: GameTrainer;
 	isLoading: boolean;
+	attacking: 'A' | 'B' | null;
+	takingDamage: 'A' | 'B' | null;
+	
 	// Actions
 	getWaitingForReplacement: () => 'A' | 'B' | null;
 	initGame: (id: string) => Promise<void>;
