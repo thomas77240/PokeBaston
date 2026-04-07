@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Swords, Users } from 'lucide-react';
 import TeamView from './TeamView';
 import AttacksView from './AttacksView';
+import { useGameStore } from '@/stores/useGameStore';
 
 interface TrainerMenuProps {
     trainer: GameTrainer;
@@ -11,7 +12,29 @@ interface TrainerMenuProps {
 }
 
 const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
-    const [activeView, setActiveView] = useState<'home' | 'team' | 'attacks'>('home');
+    const { phase, getWaitingForReplacement } = useGameStore();
+    const waitingFor = getWaitingForReplacement();
+
+    const [activeView, setActiveView] = useState<'home' | 'team' | 'attacks'>(
+        phase === 'WAITING_FOR_TURN' ? 'home' : waitingFor === trainerKey ? 'team' : 'home'
+    );
+
+    const [prevPhase, setPrevPhase] = useState(phase);
+
+    if (phase !== prevPhase) {
+        setPrevPhase(phase);
+        if (phase === 'WAITING_FOR_TURN') {
+            setActiveView('home');
+        } else if (waitingFor === trainerKey) {
+            setActiveView('team');
+        } else {
+            setActiveView('home');
+        }
+    }
+
+    if (waitingFor && waitingFor !== trainerKey) {
+        return null;
+    }
 
     const xEnter = trainerKey === 'A' ? '-100%' : '100%';
     const xExit = trainerKey === 'A' ? '-100%' : '100%';
@@ -45,11 +68,12 @@ const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
                                 onClick={() => setActiveView('attacks')}
                                 className="group relative flex items-center justify-between overflow-hidden bg-background-50 border-background-600 border-2 py-5 px-6 cursor-pointer rounded-2xl shadow transition-all duration-300 hover:-translate-y-1 active:scale-95"
                             >
-                                <span className="font-title text-xl font-bold text-neutral-800">
-                                    Attaquer
-                                </span>
+                                <span className="font-title text-xl font-bold text-neutral-800">Attaquer</span>
                                 <div className="bg-background-100 p-2 rounded-xl group-hover:bg-red-100 transition-colors">
-                                    <Swords size={24} className="text-neutral-700 group-hover:text-red-500 transition-colors" />
+                                    <Swords
+                                        size={24}
+                                        className="text-neutral-700 group-hover:text-red-500 transition-colors"
+                                    />
                                 </div>
                             </button>
 
@@ -57,11 +81,12 @@ const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
                                 onClick={() => setActiveView('team')}
                                 className="group relative flex items-center justify-between overflow-hidden bg-background-50 border-background-600 border-2 py-5 px-6 cursor-pointer rounded-2xl shadow transition-all duration-300 hover:-translate-y-1 active:scale-95"
                             >
-                                <span className="font-title text-xl font-bold text-neutral-800">
-                                    Équipe
-                                </span>
+                                <span className="font-title text-xl font-bold text-neutral-800">Équipe</span>
                                 <div className="bg-background-100 p-2 rounded-xl group-hover:bg-blue-100 transition-colors">
-                                    <Users size={24} className="text-neutral-700 group-hover:text-blue-500 transition-colors" />
+                                    <Users
+                                        size={24}
+                                        className="text-neutral-700 group-hover:text-blue-500 transition-colors"
+                                    />
                                 </div>
                             </button>
                         </div>
@@ -80,7 +105,11 @@ const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
                     >
                         <TeamView
                             trainerKey={trainerKey}
-                            activePokemon={trainer.activePokemon ? trainer.team[trainer.activePokemon] : null}
+                            activePokemon={
+                                trainer?.activePokemon !== undefined && trainer?.activePokemon !== null
+                                    ? trainer.team[trainer.activePokemon]
+                                    : null
+                            }
                             goBack={() => setActiveView('home')}
                         />
                     </motion.div>
@@ -98,7 +127,11 @@ const TrainerMenu = ({ trainer, trainerKey }: TrainerMenuProps) => {
                     >
                         <AttacksView
                             trainerKey={trainerKey}
-                            activePokemon={trainer.activePokemon ? trainer.team[trainer.activePokemon] : null}
+                            activePokemon={
+                                trainer?.activePokemon !== undefined && trainer?.activePokemon !== null
+                                    ? trainer.team[trainer.activePokemon]
+                                    : null
+                            }
                             goBack={() => setActiveView('home')}
                         />
                     </motion.div>

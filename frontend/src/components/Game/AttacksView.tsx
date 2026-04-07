@@ -25,7 +25,6 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 	};
 
 	const overviewAttack = (move: GamePokemon['moves'][0]) => {
-		console.log('Overviewing move:', move);
 		if (currentOverviewedMove?.name === move.name) {
 			setCurrentOverviewedMove(null);
 		} else {
@@ -77,7 +76,7 @@ const AttacksView = ({ goBack, activePokemon, trainerKey }: AttacksViewProps) =>
 									<TypeColoredItem
 										as="span"
 										pokemonType={currentOverviewedMove.type}
-										className="inline-flex px-3 py-0.5 bg-type rounded-full text-[10px] font-bold uppercase tracking-widest text-white shadow-sm justify-center items-center"
+										className="inline-flex px-3 py-0.5 bg-type rounded-sm text-[10px] font-bold uppercase tracking-widest text-white shadow-sm justify-center items-center"
 									>
 										{currentOverviewedMove.type}
 									</TypeColoredItem>

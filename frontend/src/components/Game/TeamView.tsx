@@ -5,29 +5,29 @@ import { TypeColoredItem } from '../ui/TypeColoredItem';
 import { PokemonUtils } from '@/utils/pokemon.utils';
 
 interface TeamViewProps {
-    goBack: () => void;
+    goBack?: () => void;
     trainerKey: 'A' | 'B';
     activePokemon: GamePokemon | null;
 }
 
 const TeamView = ({ goBack, trainerKey, activePokemon }: TeamViewProps) => {
-    const { registerChoice, getTrainer } = useGameStore();
+    const { registerChoice, getTrainer, getWaitingForReplacement } = useGameStore();
     const trainer = getTrainer(trainerKey);
 
     const selectPokemon = (pokemonId: number) => {
         registerChoice(trainerKey, { type: 'SWITCH', pokemonId });
         setTimeout(() => {
-            goBack();
+            goBack?.();
         }, 200);
     };
 
     return (
         <div className="h-full w-full flex flex-col">
-            <ConfigHeader title={`Équipe`} backButtonAction={goBack} className="px-6!" />
+            <ConfigHeader title={`Équipe`} backButtonAction={getWaitingForReplacement() === trainerKey ? undefined : goBack} className="px-6!" />
 
             <div className="p-6 flex-1 overflow-y-auto">
                 <h2 className="text-2xl font-title font-bold text-neutral-800 text-center mb-8">
-                    Qui envoyer au combat ?
+                    {getWaitingForReplacement() === trainerKey ? 'Quel Pokémon envoyer au combat ?' : 'Votre équipe'}
                 </h2>
 
                 {/* Container empilé (Liste verticale) */}

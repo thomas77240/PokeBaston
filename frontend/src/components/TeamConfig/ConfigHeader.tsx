@@ -3,7 +3,7 @@ import { ChevronLeft } from 'lucide-react';
 interface ConfigHeaderProps {
 	className?: string;
 	title: string;
-	backButtonAction: () => void;
+	backButtonAction?: () => void;
 }
 
 const ConfigHeader = ({ className, title, backButtonAction }: ConfigHeaderProps) => {
@@ -11,13 +11,14 @@ const ConfigHeader = ({ className, title, backButtonAction }: ConfigHeaderProps)
 		<header
 			className={`bg-background-100 h-20 border-b items-center border-background-600 py-4 px-8 grid grid-cols-3 ${className}`}
 		>
+				{backButtonAction ? (
 			<button
 				onClick={backButtonAction}
 				className="group flex gap-2 h-full w-fit items-center text-muted hover:text-foreground font-medium cursor-pointer"
 			>
 				<ChevronLeft className="bg-background-500 group-hover:bg-background-600 p-1 h-8 w-8 rounded-full" />
 				Retour
-			</button>
+			</button>) : <div />}
 			<h2 className="text-center font-title text-3xl">{title}</h2>
 		</header>
 	);

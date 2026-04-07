@@ -3,84 +3,125 @@ import stage from '@/assets/images/stages/stage_1.png';
 import { useGameStore } from '@/stores/useGameStore';
 import { PokemonUtils } from '@/utils/pokemon.utils';
 import ActivePokemonStatusCard from './ActivePokemonStatusCard';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
+import TypewriterText from '../ui/TypewriterText';
 
 const Stage = () => {
-	// On récupère aussi la phase et les logs depuis le store
-	const { trainerA, trainerB, phase } = useGameStore();
+    const { trainerA, trainerB, phase, currentLog } = useGameStore();
 
-	// Remplacer par state.combatLogs quand tu l'auras ajouté à Zustand
-	const currentLog = "Reptincel utilise Lance-Flammes ! C'est super efficace !";
+    const activePokemonA = trainerA?.activePokemon !== undefined && trainerA?.activePokemon !== null
+        ? trainerA.team[trainerA.activePokemon]
+        : null;
 
-	const activePokemonA = trainerA?.team[trainerA.activePokemon];
-	const activePokemonB = trainerB?.team[trainerB.activePokemon];
+    const activePokemonB = trainerB?.activePokemon !== undefined && trainerB?.activePokemon !== null
+        ? trainerB.team[trainerB.activePokemon]
+        : null;
 
-	return (
-		<div className="w-full h-full bg-white flex flex-col items-center">
-			{/* 1. LA SCÈNE (En haut, garde ses proportions) */}
-			<div className="w-full relative aspect-video shrink-0">
-				<div className="absolute inset-0 h-full w-full">
-					<img src={stage} alt="Stage" className="w-full h-full object-cover" />
-				</div>
+    const spriteVariants: Record<'A' | 'B', Variants> = {
+        A: {
+            initial: { scale: 0, opacity: 0, x: -50 },
+            animate: { scale: 1, opacity: 1, x: 0, transition: { type: 'spring', bounce: 0.4, duration: 0.6 } },
+            exit: { scale: 0, opacity: 0, x: -50, transition: { duration: 0.3 } },
+        },
+        B: {
+            initial: { scale: 0, opacity: 0, x: 50 },
+            animate: { scale: 1, opacity: 1, x: 0, transition: { type: 'spring', bounce: 0.4, duration: 0.6 } },
+            exit: { scale: 0, opacity: 0, x: 50, transition: { duration: 0.3 } },
+        },
+    };
 
-				{/* Les Pokémon */}
-				<div className="absolute inset-0 h-full flex flex-col justify-end items-center pb-12">
-    {activePokemonA && (
-        <>
-            <div className="absolute bottom-[18%] left-[10%] h-48 w-64 flex items-end justify-center">
-                <img
-                    src={PokemonUtils.getBackSprite(activePokemonA)}
-                    alt={activePokemonA?.name}
-                    // scale-[2] double la taille d'origine (ou scale-[2.5], scale-[3] selon tes besoins)
-                    // origin-bottom s'assure qu'en grandissant, les pieds restent au sol
-                    // [image-rendering:pixelated] garde les pixels nets et empêche le flou
-                    className="h-auto w-auto object-contain scale-[3.5] origin-bottom [image-rendering:pixelated]"
-                />
+    return (
+        <div className="w-full h-full bg-neutral-900 flex flex-col items-center">
+
+            <div className="w-full flex-1 flex flex-col justify-start items-center overflow-hidden bg-black relative">
+
+                <div className="relative w-full aspect-video max-w-[calc((100vh-120px)*16/9)] shadow-2xl">
+
+                    {/* Image de fond */}
+                    <div className="absolute inset-0 h-full w-full">
+                        <img
+                            src={stage}
+                            alt="Stage"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <div className="absolute inset-0 h-full w-full z-10">
+
+                        {/* --- POKEMON JOUEUR A (En bas à gauche) --- */}
+                        <div className="absolute bottom-[10%] left-[15%] flex items-end justify-center">
+                            <AnimatePresence mode="wait">
+                                {activePokemonA && (
+                                    <motion.img
+                                        key={`A-${activePokemonA.id}`}
+                                        variants={spriteVariants.A}
+                                        initial="initial"
+                                        animate="animate"
+                                        exit="exit"
+                                        src={PokemonUtils.getBackSprite(activePokemonA)}
+                                        alt={activePokemonA.name}
+                                        className="object-contain scale-[2.5] origin-bottom [image-rendering:pixelated]"
+                                    />
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Status Card Joueur A */}
+                        {activePokemonA && (
+                            <div className="absolute right-2 bottom-2 md:right-6 md:bottom-6 w-full max-w-[30%]">
+                                <ActivePokemonStatusCard pokemon={activePokemonA} />
+                            </div>
+                        )}
+
+                        {/* --- POKEMON JOUEUR B (En haut à droite) --- */}
+                        <div className="absolute bottom-[40%] left-[70%] flex items-end justify-center">
+                            <AnimatePresence mode="wait">
+                                {activePokemonB && (
+                                    <motion.img
+                                        key={`B-${activePokemonB.id}`}
+                                        variants={spriteVariants.B}
+                                        initial="initial"
+                                        animate="animate"
+                                        exit="exit"
+                                        src={PokemonUtils.getSprite(activePokemonB)}
+                                        alt={activePokemonB.name}
+                                        className="object-contain scale-[1.5] origin-bottom [image-rendering:pixelated]"
+                                    />
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Status Card Joueur B */}
+                        {activePokemonB && (
+                            <div className="absolute left-2 top-2 md:left-6 md:top-6 w-full max-w-[30%]">
+                                <ActivePokemonStatusCard pokemon={activePokemonB} />
+                            </div>
+                        )}
+
+                    </div>
+                </div>
             </div>
 
-            <div className="absolute right-[3%] bottom-[5%]">
-                <ActivePokemonStatusCard pokemon={activePokemonA} />
-            </div>
-        </>
-    )}
-
-    {activePokemonB && (
-        <>
-            <div className="absolute top-[40%] right-[22%] h-40 w-56 flex items-end justify-center">
-                <img
-                    src={PokemonUtils.getSprite(activePokemonB)}
-                    alt={activePokemonB?.name}
-                    // Souvent le Pokémon adverse est un poil plus petit pour l'effet de perspective (ex: 1.5 au lieu de 2)
-                    className="h-auto w-auto object-contain scale-[2] origin-bottom [image-rendering:pixelated]"
-                />
-            </div>
-
-            <div className="absolute left-[3%] top-[5%]">
-                <ActivePokemonStatusCard pokemon={activePokemonB} />
-            </div>
-        </>
-    )}
-</div>
-			</div>
-
-			{/* 2. LA ZONE DE LOGS (En bas, prend le reste de la place) */}
-			<div className="grow w-full p-8 flex flex-col justify-center">
-				<div
-					className={`
-                    w-full h-full max-h-48 border-4 border-gray-700 bg-white rounded-lg p-6 shadow-lg
-                    transition-all duration-500 transform
-                    ${phase === 'ANIMATING_RESULTS' ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}
+            {/* 2. LA ZONE DE LOGS : shrink-0 pour garantir qu'elle ne se fait jamais écraser */}
+            <div className="w-full shrink-0 min-h-30 px-4 py-4 flex flex-col justify-center items-center bg-black text-white">
+                <div
+                    className={`
+                    w-full h-full max-w-5xl rounded-lg px-6 py-4 shadow-lg relative
+                    flex items-center transition-all duration-500 transform
+                    ${phase === 'ANIMATING_RESULTS' ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 pointer-events-none'}
                 `}
-				>
-					<p className="text-2xl font-title text-gray-800 leading-relaxed">{currentLog}</p>
+                >
+                    <p className="text-lg md:text-xl lg:text-2xl font-title text-white leading-relaxed">
+                        <TypewriterText text={currentLog || ''} speed={30} />
+                    </p>
 
-					{/* Petit indicateur clignotant classique en bas à droite */}
-					{phase === 'ANIMATING_RESULTS' && (
-						<div className="absolute bottom-4 right-6 w-4 h-4 bg-red-500 rounded-full animate-bounce" />
-					)}
-				</div>
-			</div>
-		</div>
-	);
+                    {phase === 'ANIMATING_RESULTS' && (
+                        <div className="absolute bottom-4 right-6 w-3 h-3 bg-white rounded-full animate-bounce" />
+                    )}
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Stage;
